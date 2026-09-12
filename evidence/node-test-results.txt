@@ -1,0 +1,230 @@
+
+> together-insights-demo@3.0.0 test
+> node --test tests/*.test.cjs
+
+TAP version 13
+# Subtest: numeric verse range and nonconsecutive verses
+ok 1 - numeric verse range and nonconsecutive verses
+  ---
+  duration_ms: 7.959945
+  type: 'test'
+  ...
+# Subtest: escaped Markdown ampersand
+ok 2 - escaped Markdown ampersand
+  ---
+  duration_ms: 0.947754
+  type: 'test'
+  ...
+# Subtest: HTML entities in URLs
+ok 3 - HTML entities in URLs
+  ---
+  duration_ms: 0.528796
+  type: 'test'
+  ...
+# Subtest: Church key is independent of language, query and hash
+ok 4 - Church key is independent of language, query and hash
+  ---
+  duration_ms: 0.712798
+  type: 'test'
+  ...
+# Subtest: legacy Church domain normalized
+ok 5 - legacy Church domain normalized
+  ---
+  duration_ms: 0.462884
+  type: 'test'
+  ...
+# Subtest: non-Church query keeps resource identity
+ok 6 - non-Church query keeps resource identity
+  ---
+  duration_ms: 0.960613
+  type: 'test'
+  ...
+# Subtest: opaque range uses document order
+ok 7 - opaque range uses document order
+  ---
+  duration_ms: 0.662525
+  type: 'test'
+  ...
+# Subtest: opaque range with missing endpoint is not fabricated
+ok 8 - opaque range with missing endpoint is not fabricated
+  ---
+  duration_ms: 0.290278
+  type: 'test'
+  ...
+# Subtest: reversed range reports missing
+ok 9 - reversed range reports missing
+  ---
+  duration_ms: 0.816789
+  type: 'test'
+  ...
+# Subtest: numeric missing targets reported explicitly
+ok 10 - numeric missing targets reported explicitly
+  ---
+  duration_ms: 0.837452
+  type: 'test'
+  ...
+# Subtest: invalid excessive numeric range rejected
+ok 11 - invalid excessive numeric range rejected
+  ---
+  duration_ms: 0.335929
+  type: 'test'
+  ...
+# Subtest: malformed fragment is invalid not a guessed paragraph
+ok 12 - malformed fragment is invalid not a guessed paragraph
+  ---
+  duration_ms: 0.944155
+  type: 'test'
+  ...
+# Subtest: chapter range extracted from visible label
+ok 13 - chapter range extracted from visible label
+  ---
+  duration_ms: 4.277467
+  type: 'test'
+  ...
+# Subtest: verse label does not become chapter range
+ok 14 - verse label does not become chapter range
+  ---
+  duration_ms: 0.49769
+  type: 'test'
+  ...
+# Subtest: conference and manual types
+ok 15 - conference and manual types
+  ---
+  duration_ms: 0.296243
+  type: 'test'
+  ...
+# Subtest: collections and assets are classified
+ok 16 - collections and assets are classified
+  ---
+  duration_ms: 0.327695
+  type: 'test'
+  ...
+# Subtest: relative nested links retain source base
+ok 17 - relative nested links retain source base
+  ---
+  duration_ms: 0.273392
+  type: 'test'
+  ...
+# Subtest: hash-only nested link retains source document
+ok 18 - hash-only nested link retains source document
+  ---
+  duration_ms: 0.225996
+  type: 'test'
+  ...
+# Subtest: dangerous URL schemes and credential URLs rejected
+ok 19 - dangerous URL schemes and credential URLs rejected
+  ---
+  duration_ms: 0.418142
+  type: 'test'
+  ...
+# Subtest: lookalike host not classified as Church scripture
+ok 20 - lookalike host not classified as Church scripture
+  ---
+  duration_ms: 0.270594
+  type: 'test'
+  ...
+# Subtest: Markdown scanner handles bold labels and nested brackets
+ok 21 - Markdown scanner handles bold labels and nested brackets
+  ---
+  duration_ms: 0.990419
+  type: 'test'
+  ...
+# Subtest: balanced parentheses inside URL
+ok 22 - balanced parentheses inside URL
+  ---
+  duration_ms: 0.250362
+  type: 'test'
+  ...
+# Subtest: bare and autolinks do not duplicate Markdown links
+ok 23 - bare and autolinks do not duplicate Markdown links
+  ---
+  duration_ms: 0.381422
+  type: 'test'
+  ...
+# Subtest: escaped label marker not treated as Markdown
+ok 24 - escaped label marker not treated as Markdown
+  ---
+  duration_ms: 0.197517
+  type: 'test'
+  ...
+# Subtest: document strips supplied executable metadata
+ok 25 - document strips supplied executable metadata
+  ---
+  duration_ms: 1.473778
+  type: 'test'
+  ...
+# Subtest: document revision stable through validation round trip
+ok 26 - document revision stable through validation round trip
+  ---
+  duration_ms: 0.590209
+  type: 'test'
+  ...
+# Subtest: content version changes when quote changes
+ok 27 - content version changes when quote changes
+  ---
+  duration_ms: 0.671862
+  type: 'test'
+  ...
+# Subtest: duplicate and unsafe original IDs rejected
+ok 28 - duplicate and unsafe original IDs rejected
+  ---
+  duration_ms: 1.347199
+  type: 'test'
+  ...
+# Subtest: unsupported language / ambiguous coverage rejected
+ok 29 - unsupported language / ambiguous coverage rejected
+  ---
+  duration_ms: 0.305365
+  type: 'test'
+  ...
+# Subtest: empty and excessive content rejected
+ok 30 - empty and excessive content rejected
+  ---
+  duration_ms: 0.36661
+  type: 'test'
+  ...
+# Subtest: bundled reference records validate; all conference records are summaries
+ok 31 - bundled reference records validate; all conference records are summaries
+  ---
+  duration_ms: 13.763355
+  type: 'test'
+  ...
+# Subtest: every supplied lesson Markdown link is internally classifiable
+ok 32 - every supplied lesson Markdown link is internally classifiable
+  ---
+  duration_ms: 11.683544
+  type: 'test'
+  ...
+# Subtest: production build contains no unresolved tokens or remote script loads
+ok 33 - production build contains no unresolved tokens or remote script loads
+  ---
+  duration_ms: 20.589189
+  type: 'test'
+  ...
+# Subtest: lesson validator strips non-content fields and rejects unsafe IDs
+ok 34 - lesson validator strips non-content fields and rejects unsafe IDs
+  ---
+  duration_ms: 1.672441
+  type: 'test'
+  ...
+# Subtest: deployment pack is bundled without a server or dependency install
+ok 35 - deployment pack is bundled without a server or dependency install
+  ---
+  duration_ms: 261.364052
+  type: 'test'
+  ...
+# Subtest: invalid deployment lesson fails at build time, not just in the UI
+ok 36 - invalid deployment lesson fails at build time, not just in the UI
+  ---
+  duration_ms: 183.65195
+  type: 'test'
+  ...
+1..36
+# tests 36
+# suites 0
+# pass 36
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 776.637765

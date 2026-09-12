@@ -1,0 +1,329 @@
+{
+  "schema": "together-reference-library-v3",
+  "documents": [
+    {
+      "url": "https://www.churchofjesuschrist.org/study/general-conference/2015/04/therefore-they-hushed-their-fears",
+      "title": "그러므로 그들이 두려움을 가라앉히고",
+      "author": "데이비드 에이 베드나 장로",
+      "date": "2015 · 04",
+      "language": "ko",
+      "coverage": "summary",
+      "edition": "시연용 학습 요약 · 공식 말씀 전문 아님",
+      "provenance": "공식 말씀을 참고해 작성한 짧은 비공식 요약입니다. 원문을 인용한 것이 아니며, 아래 문단 번호는 요약 내부 위치입니다.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "베드나 장로는 불확실한 상황에서 느끼는 불안과, 주님을 경외하는 마음을 구별합니다. 주님을 경외한다는 것은 그분을 존중하며 뜻에 순종하는 것입니다.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "앨마의 백성은 하나님이 자신들을 구하실 수 있음을 기억하면서 두려움을 가라앉혔습니다. 중요한 변화는 위험만 바라보던 시선을 구주께 돌린 데 있습니다.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-3",
+          "markdown": "말씀은 그리스도께 초점을 맞추고, 그분 위에 삶의 토대를 놓으며, 믿음으로 계속 나아가도록 권합니다. 성약을 기억하고 지키는 일도 그 토대와 연결됩니다.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-4",
+          "markdown": "경외와 순종에 관한 [전도서 12:13–14](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/12?lang=kor&id=p13-p14#p13)을 함께 읽어 보세요. 이 링크에서도 같은 패널의 성구 읽기를 체험할 수 있습니다.",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ]
+    },
+    {
+      "url": "https://www.churchofjesuschrist.org/study/general-conference/2015/04/therefore-they-hushed-their-fears",
+      "title": "Therefore They Hushed Their Fears",
+      "author": "Elder David A. Bednar",
+      "date": "2015 · 04",
+      "language": "en",
+      "coverage": "summary",
+      "edition": "Demo study summary · not the original talk",
+      "provenance": "A brief, independently written summary based on the cited official talk. Paragraph IDs belong to this summary, not to the original talk.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "Elder Bednar distinguishes anxiety about uncertain circumstances from reverence for the Lord. Reverence includes respect for Christ and willingness to obey Him.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "Alma’s people remembered God’s power to deliver them and quieted their fears. Their attention moved from danger toward the Savior.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-3",
+          "markdown": "The message encourages attention to Christ, a foundation built on Him, and faithful forward movement. Remembering and keeping covenants contributes to that foundation.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-4",
+          "markdown": "Read [Ecclesiastes 12:13–14](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/12?lang=eng&id=p13-p14#p13) on reverence and obedience. This link also demonstrates nested scripture reading in the same panel.",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ]
+    },
+    {
+      "url": "https://www.churchofjesuschrist.org/study/general-conference/2021/10/51gong",
+      "title": "다시 신뢰하십시오",
+      "author": "게릿 더블유 공 장로",
+      "date": "2021 · 10",
+      "language": "ko",
+      "coverage": "summary",
+      "edition": "시연용 학습 요약 · 공식 말씀 전문 아님",
+      "provenance": "공식 말씀을 참고해 작성한 짧은 비공식 요약입니다. 원문을 인용한 것이 아니며, 아래 문단 번호는 요약 내부 위치입니다.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "공 장로는 상처를 입거나 기대가 이루어지지 않았을 때 하나님과 사람을 신뢰하기 어려울 수 있음을 인정합니다.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "하나님께 돌아오는 여정에서 다시 신뢰를 키울 수 있습니다. 필요한 것은 믿음뿐 아니라 용기, 지혜, 분별력입니다.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-3",
+          "markdown": "서로를 더 용서하고 덜 판단하는 태도는 교회가 돌아올 수 있는 집처럼 느껴지게 합니다. 신뢰는 사람의 완전함을 가정하는 것과 다릅니다.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-4",
+          "markdown": "공과와 연결해서 [잠언 3:5–7](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=kor&id=p5-p7#p5)을 읽어 보세요. 신뢰를 다시 배우는 데 지금 필요한 작은 행동은 무엇인가요?",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ]
+    },
+    {
+      "url": "https://www.churchofjesuschrist.org/study/general-conference/2021/10/51gong",
+      "title": "Trust Again",
+      "author": "Elder Gerrit W. Gong",
+      "date": "2021 · 10",
+      "language": "en",
+      "coverage": "summary",
+      "edition": "Demo study summary · not the original talk",
+      "provenance": "A brief, independently written summary based on the cited official talk. Paragraph IDs belong to this summary, not to the original talk.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "Elder Gong acknowledges that hurt and unmet expectations can make trusting God and other people difficult.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "Trust can grow again as we return toward God. That process calls for courage, wisdom and discernment alongside faith.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-3",
+          "markdown": "More forgiveness and less judgment can help the Church feel like a welcoming home. Trust does not require assuming that people are perfect.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-4",
+          "markdown": "For a connection to this lesson, read [Proverbs 3:5–7](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=eng&id=p5-p7#p5). What small action could help you learn to trust again?",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ]
+    },
+    {
+      "url": "https://www.churchofjesuschrist.org/study/general-conference/2022/04/15andersen",
+      "title": "예수님을 따름: 화평하게 하는 자가 됨",
+      "author": "닐 엘 앤더슨 장로",
+      "date": "2022 · 04",
+      "language": "ko",
+      "coverage": "summary",
+      "edition": "시연용 학습 요약 · 공식 말씀 전문 아님",
+      "provenance": "공식 말씀을 참고해 작성한 짧은 비공식 요약입니다. 원문을 인용한 것이 아니며, 아래 문단 번호는 요약 내부 위치입니다.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "앤더슨 장로는 온라인에서 분노와 경멸이 빠르게 퍼지는 상황 속에서도 그리스도의 제자로 살아가도록 권합니다.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "화평을 만드는 일은 믿는 바를 숨기는 수동적인 태도가 아닙니다. 신앙을 나누면서도 적의와 분노를 내려놓을 수 있습니다.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-3",
+          "markdown": "다른 관점을 가진 사람에게도 존중과 사랑으로 반응하는 것이 구주를 따르는 실천이 됩니다.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-4",
+          "markdown": "공과의 [잠언 15:1–4, 18](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=kor&id=p1-p4,p18#p1)과 연결해 읽어 보세요. 의견이 다를 때도 관계를 지키는 대답을 어떻게 할 수 있을까요?",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ]
+    },
+    {
+      "url": "https://www.churchofjesuschrist.org/study/general-conference/2022/04/15andersen",
+      "title": "Following Jesus: Being a Peacemaker",
+      "author": "Elder Neil L. Andersen",
+      "date": "2022 · 04",
+      "language": "en",
+      "coverage": "summary",
+      "edition": "Demo study summary · not the original talk",
+      "provenance": "A brief, independently written summary based on the cited official talk. Paragraph IDs belong to this summary, not to the original talk.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "Elder Andersen invites disciples to follow Christ even when anger and contempt spread rapidly online.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "Peacemaking does not mean passively hiding conviction. We can share our faith while setting aside hostility and anger.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-3",
+          "markdown": "Respectful, loving responses to people with different perspectives put discipleship into practice.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-4",
+          "markdown": "Connect this message with the lesson’s [Proverbs 15:1–4, 18](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=eng&id=p1-p4,p18#p1). How could your next reply protect a relationship during disagreement?",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ]
+    },
+    {
+      "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/41rasband",
+      "title": "말은 중요합니다",
+      "author": "로널드 에이 래스번드 장로",
+      "date": "2024 · 04",
+      "language": "ko",
+      "coverage": "summary",
+      "edition": "시연용 학습 요약 · 공식 말씀 전문 아님",
+      "provenance": "공식 말씀을 참고해 작성한 짧은 비공식 요약입니다. 원문을 인용한 것이 아니며, 아래 문단 번호는 요약 내부 위치입니다.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "래스번드 장로는 말이 우리의 신념과 마음을 드러내며 주변의 분위기에 영향을 준다고 가르칩니다.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "경솔한 말은 상처를 남길 수 있지만, 사려 깊은 말은 용기와 희망을 전하고 다시 시작하도록 도울 수 있습니다.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-3",
+          "markdown": "하나님의 말씀을 듣고 따르는 일은 다른 모든 말보다 중요합니다. 말씀을 공부하는 것은 주님께 가까이 나아가는 길입니다.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-4",
+          "markdown": "공과와 연결해 [잠언 16:24](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/16?lang=kor&id=p24#p24)을 읽어 보세요. 오늘 누군가에게 전할 수 있는 진실하고 따뜻한 말은 무엇인가요?",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ]
+    },
+    {
+      "url": "https://www.churchofjesuschrist.org/study/general-conference/2024/04/41rasband",
+      "title": "Words Matter",
+      "author": "Elder Ronald A. Rasband",
+      "date": "2024 · 04",
+      "language": "en",
+      "coverage": "summary",
+      "edition": "Demo study summary · not the original talk",
+      "provenance": "A brief, independently written summary based on the cited official talk. Paragraph IDs belong to this summary, not to the original talk.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "Elder Rasband teaches that words reveal beliefs and feelings and influence the atmosphere around us.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "Careless speech can wound, while thoughtful words can encourage hope and help people begin again.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-3",
+          "markdown": "Listening to and following God’s word matters above all other speech. Studying His word draws us closer to Him.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-4",
+          "markdown": "Connect this message with [Proverbs 16:24](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/16?lang=eng&id=p24#p24). What sincere, kind words could you offer someone today?",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ]
+    },
+    {
+      "url": "https://www.churchofjesuschrist.org/study/manual/teaching-in-the-saviors-way-2022/07-part-2/11-invite-diligent-learning",
+      "title": "구주께서 보여 주신 방법으로 가르침 · 부지런히 배우도록 권유한다",
+      "author": "",
+      "date": "2022",
+      "language": "ko",
+      "coverage": "excerpt",
+      "edition": "첨부 공과에 인용된 발췌",
+      "provenance": "Source: user-provided Pasted markdown.md; excerpt only. The supplied lesson links this quotation to p19. English retains the v2 prototype translation.",
+      "blocks": [
+        {
+          "id": "p19",
+          "markdown": "학습자들에게 구주와 그분의 복음에 대해 배우고 있는 것을 서로 이야기할 기회를 [준다]. 그럴 기회를 준다면 그들은 자신이 배운 진리들을 체화하고 표현할 수 있을 것이다. 또한 다른 환경에서도 진리를 나눌 수 있는 자신의 능력에 대해 자신감을 얻는 데 도움이 된다.",
+          "type": "paragraph",
+          "sourceId": true
+        }
+      ]
+    },
+    {
+      "url": "https://www.churchofjesuschrist.org/study/manual/teaching-in-the-saviors-way-2022/07-part-2/11-invite-diligent-learning",
+      "title": "Teaching in the Savior’s Way · Invite Diligent Learning",
+      "author": "",
+      "date": "2022",
+      "language": "en",
+      "coverage": "excerpt",
+      "edition": "Excerpt translated from the supplied Korean lesson; not verified official English",
+      "provenance": "Source: user-provided Pasted markdown.md; excerpt only. The supplied lesson links this quotation to p19. English retains the v2 prototype translation.",
+      "blocks": [
+        {
+          "id": "p19",
+          "markdown": "Give learners opportunities to talk with each other about what they are learning about the Savior and His gospel. These opportunities help them internalize and express the truths they have learned. They also help them gain confidence in their ability to share truth in other settings.",
+          "type": "paragraph",
+          "sourceId": true
+        }
+      ]
+    }
+  ]
+}

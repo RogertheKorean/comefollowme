@@ -1,0 +1,604 @@
+{
+  "id": "cfm-2026-37",
+  "version": "36ce14b3b997",
+  "title": {
+    "ko": "네 길을 지도하시리라",
+    "en": "He Shall Direct Thy Paths"
+  },
+  "date": {
+    "ko": "9월 7일–13일 · 2026",
+    "en": "September 7–13 · 2026"
+  },
+  "sourceUrl": {
+    "ko": "https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/37?lang=kor",
+    "en": "https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-old-testament-2026/37?lang=eng"
+  },
+  "sourceLabel": "Pasted markdown.md",
+  "translationStatus": "prototype-translation-from-user-korean-not-official",
+  "alignment": "manually-paired-prototype-blocks",
+  "sections": [
+    {
+      "id": "intro",
+      "ko": "공과 소개",
+      "en": "Lesson introduction"
+    },
+    {
+      "id": "home",
+      "ko": "가정 및 교회에서 배우기 위한 아이디어",
+      "en": "Learning at home and at church"
+    },
+    {
+      "id": "wisdom",
+      "ko": "지혜에 귀 기울이기",
+      "en": "Listening to wisdom"
+    },
+    {
+      "id": "reverence",
+      "ko": "주님을 경외하기",
+      "en": "Fearing the Lord"
+    },
+    {
+      "id": "trust",
+      "ko": "마음을 다하여 신뢰하기",
+      "en": "Trusting with all our heart"
+    },
+    {
+      "id": "kindness",
+      "ko": "유순한 대답",
+      "en": "A soft answer"
+    },
+    {
+      "id": "woman",
+      "ko": "현숙한 여인",
+      "en": "A virtuous woman"
+    },
+    {
+      "id": "eternal",
+      "ko": "영원한 가치",
+      "en": "Eternal value"
+    },
+    {
+      "id": "helps",
+      "ko": "경전 도움말",
+      "en": "Scripture helps"
+    },
+    {
+      "id": "children",
+      "ko": "어린이를 가르치기",
+      "en": "Teaching children"
+    },
+    {
+      "id": "child-fear",
+      "ko": "하나님을 사랑하고 순종해요",
+      "en": "Loving and obeying God"
+    },
+    {
+      "id": "child-trust",
+      "ko": "온 마음으로 신뢰해요",
+      "en": "Trusting with all my heart"
+    },
+    {
+      "id": "child-kind",
+      "ko": "친절한 말을 해요",
+      "en": "Speaking kindly"
+    }
+  ],
+  "blocks": [
+    {
+      "id": "b00",
+      "conceptId": "cfm2026-w37-intro-b00",
+      "sectionId": "intro",
+      "kind": "media",
+      "ko": "[어린이들과 함께 계시는 예수 그리스도](https://www.churchofjesuschrist.org/imgs/52b6edd501a011ef9567eeeeac1ef5a1500c2ff9/full/%21500%2C/0/default)",
+      "en": "[Jesus Christ with Children](https://www.churchofjesuschrist.org/imgs/52b6edd501a011ef9567eeeeac1ef5a1500c2ff9/full/%21500%2C/0/default)"
+    },
+    {
+      "id": "b01",
+      "conceptId": "cfm2026-w37-intro-b01",
+      "sectionId": "intro",
+      "kind": "credit",
+      "ko": "*어린이들과 함께 계시는 예수 그리스도*, 딜린 마쉬",
+      "en": "*Jesus Christ with Children*, Dilleen Marsh"
+    },
+    {
+      "id": "b02",
+      "conceptId": "cfm2026-w37-intro-b02",
+      "sectionId": "intro",
+      "kind": "title",
+      "ko": "**9월 7일\\~13일: “네 길을 지도하시리라”**",
+      "en": "**September 7–13: “He Shall Direct Thy Paths”**"
+    },
+    {
+      "id": "b03",
+      "conceptId": "cfm2026-w37-intro-b03",
+      "sectionId": "intro",
+      "kind": "references",
+      "ko": "# [잠언 1\\~4장](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/1?lang=kor); [15\\~16장](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=kor); [22장](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/22?lang=kor); [31장](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/31?lang=kor); [전도서 1\\~3장](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/1?lang=kor); [11\\~12장](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/11?lang=kor)",
+      "en": "# [Proverbs 1–4](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/1?lang=eng); [15–16](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=eng); [22](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/22?lang=eng); [31](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/31?lang=eng); [Ecclesiastes 1–3](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/1?lang=eng); [11–12](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/11?lang=eng)"
+    },
+    {
+      "id": "b04",
+      "conceptId": "cfm2026-w37-intro-b04",
+      "sectionId": "intro",
+      "kind": "text",
+      "ko": "여러분은 잠언을 사랑이 많은 부모님의 지혜로운 권고를 모아 놓은 책이라고 생각할 수도 있다.([잠언 1:8](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/1?lang=kor\\&id=p8#p8) 참조) 잠언의 주된 메시지는 우리가 지혜, 특히 하나님의 지혜를 구한다면 삶이 순조로우리라는 것이다. 그러나 잠언 뒤에 나오는 전도서는 마치 이렇게 말하는 듯하다. “그게 그렇게 쉬운 일은 아니야.” 전도서에서 전도자는 “지혜를 알고자 하며 … 마음을 썼으나” “바람을 잡으려는 것” 같았고” “번뇌도 많”았다고 진술했다.([전도서 1:17\\~18](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/1?lang=kor\\&id=p17-p18#p17)) 전도서는 다양한 방식으로 다음과 같이 질문한다. “모든 것이 헛되고 일시적이며 불확실해 보이는 이 세상에 진정한 의미라는 것이 있을까?”",
+      "en": "You might think of Proverbs as a book collecting the wise advice of loving parents (see [Proverbs 1:8](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/1?lang=eng&id=p8#p8)). Its central message is that life will go well when we seek wisdom, especially the wisdom of God. Yet the book that follows, Ecclesiastes, seems to say, “It is not quite that easy.” The Preacher in Ecclesiastes says that he devoted his heart to knowing wisdom, but found it like chasing the wind, with much sorrow ([Ecclesiastes 1:17–18](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/1?lang=eng&id=p17-p18#p17)). In various ways the book asks: “Can there be lasting meaning in a world where everything seems empty, temporary, and uncertain?”"
+    },
+    {
+      "id": "b05",
+      "conceptId": "cfm2026-w37-intro-b05",
+      "sectionId": "intro",
+      "kind": "text",
+      "ko": "그러나 잠언과 전도서는 삶을 다른 관점에서 바라보면서도 유사한 진리를 가르친다. 전도서는 이렇게 선언한다. “일의 결국을 다 들었으니 하나님을 경외하고 그의 명령들을 지킬지어다 이것이 모든 사람의 본분이니라.”([전도서 12:13](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/12?lang=kor\\&id=p13#p13)) 잠언 전반에서 볼 수 있는 원리는 다음과 같다. “너는 마음을 다하여 여호와를 신뢰하[라.]”([잠언 3:5](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=kor\\&id=p5#p5); 또한 [7절](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=kor\\&id=p7#p7) 참조) 우리가 주 예수 그리스도를 신뢰하고 따를 때, 삶은 항상 완벽하지는 않더라도 항상 더 나아진다.",
+      "en": "Although Proverbs and Ecclesiastes look at life from different perspectives, they teach similar truths. Ecclesiastes declares: “Let us hear the conclusion of the whole matter: Fear God, and keep his commandments: for this is the whole duty of man” ([Ecclesiastes 12:13](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/12?lang=eng&id=p13#p13)). A principle found throughout Proverbs is: “Trust in the Lord with all thine heart” ([Proverbs 3:5](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=eng&id=p5#p5); see also [verse 7](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=eng&id=p7#p7)). When we trust and follow the Lord Jesus Christ, life may not always be perfect, but it is always better."
+    },
+    {
+      "id": "b06",
+      "conceptId": "cfm2026-w37-intro-b06",
+      "sectionId": "intro",
+      "kind": "text",
+      "ko": "잠언과 전도서의 주요 내용을 알아보려면, 경전 안내서에서 “잠언”과 “전도서”를 참조한다.",
+      "en": "For an overview of Proverbs and Ecclesiastes, see “Proverbs” and “Ecclesiastes” in the Guide to the Scriptures."
+    },
+    {
+      "id": "b07",
+      "conceptId": "cfm2026-w37-intro-b07",
+      "sectionId": "intro",
+      "kind": "media",
+      "ko": "[학습 아이콘](https://www.churchofjesuschrist.org/imgs/df7bc1f3168311edaa54eeeeac1e79ae7f612244/full/%21100%2C/0/default)",
+      "en": "[Study icon](https://www.churchofjesuschrist.org/imgs/df7bc1f3168311edaa54eeeeac1e79ae7f612244/full/%21100%2C/0/default)"
+    },
+    {
+      "id": "b08",
+      "conceptId": "cfm2026-w37-home-b08",
+      "sectionId": "home",
+      "kind": "text",
+      "ko": "## 가정 및 교회에서 배우기 위한 아이디어",
+      "en": "## Ideas for Learning at Home and at Church"
+    },
+    {
+      "id": "b09",
+      "conceptId": "cfm2026-w37-wisdom-b09",
+      "sectionId": "wisdom",
+      "kind": "text",
+      "ko": "[**잠언 1\\~4장**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/1?lang=kor)**; **[**15\\~16장**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=kor)**; **[**전도서 1\\~3장**](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/1?lang=kor)**; **[**11\\~12장**](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/11?lang=kor)",
+      "en": "[**Proverbs 1–4**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/1?lang=eng); [**15–16**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=eng); [**Ecclesiastes 1–3**](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/1?lang=eng); [**11–12**](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/11?lang=eng)"
+    },
+    {
+      "id": "b10",
+      "conceptId": "cfm2026-w37-wisdom-b10",
+      "sectionId": "wisdom",
+      "kind": "text",
+      "ko": "### “네 귀를 지혜에 기울이며”",
+      "en": "### “Incline thine ear unto wisdom”"
+    },
+    {
+      "id": "b11",
+      "conceptId": "cfm2026-w37-wisdom-b11",
+      "sectionId": "wisdom",
+      "kind": "text",
+      "ko": "잠언과 전도서는 지혜에 관한 통찰로 가득하다. [잠언 1\\~4장](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/1?lang=kor), [15\\~16장](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=kor), [전도서 1\\~3장](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/1?lang=kor), [11\\~12장](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/11?lang=kor)에서 “지혜” 및 그와 관련된 말들(“지식”, “명철” 등)이 나오면 표시한다. 여러분은 이 부분을 통해 지혜에 관하여 어떤 생각을 하게 되었는가? 그런 생각을 토대로, “여호와[께서] 주시”는 지혜를 묘사한다면 어떻게 말하겠는가?([잠언 2:6](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/2?lang=kor\\&id=p6#p6)) 우리는 하나님의 지혜를 통해 어떤 축복을 받을 수 있는가?",
+      "en": "Proverbs and Ecclesiastes are full of insights about wisdom. As you read [Proverbs 1–4](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/1?lang=eng), [15–16](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=eng), [Ecclesiastes 1–3](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/1?lang=eng), and [11–12](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/11?lang=eng), mark the word “wisdom” and related words such as “knowledge” and “understanding.” What thoughts about wisdom come to you from these passages? Drawing on those thoughts, how would you describe the wisdom that the Lord gives ([Proverbs 2:6](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/2?lang=eng&id=p6#p6))? What blessings can God's wisdom bring us?"
+    },
+    {
+      "id": "b12",
+      "conceptId": "cfm2026-w37-wisdom-b12",
+      "sectionId": "wisdom",
+      "kind": "text",
+      "ko": "또한 [마태복음 7장 24\\~27절](https://www.churchofjesuschrist.org/study/scriptures/nt/matt/7?lang=kor\\&id=p24-p27#p24)과 [25장 1\\~13절](https://www.churchofjesuschrist.org/study/scriptures/nt/matt/25?lang=kor\\&id=p1-p13#p1)을 참조한다.",
+      "en": "See also [Matthew 7:24–27](https://www.churchofjesuschrist.org/study/scriptures/nt/matt/7?lang=eng&id=p24-p27#p24) and [25:1–13](https://www.churchofjesuschrist.org/study/scriptures/nt/matt/25?lang=eng&id=p1-p13#p1)."
+    },
+    {
+      "id": "b13",
+      "conceptId": "cfm2026-w37-wisdom-b13",
+      "sectionId": "wisdom",
+      "kind": "text",
+      "ko": "**학습자들이 배운 것을 나누도록 돕는다.** “학습자들에게 구주와 그분의 복음에 대해 배우고 있는 것을 서로 이야기할 기회를 [준다]. 그럴 기회를 준다면 그들은 자신이 배운 진리들을 체화하고 표현할 수 있을 것이다. 또한 다른 환경에서도 진리를 나눌 수 있는 자신의 능력에 대해 자신감을 얻는 데 도움이 된다.”(『구주께서 보여 주신 방법으로 가르침』, [26쪽](https://www.churchofjesuschrist.org/study/manual/teaching-in-the-saviors-way-2022/07-part-2/11-invite-diligent-learning?lang=kor\\&id=p19#p19)) 예를 들어, 학습자들에게 잠언이나 전도서에서 하나님의 지혜에 대한 통찰을 얻은 참조 성구를 적어 보라고 할 수 있다. 그들에게 배운 것을 이야기해 보게 한다.",
+      "en": "**Help learners share what they learn.** “Give learners opportunities to talk with each other about what they are learning about the Savior and His gospel. These opportunities help them internalize and express the truths they have learned. They also help them gain confidence in their ability to share truth in other settings” (*Teaching in the Savior's Way*, [page 26](https://www.churchofjesuschrist.org/study/manual/teaching-in-the-saviors-way-2022/07-part-2/11-invite-diligent-learning?lang=eng&id=p19#p19); this quotation is translated from the supplied Korean text). For example, invite learners to write down a reference in Proverbs or Ecclesiastes that gave them insight into God's wisdom, and then talk about what they learned."
+    },
+    {
+      "id": "b14",
+      "conceptId": "cfm2026-w37-reverence-b14",
+      "sectionId": "reverence",
+      "kind": "text",
+      "ko": "[**잠언 1:7**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/1?lang=kor\\&id=p7#p7)**; **[**2:5**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/2?lang=kor\\&id=p5#p5)**; **[**3:7**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=kor\\&id=p7#p7)**; **[**15:33**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=kor\\&id=p33#p33)**; **[**16:6**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/16?lang=kor\\&id=p6#p6)**; **[**31:30**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/31?lang=kor\\&id=p30#p30)**; **[**전도서 12:13**](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/12?lang=kor\\&id=p13#p13)",
+      "en": "[**Proverbs 1:7**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/1?lang=eng&id=p7#p7); [**2:5**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/2?lang=eng&id=p5#p5); [**3:7**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=eng&id=p7#p7); [**15:33**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=eng&id=p33#p33); [**16:6**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/16?lang=eng&id=p6#p6); [**31:30**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/31?lang=eng&id=p30#p30); [**Ecclesiastes 12:13**](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/12?lang=eng&id=p13#p13)"
+    },
+    {
+      "id": "b15",
+      "conceptId": "cfm2026-w37-reverence-b15",
+      "sectionId": "reverence",
+      "kind": "text",
+      "ko": "### “스스로 지혜롭게 여기지 말지어다 여호와를 경외하[라].”",
+      "en": "### “Be not wise in thine own eyes: fear the Lord”"
+    },
+    {
+      "id": "b16",
+      "conceptId": "cfm2026-w37-reverence-b16",
+      "sectionId": "reverence",
+      "kind": "text",
+      "ko": "잠언과 전도서 전반에 걸쳐 발견되는 또 다른 주제는 “여호와를 경외하는 것”이다. 읽으면서 이 문구를 잘 살펴본다. 주님을 경외한다는 말은 어떤 의미라고 생각하는가? 데이비드 에이 베드나 장로의 말씀 “[그러므로 그들이 두려움을 가라앉히고](https://www.churchofjesuschrist.org/study/general-conference/2015/04/therefore-they-hushed-their-fears?lang=kor)”에서 통찰을 찾아본다.(『리아호나』, 2015년 5월호, 46\\~49쪽) 주님을 경외하는 것은 다른 종류의 두려움과 어떻게 다른가?",
+      "en": "Another theme throughout Proverbs and Ecclesiastes is fearing the Lord. Watch for this expression as you read. What do you think it means to fear the Lord? Look for insights in Elder David A. Bednar's message [“Therefore They Hushed Their Fears”](https://www.churchofjesuschrist.org/study/general-conference/2015/04/therefore-they-hushed-their-fears?lang=eng) (*Liahona*, May 2015, pages 46–49). How is fearing the Lord different from other kinds of fear?"
+    },
+    {
+      "id": "b17",
+      "conceptId": "cfm2026-w37-reverence-b17",
+      "sectionId": "reverence",
+      "kind": "text",
+      "ko": "또한 [잠언 8장 13절](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/8?lang=kor\\&id=p13#p13)을 참조한다.",
+      "en": "See also [Proverbs 8:13](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/8?lang=eng&id=p13#p13)."
+    },
+    {
+      "id": "b18",
+      "conceptId": "cfm2026-w37-trust-b18",
+      "sectionId": "trust",
+      "kind": "text",
+      "ko": "[**잠언 3:5\\~7**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=kor\\&id=p5-p7#p5)**; **[**4장**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/4?lang=kor)",
+      "en": "[**Proverbs 3:5–7**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=eng&id=p5-p7#p5); [**chapter 4**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/4?lang=eng)"
+    },
+    {
+      "id": "b20",
+      "conceptId": "cfm2026-w37-trust-b20",
+      "sectionId": "trust",
+      "kind": "media",
+      "ko": "[세미나리 아이콘](https://www.churchofjesuschrist.org/imgs/c83005ab249911ed8e2feeeeac1e6a13b807064c/full/%21250%2C/0/default)",
+      "en": "[Seminary icon](https://www.churchofjesuschrist.org/imgs/c83005ab249911ed8e2feeeeac1e6a13b807064c/full/%21250%2C/0/default)"
+    },
+    {
+      "id": "b21",
+      "conceptId": "cfm2026-w37-trust-b21",
+      "sectionId": "trust",
+      "kind": "text",
+      "ko": "### “너는 마음을 다하여 여호와를 신뢰하라.”",
+      "en": "### “Trust in the Lord with all thine heart”"
+    },
+    {
+      "id": "b22",
+      "conceptId": "cfm2026-w37-trust-b22",
+      "sectionId": "trust",
+      "kind": "text",
+      "ko": "누군가에게 “여호와를 신뢰하”는 것이 “[우리의] 명철”에 의지하는 편보다 낫다고 어떻게 설득할 수 있을까?([잠언 3:5](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=kor\\&id=p5#p5)) 여러분은 어떤 비유나 실물 공과를 활용하겠는가? [잠언 3장 5\\~7절](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=kor\\&id=p5-p7#p5)의 말씀을 깊이 생각하면서 다음 문장들을 어떻게 완성할지 생각해 본다. *주님을 신뢰하는 것은 …는 것과 같다. 우리 자신의 명철에 의지하는 것은 …는 것과 같다.*",
+      "en": "How could you persuade someone that trusting the Lord is better than relying on our own understanding ([Proverbs 3:5](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=eng&id=p5#p5))? What analogy or object lesson would you use? As you ponder [Proverbs 3:5–7](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=eng&id=p5-p7#p5), consider how you would finish these sentences: *Trusting the Lord is like … . Relying on our own understanding is like … .*"
+    },
+    {
+      "id": "b23",
+      "conceptId": "cfm2026-w37-trust-b23",
+      "sectionId": "trust",
+      "kind": "text",
+      "ko": "우리 자신의 명철을 의지하는 것은 왜 현명하지 못한가? 여러분은 주님께서 신뢰할 수 있는 분이라는 것을 어떻게 알게 되었는가?",
+      "en": "Why is it unwise to rely on our own understanding? How have you come to know that the Lord can be trusted?"
+    },
+    {
+      "id": "b24",
+      "conceptId": "cfm2026-w37-trust-b24",
+      "sectionId": "trust",
+      "kind": "text",
+      "ko": "그렇다 하더라도 우리는 때때로 주님을 신뢰하기 어렵다고 느낄 수 있다. 왜 그럴까? 게릿 더블유 공 장로는 “[다시 신뢰하십시오](https://www.churchofjesuschrist.org/study/general-conference/2021/10/51gong?lang=kor)”(『리아호나』, 2021년 11월호, 97\\~99쪽)에서 몇 가지 이유와 유용한 조언을 제시한다. 이 말씀에는 누군가 주님에 대한 신뢰를 회복하는 데 도움이 될 어떤 이야기나 가르침이 나오는가?",
+      "en": "Even so, we may sometimes find it difficult to trust the Lord. Why might that be? In [“Trust Again”](https://www.churchofjesuschrist.org/study/general-conference/2021/10/51gong?lang=eng) (*Liahona*, November 2021, pages 97–99), Elder Gerrit W. Gong offers some reasons and helpful counsel. Which stories or teachings in this message could help someone regain trust in the Lord?"
+    },
+    {
+      "id": "b25",
+      "conceptId": "cfm2026-w37-trust-b25",
+      "sectionId": "trust",
+      "kind": "text",
+      "ko": "[잠언 3장 6절](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=kor\\&id=p6#p6)과 [잠언 4장](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/4?lang=kor)은 모두 인생을 “길”에 비유한다. 주님께서 “[여러분의] 길을 지도하시”게 한다는 말은 무슨 뜻이라고 생각하는가?([잠언 3:6](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=kor\\&id=p6#p6)) [4장](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/4?lang=kor)에서 “[여러분의] 발이 행할 길을 헤아[리]”는 데 도움이 되는 내용은 무엇인가?([26절 각주](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/4?lang=kor\\&id=p26#p26)) 예를 들어, [11\\~12절](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/4?lang=kor\\&id=p11-p12#p11)과 [18\\~19절](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/4?lang=kor\\&id=p18-p19#p18)은 옳은 길을 따라갈 때 받는 축복에 관하여 무엇을 가르치는가? [26\\~27절](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/4?lang=kor\\&id=p26-p27#p26)은 여러분에게 어떤 의미가 있는가?",
+      "en": "Both [Proverbs 3:6](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=eng&id=p6#p6) and [Proverbs 4](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/4?lang=eng) compare life to a path. What does it mean to let the Lord direct your paths ([Proverbs 3:6](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=eng&id=p6#p6))? What in [chapter 4](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/4?lang=eng) helps you consider the path your feet are taking (see the [footnote to verse 26](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/4?lang=eng&id=p26#p26))? For example, what do [verses 11–12](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/4?lang=eng&id=p11-p12#p11) and [18–19](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/4?lang=eng&id=p18-p19#p18) teach about the blessings of following the right path? What do [verses 26–27](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/4?lang=eng&id=p26-p27#p26) mean to you?"
+    },
+    {
+      "id": "b26",
+      "conceptId": "cfm2026-w37-trust-b26",
+      "sectionId": "trust",
+      "kind": "text",
+      "ko": "또한 다음 자료들을 참조한다. [니파이후서 31:18\\~21](https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/31?lang=kor\\&id=p18-p21#p18); “Lord, I Would Follow Thee[나 주님 따르리]”, *Hymns*, 220장.",
+      "en": "See also [2 Nephi 31:18–21](https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/31?lang=eng&id=p18-p21#p18); “Lord, I Would Follow Thee,” *Hymns*, no. 220."
+    },
+    {
+      "id": "b27",
+      "conceptId": "cfm2026-w37-kindness-b27",
+      "sectionId": "kindness",
+      "kind": "text",
+      "ko": "[**잠언 15**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=kor)**; **[**16:24\\~32**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/16?lang=kor\\&id=p24-p32#p24)",
+      "en": "[**Proverbs 15**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=eng); [**16:24–32**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/16?lang=eng&id=p24-p32#p24)"
+    },
+    {
+      "id": "b28",
+      "conceptId": "cfm2026-w37-kindness-b28",
+      "sectionId": "kindness",
+      "kind": "text",
+      "ko": "### “유순한 대답은 분노를 쉬게 하여도”",
+      "en": "### “A soft answer turneth away wrath”"
+    },
+    {
+      "id": "b29",
+      "conceptId": "cfm2026-w37-kindness-b29",
+      "sectionId": "kindness",
+      "kind": "text",
+      "ko": "[잠언 15장\\~16장](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=kor)에는 특히 사랑하는 이들과 대화하는 방식을 개선하는 데 영감이 될 내용이 나온다. 예를 들어, “유순한 대답”이 “분노를 쉬게” 했던 구체적인 경험을 생각해 본다.([잠언 15:1](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=kor\\&id=p1#p1))",
+      "en": "[Proverbs 15–16](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=eng) can inspire us to improve how we speak, especially to those we love. For example, think of a particular experience when a soft answer turned away anger ([Proverbs 15:1](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=eng&id=p1#p1))."
+    },
+    {
+      "id": "b30",
+      "conceptId": "cfm2026-w37-kindness-b30",
+      "sectionId": "kindness",
+      "kind": "text",
+      "ko": "또한 구주께서 [잠언 15장 1\\~4, 18절](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=kor\\&id=p1-p4,p18#p1)의 가르침을 모범으로 보이셨던 때를 생각해 볼 수 있다.([마가복음 12:13\\~17](https://www.churchofjesuschrist.org/study/scriptures/nt/mark/12?lang=kor\\&id=p13-p17#p13); [요한복음 8:1\\~11](https://www.churchofjesuschrist.org/study/scriptures/nt/john/8?lang=kor\\&id=p1-p11#p1) 참조) 여러분은 다른 사람들과 교류할 때 어떻게 그분의 모범을 따를 수 있을까?",
+      "en": "You could also think of times when the Savior exemplified the teachings in [Proverbs 15:1–4, 18](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=eng&id=p1-p4,p18#p1) (see [Mark 12:13–17](https://www.churchofjesuschrist.org/study/scriptures/nt/mark/12?lang=eng&id=p13-p17#p13); [John 8:1–11](https://www.churchofjesuschrist.org/study/scriptures/nt/john/8?lang=eng&id=p1-p11#p1)). How can you follow His example in your interactions with others?"
+    },
+    {
+      "id": "b31",
+      "conceptId": "cfm2026-w37-kindness-b31",
+      "sectionId": "kindness",
+      "kind": "text",
+      "ko": "[잠언 15장](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=kor)과 [16장 24\\~32절](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/16?lang=kor\\&id=p24-p32#p24)의 권고는 오늘날의 디지털 기기를 통한 소통에 어떻게 적용될 수 있을까? 소셜 미디어나 문자를 통해 소통하는 것에 관한 조언으로 쓰일 수 있는 구절을 찾아본다.",
+      "en": "How could the counsel in [Proverbs 15](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=eng) and [16:24–32](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/16?lang=eng&id=p24-p32#p24) apply to communication through today's digital devices? Look for verses that could serve as advice about communicating on social media or by text message."
+    },
+    {
+      "id": "b32",
+      "conceptId": "cfm2026-w37-kindness-b32",
+      "sectionId": "kindness",
+      "kind": "text",
+      "ko": "또한 다음 자료들을 참조한다. 닐 엘 앤더슨, “[예수님을 따름: 화평하게 하는 자가 됨](https://www.churchofjesuschrist.org/study/general-conference/2022/04/15andersen?lang=kor)”, 『리아호나』, 2022년 5월호, 17\\~20쪽; 로널드 에이 래스번드, “[말은 중요합니다](https://www.churchofjesuschrist.org/study/general-conference/2024/04/41rasband?lang=kor)”, 『리아호나』, 2024년 5월호, 70\\~76쪽; 『청소년의 힘을 위하여: 선택을 위한 안내서』(2025), [30쪽](https://www.churchofjesuschrist.org/study/manual/for-the-strength-of-youth/06-love-god-love-your-neighbor?lang=kor\\&id=p_qUmpH#p_qUmpH).",
+      "en": "See also Neil L. Andersen, [“Following Jesus: Being a Peacemaker”](https://www.churchofjesuschrist.org/study/general-conference/2022/04/15andersen?lang=eng), *Liahona*, May 2022, pages 17–20; Ronald A. Rasband, [“Words Matter”](https://www.churchofjesuschrist.org/study/general-conference/2024/04/41rasband?lang=eng), *Liahona*, May 2024, pages 70–76; *For the Strength of Youth: A Guide for Making Choices* (2025), [page 30](https://www.churchofjesuschrist.org/study/manual/for-the-strength-of-youth/06-love-god-love-your-neighbor?lang=eng&id=p_qUmpH#p_qUmpH)."
+    },
+    {
+      "id": "b33",
+      "conceptId": "cfm2026-w37-kindness-b33",
+      "sectionId": "kindness",
+      "kind": "media",
+      "ko": "[여성과 갈매기들](https://www.churchofjesuschrist.org/imgs/69e9226301a611ef96b4eeeeac1e0cfa04738f9c/full/%21500%2C/0/default)",
+      "en": "[Woman and seagulls](https://www.churchofjesuschrist.org/imgs/69e9226301a611ef96b4eeeeac1e0cfa04738f9c/full/%21500%2C/0/default)"
+    },
+    {
+      "id": "b34",
+      "conceptId": "cfm2026-w37-kindness-b34",
+      "sectionId": "kindness",
+      "kind": "credit",
+      "ko": "*누가 현숙한 여인을 찾아 얻겠느냐? “ll”*, 루이스 파커",
+      "en": "*Who Can Find a Virtuous Woman? “ll”*, Louise Parker"
+    },
+    {
+      "id": "b35",
+      "conceptId": "cfm2026-w37-woman-b35",
+      "sectionId": "woman",
+      "kind": "text",
+      "ko": "[**잠언 31:10\\~31**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/31?lang=kor\\&id=p10-p31#p10)",
+      "en": "[**Proverbs 31:10–31**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/31?lang=eng&id=p10-p31#p10)"
+    },
+    {
+      "id": "b36",
+      "conceptId": "cfm2026-w37-woman-b36",
+      "sectionId": "woman",
+      "kind": "text",
+      "ko": "### “여호와를 경외하는 여자는 칭찬을 받을 것이라.”",
+      "en": "### “A woman that feareth the Lord, she shall be praised”"
+    },
+    {
+      "id": "b37",
+      "conceptId": "cfm2026-w37-woman-b37",
+      "sectionId": "woman",
+      "kind": "text",
+      "ko": "[잠언 31장 10\\~31절](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/31?lang=kor\\&id=p10-p31#p10)에는 “현숙한 여인”, 곧 영적인 힘과 능력, 영향력이 큰 여성이 묘사되어 있다. 현숙한 여인들에 관한 각 구절의 설명을 여러분의 말로 요약해 본다. 여러분은 이러한 특징 중 어떤 것을 본받을 수 있는가?",
+      "en": "[Proverbs 31:10–31](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/31?lang=eng&id=p10-p31#p10) describes a virtuous woman—a woman of great spiritual strength, ability, and influence. Summarize in your own words what each verse says about virtuous women. Which of these qualities could you seek to develop?"
+    },
+    {
+      "id": "b38",
+      "conceptId": "cfm2026-w37-eternal-b38",
+      "sectionId": "eternal",
+      "kind": "text",
+      "ko": "[**전도서 1\\~3장**](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/1?lang=kor)**; **[**12장**](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/12?lang=kor)",
+      "en": "[**Ecclesiastes 1–3**](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/1?lang=eng); [**chapter 12**](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/12?lang=eng)"
+    },
+    {
+      "id": "b39",
+      "conceptId": "cfm2026-w37-eternal-b39",
+      "sectionId": "eternal",
+      "kind": "text",
+      "ko": "### 필멸의 삶은 일시적이다.",
+      "en": "### Mortal life is temporary."
+    },
+    {
+      "id": "b40",
+      "conceptId": "cfm2026-w37-eternal-b40",
+      "sectionId": "eternal",
+      "kind": "text",
+      "ko": "[전도서 1\\~2장](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/1?lang=kor)에서 밝히듯, 세상의 많은 것이 “헛되”다(혹은 일시적이고 중요하지 않을 때가 많다)는 것을 기억하는 것은 왜 가치 있는 일일까? [전도서 12장](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/12?lang=kor)에 따르면, 삶에 영원한 가치를 가져다주는 것은 무엇인가?",
+      "en": "Why is it valuable to remember that, as [Ecclesiastes 1–2](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/1?lang=eng) explains, much in the world is “vanity”—temporary, or often of little importance? According to [Ecclesiastes 12](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/12?lang=eng), what gives life eternal value?"
+    },
+    {
+      "id": "b41",
+      "conceptId": "cfm2026-w37-eternal-b41",
+      "sectionId": "eternal",
+      "kind": "text",
+      "ko": "더 많은 아이디어를 얻으려면, 이번 달 『[리아호나](https://www.churchofjesuschrist.org/study/magazines/liahona?lang=kor)』 및 『[청소년의 힘을 위하여](https://www.churchofjesuschrist.org/study/magazines/for-the-strength-of-youth?lang=kor)』 잡지 기사를 참조한다.",
+      "en": "For more ideas, see articles in this month's [*Liahona*](https://www.churchofjesuschrist.org/study/magazines/liahona?lang=eng) and [*For the Strength of Youth*](https://www.churchofjesuschrist.org/study/magazines/for-the-strength-of-youth?lang=eng) magazines."
+    },
+    {
+      "id": "b42",
+      "conceptId": "cfm2026-w37-helps-b42",
+      "sectionId": "helps",
+      "kind": "text",
+      "ko": "### 경전 도움말",
+      "en": "### Scripture Helps"
+    },
+    {
+      "id": "b43",
+      "conceptId": "cfm2026-w37-helps-b43",
+      "sectionId": "helps",
+      "kind": "text",
+      "ko": "- [“징계하는 채찍”은 무엇을 뜻하는가?](https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/35-proverbs-1-4-15-16-22-31-ecclesiastes-1-3-11-12?lang=kor\\&id=p_zrYGD-p_vgHOp#p_zrYGD)\n- [“네 떡을 물 위에 던져라”라는 말은 어떤 의미인가?](https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/35-proverbs-1-4-15-16-22-31-ecclesiastes-1-3-11-12?lang=kor\\&id=p_mperO-p_uK5Qt#p_mperO)",
+      "en": "- [What does the rod of correction mean?](https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/35-proverbs-1-4-15-16-22-31-ecclesiastes-1-3-11-12?lang=eng&id=p_zrYGD-p_vgHOp#p_zrYGD)\n- [What does it mean to cast your bread upon the waters?](https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/35-proverbs-1-4-15-16-22-31-ecclesiastes-1-3-11-12?lang=eng&id=p_mperO-p_uK5Qt#p_mperO)"
+    },
+    {
+      "id": "b44",
+      "conceptId": "cfm2026-w37-helps-b44",
+      "sectionId": "helps",
+      "kind": "text",
+      "ko": "[클릭해서 내용 더 보기.](https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/35-proverbs-1-4-15-16-22-31-ecclesiastes-1-3-11-12?lang=kor)",
+      "en": "[Open additional material.](https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/35-proverbs-1-4-15-16-22-31-ecclesiastes-1-3-11-12?lang=eng)"
+    },
+    {
+      "id": "b45",
+      "conceptId": "cfm2026-w37-helps-b45",
+      "sectionId": "helps",
+      "kind": "media",
+      "ko": "[어린이란 아이콘](https://www.churchofjesuschrist.org/imgs/1a99f017c4ee11ed9c00eeeeac1e6838b05c8916/full/%21100%2C/0/default)",
+      "en": "[Children's section icon](https://www.churchofjesuschrist.org/imgs/1a99f017c4ee11ed9c00eeeeac1e6838b05c8916/full/%21100%2C/0/default)"
+    },
+    {
+      "id": "b46",
+      "conceptId": "cfm2026-w37-children-b46",
+      "sectionId": "children",
+      "kind": "text",
+      "ko": "## 어린이를 가르치기 위한 아이디어",
+      "en": "## Ideas for Teaching Children"
+    },
+    {
+      "id": "b47",
+      "conceptId": "cfm2026-w37-child-fear-b47",
+      "sectionId": "child-fear",
+      "kind": "text",
+      "ko": "[**잠언 1:7**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/1?lang=kor\\&id=p7#p7)**; **[**2:5**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/2?lang=kor\\&id=p5#p5)**; **[**15:33**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=kor\\&id=p33#p33)**; **[**16:6**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/16?lang=kor\\&id=p6#p6)**; **[**전도서 12:13**](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/12?lang=kor\\&id=p13#p13)",
+      "en": "[**Proverbs 1:7**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/1?lang=eng&id=p7#p7); [**2:5**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/2?lang=eng&id=p5#p5); [**15:33**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=eng&id=p33#p33); [**16:6**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/16?lang=eng&id=p6#p6); [**Ecclesiastes 12:13**](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/12?lang=eng&id=p13#p13)"
+    },
+    {
+      "id": "b48",
+      "conceptId": "cfm2026-w37-child-fear-b48",
+      "sectionId": "child-fear",
+      "kind": "text",
+      "ko": "### “하나님을 경외”한다는 것은 하나님을 사랑하고 그분께 순종하는 것을 의미해요.",
+      "en": "### Fearing God means loving and obeying Him."
+    },
+    {
+      "id": "b49",
+      "conceptId": "cfm2026-w37-child-fear-b49",
+      "sectionId": "child-fear",
+      "kind": "text",
+      "ko": "- 아이들이 하나님을 경외하는 것에 관한 구절을 이해할 수 있도록 “경외”라는 말을 *경건*, *사랑*, 또는 *순종* 같은 말로 바꾸어 본다.(또한 [히브리서 12:28](https://www.churchofjesuschrist.org/study/scriptures/nt/heb/12?lang=kor\\&id=p28#p28) 참조) 그렇게 할 때, 이 구절들에 대한 생각이 어떻게 달라지는가? 우리는 주님을 경외한다는 것을 어떻게 나타내 보이는가?",
+      "en": "- To help children understand verses about fearing God, try replacing “fear” with words such as *reverence*, *love*, or *obedience* (see also [Hebrews 12:28](https://www.churchofjesuschrist.org/study/scriptures/nt/heb/12?lang=eng&id=p28#p28)). How does doing this change their understanding of the verses? How do we show that we fear the Lord?"
+    },
+    {
+      "id": "b50",
+      "conceptId": "cfm2026-w37-child-trust-b50",
+      "sectionId": "child-trust",
+      "kind": "text",
+      "ko": "[**잠언 3:5\\~7**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=kor\\&id=p5-p7#p5)",
+      "en": "[**Proverbs 3:5–7**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=eng&id=p5-p7#p5)"
+    },
+    {
+      "id": "b51",
+      "conceptId": "cfm2026-w37-child-trust-b51",
+      "sectionId": "child-trust",
+      "kind": "text",
+      "ko": "### 나는 마음을 다하여 주님을 신뢰할 수 있어요.",
+      "en": "### I can trust the Lord with all my heart."
+    },
+    {
+      "id": "b52",
+      "conceptId": "cfm2026-w37-child-trust-b52",
+      "sectionId": "child-trust",
+      "kind": "text",
+      "ko": "- 아이들과 함께 [잠언 3장 5∼7절](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=kor\\&id=p5-p7#p5)에 어울리는 동작을 만들어 본다. 손으로 하트 만들기, 한쪽으로 기대기, 제자리 걷기, 눈 가리키기 등을 예로 들 수 있다. 우리가 온 마음으로 예수 그리스도를 신뢰한다는 것을 어떻게 나타낼 수 있을까?\n- “네 명철을 의지하지 말라”는 말의 의미를 보여 주기 위해 아이들에게 벽처럼 견고하고 안정적인 것에 기대 보라고 한다.([잠언 3:5](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=kor\\&id=p5#p5)) 그런 다음에는 빗자루처럼 견고하지 않은 것에 기대 보게 한다. 또는 책이나 종이처럼 견고한 정도가 다른 여러 물체에 막대기나 연필을 기대어 보게 할 수도 있다. “[자신의] 명철”에 의지하지 말고 “여호와를 신뢰하”는 것이 중요한 이유는 무엇인가?([5절](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=kor\\&id=p5#p5))",
+      "en": "- With the children, make up actions that go with [Proverbs 3:5–7](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=eng&id=p5-p7#p5). Examples include making a heart with your hands, leaning to one side, walking in place, or pointing to your eyes. How can we show that we trust Jesus Christ with our whole heart?\n- To illustrate what it means not to lean on your own understanding, invite the children to lean against something solid and stable, such as a wall ([Proverbs 3:5](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=eng&id=p5#p5)). Then invite them to lean on something less stable, such as a broom. Or lean a stick or pencil against objects of differing firmness, such as a book or a sheet of paper. Why is it important to trust in the Lord rather than lean on our own understanding ([verse 5](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=eng&id=p5#p5))?"
+    },
+    {
+      "id": "b53",
+      "conceptId": "cfm2026-w37-child-trust-b53",
+      "sectionId": "child-trust",
+      "kind": "media",
+      "ko": "[수심에 잠긴 여인과 꽃](https://www.churchofjesuschrist.org/imgs/6afc477401a311efa291eeeeac1ea1493ae259da/full/%21500%2C/0/default)",
+      "en": "[Thoughtful woman and flowers](https://www.churchofjesuschrist.org/imgs/6afc477401a311efa291eeeeac1ea1493ae259da/full/%21500%2C/0/default)"
+    },
+    {
+      "id": "b54",
+      "conceptId": "cfm2026-w37-child-trust-b54",
+      "sectionId": "child-trust",
+      "kind": "credit",
+      "ko": "*주님을 신뢰하는 법을 배움*, 캐슬린 피터슨",
+      "en": "*Learning to Trust the Lord*, Kathleen Peterson"
+    },
+    {
+      "id": "b55",
+      "conceptId": "cfm2026-w37-child-kind-b55",
+      "sectionId": "child-kind",
+      "kind": "text",
+      "ko": "[**잠언 15:1, 18**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=kor\\&id=p1,p18#p1)",
+      "en": "[**Proverbs 15:1, 18**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=eng&id=p1,p18#p1)"
+    },
+    {
+      "id": "b56",
+      "conceptId": "cfm2026-w37-child-kind-b56",
+      "sectionId": "child-kind",
+      "kind": "text",
+      "ko": "### 나는 친절한 말을 할 수 있어요.",
+      "en": "### I can speak kindly."
+    },
+    {
+      "id": "b57",
+      "conceptId": "cfm2026-w37-child-kind-b57",
+      "sectionId": "child-kind",
+      "kind": "text",
+      "ko": "- 아이들과 함께 화가 날 수 있는 상황을 생각해 본다. [잠언 15장 1절](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=kor\\&id=p1#p1)을 함께 읽고, 아이들이 생각한 그 상황에 이 구절을 적용해 보도록 도와준다. “유순한 대답”하기를 연습해 볼 수도 있다. “[사랑의 기도](https://www.churchofjesuschrist.org/study/manual/childrens-songbook/love-is-spoken-here?lang=kor)”와 같이 친절에 관한 노래는 이 원리를 더 강조할 수 있다.(『어린이 노래책』, 102\\~103쪽)\n- “노하기를 더디” 한다는 말의 의미를 이해하기 위해 자신(또는 아는 사람)이 화가 났지만 친절하기로 마음먹었던 경험을 서로 이야기해 본다.([잠언 15:18](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=kor\\&id=p18#p18)) 우리가 “노하기를 더디” 하는 사람이라면 *쉽게* 할 수 있는 일들을 생각해 보라고 한다. 예를 들어, 우리는 재빨리 예수님을 생각하고, 하나님 아버지께 도움을 구하고, 초등회 노래를 떠올리고, 가능하다면 그 자리를 떠날 수 있다.",
+      "en": "- With the children, think of situations in which someone might become angry. Read [Proverbs 15:1](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=eng&id=p1#p1) together and help them apply the verse to those situations. You could practice giving soft answers. A song about kindness, such as [“Love Is Spoken Here”](https://www.churchofjesuschrist.org/study/manual/childrens-songbook/love-is-spoken-here?lang=eng) (*Children's Songbook*, pages 102–103), can reinforce this principle.\n- To understand what it means to be slow to anger, share experiences when you or someone you know felt angry but chose to be kind ([Proverbs 15:18](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=eng&id=p18#p18)). Invite the children to think of things they can do *quickly* when they are slow to anger. For example, we can quickly think of Jesus, ask Heavenly Father for help, remember a Primary song, or leave the situation when possible."
+    },
+    {
+      "id": "b58",
+      "conceptId": "cfm2026-w37-child-kind-b58",
+      "sectionId": "child-kind",
+      "kind": "text",
+      "ko": "아이디어가 더 필요하면, 이번 달 『[친구들](https://www.churchofjesuschrist.org/study/magazines/friend?lang=kor)』 잡지 기사를 참조한다.",
+      "en": "For more ideas, see articles in this month's [*Friend*](https://www.churchofjesuschrist.org/study/magazines/friend?lang=eng) magazine."
+    },
+    {
+      "id": "b59",
+      "conceptId": "cfm2026-w37-child-kind-b59",
+      "sectionId": "child-kind",
+      "kind": "media",
+      "ko": "[image](https://www.churchofjesuschrist.org/study/manual/games-stories-activities/2026/september/37-proverbs-1-4-15-16-22-31-ecclesiastes-1-3-11-12?lang=kor)",
+      "en": "[Activity material](https://www.churchofjesuschrist.org/study/manual/games-stories-activities/2026/september/37-proverbs-1-4-15-16-22-31-ecclesiastes-1-3-11-12?lang=eng)"
+    },
+    {
+      "id": "b60",
+      "conceptId": "cfm2026-w37-child-kind-b60",
+      "sectionId": "child-kind",
+      "kind": "media",
+      "ko": " ([image](https://www.churchofjesuschrist.org/imgs/1pjx4lx6kw64hwt6wvch06l8gtqq8h0srm6zaetb/full/%21320%2C/0/default))",
+      "en": "[Activity image](https://www.churchofjesuschrist.org/imgs/1pjx4lx6kw64hwt6wvch06l8gtqq8h0srm6zaetb/full/%21320%2C/0/default)"
+    },
+    {
+      "id": "b61",
+      "conceptId": "cfm2026-w37-child-kind-b61",
+      "sectionId": "child-kind",
+      "kind": "media",
+      "ko": "[두 마리의 양을 이끄시는 예수님](https://www.churchofjesuschrist.org/imgs/fed2b7e497f63b4989da4a089fefc5a1ea7e4fb1/full/%21320%2C/0/default)",
+      "en": "[Jesus leading two sheep](https://www.churchofjesuschrist.org/imgs/fed2b7e497f63b4989da4a089fefc5a1ea7e4fb1/full/%21320%2C/0/default)"
+    },
+    {
+      "id": "b62",
+      "conceptId": "cfm2026-w37-child-kind-b62",
+      "sectionId": "child-kind",
+      "kind": "credit",
+      "ko": "“너는 범사에 그를 인정하라 그리하면 네 길을 지도하시리라.”([잠언 3:6](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=kor\\&id=p6#p6)) *그가 나를 인도하시네*, 김용성. 이미지 제공: havenlight.com",
+      "en": "“In all thy ways acknowledge him, and he shall direct thy paths” ([Proverbs 3:6](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=eng&id=p6#p6)). *He Leadeth Me*, by Yongsung Kim. Image courtesy of havenlight.com."
+    },
+    {
+      "id": "b63",
+      "conceptId": "cfm2026-w37-child-kind-b63",
+      "sectionId": "child-kind",
+      "kind": "media",
+      "ko": "[초등회 활동 그림: 나는 친절한 말을 할 수 있어요](https://assets.churchofjesuschrist.org/8l/cg/8lcgpqaplwg44lzujavf3qtff8k7g9615ivjsjhi/2022_come_follow_me_coloring_page.pdf)",
+      "en": "[Primary activity picture: I can speak kindly](https://assets.churchofjesuschrist.org/8l/cg/8lcgpqaplwg44lzujavf3qtff8k7g9615ivjsjhi/2022_come_follow_me_coloring_page.pdf)"
+    },
+    {
+      "id": "b64",
+      "conceptId": "cfm2026-w37-child-kind-b64",
+      "sectionId": "child-kind",
+      "kind": "media",
+      "ko": " ([image](https://www.churchofjesuschrist.org/imgs/zf5r4jk6bwwhdzk0gcqkmo7exyg0n712xqpj7qvt/full/%21320%2C/0/default))",
+      "en": "[Activity image](https://www.churchofjesuschrist.org/imgs/zf5r4jk6bwwhdzk0gcqkmo7exyg0n712xqpj7qvt/full/%21320%2C/0/default)"
+    }
+  ],
+  "raw": {
+    "ko": "[어린이들과 함께 계시는 예수 그리스도](https://www.churchofjesuschrist.org/imgs/52b6edd501a011ef9567eeeeac1ef5a1500c2ff9/full/%21500%2C/0/default)\n\n*어린이들과 함께 계시는 예수 그리스도*, 딜린 마쉬\n\n**9월 7일\\~13일: “네 길을 지도하시리라”**\n\n# [잠언 1\\~4장](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/1?lang=kor); [15\\~16장](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=kor); [22장](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/22?lang=kor); [31장](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/31?lang=kor); [전도서 1\\~3장](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/1?lang=kor); [11\\~12장](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/11?lang=kor)\n\n여러분은 잠언을 사랑이 많은 부모님의 지혜로운 권고를 모아 놓은 책이라고 생각할 수도 있다.([잠언 1:8](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/1?lang=kor\\&id=p8#p8) 참조) 잠언의 주된 메시지는 우리가 지혜, 특히 하나님의 지혜를 구한다면 삶이 순조로우리라는 것이다. 그러나 잠언 뒤에 나오는 전도서는 마치 이렇게 말하는 듯하다. “그게 그렇게 쉬운 일은 아니야.” 전도서에서 전도자는 “지혜를 알고자 하며 … 마음을 썼으나” “바람을 잡으려는 것” 같았고” “번뇌도 많”았다고 진술했다.([전도서 1:17\\~18](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/1?lang=kor\\&id=p17-p18#p17)) 전도서는 다양한 방식으로 다음과 같이 질문한다. “모든 것이 헛되고 일시적이며 불확실해 보이는 이 세상에 진정한 의미라는 것이 있을까?”\n\n그러나 잠언과 전도서는 삶을 다른 관점에서 바라보면서도 유사한 진리를 가르친다. 전도서는 이렇게 선언한다. “일의 결국을 다 들었으니 하나님을 경외하고 그의 명령들을 지킬지어다 이것이 모든 사람의 본분이니라.”([전도서 12:13](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/12?lang=kor\\&id=p13#p13)) 잠언 전반에서 볼 수 있는 원리는 다음과 같다. “너는 마음을 다하여 여호와를 신뢰하[라.]”([잠언 3:5](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=kor\\&id=p5#p5); 또한 [7절](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=kor\\&id=p7#p7) 참조) 우리가 주 예수 그리스도를 신뢰하고 따를 때, 삶은 항상 완벽하지는 않더라도 항상 더 나아진다.\n\n잠언과 전도서의 주요 내용을 알아보려면, 경전 안내서에서 “잠언”과 “전도서”를 참조한다.\n\n[학습 아이콘](https://www.churchofjesuschrist.org/imgs/df7bc1f3168311edaa54eeeeac1e79ae7f612244/full/%21100%2C/0/default)\n\n## 가정 및 교회에서 배우기 위한 아이디어\n\n[**잠언 1\\~4장**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/1?lang=kor)**; **[**15\\~16장**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=kor)**; **[**전도서 1\\~3장**](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/1?lang=kor)**; **[**11\\~12장**](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/11?lang=kor)\n\n### svg“네 귀를 지혜에 기울이며”\n\n잠언과 전도서는 지혜에 관한 통찰로 가득하다. [잠언 1\\~4장](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/1?lang=kor), [15\\~16장](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=kor), [전도서 1\\~3장](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/1?lang=kor), [11\\~12장](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/11?lang=kor)에서 “지혜” 및 그와 관련된 말들(“지식”, “명철” 등)이 나오면 표시한다. 여러분은 이 부분을 통해 지혜에 관하여 어떤 생각을 하게 되었는가? 그런 생각을 토대로, “여호와[께서] 주시”는 지혜를 묘사한다면 어떻게 말하겠는가?([잠언 2:6](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/2?lang=kor\\&id=p6#p6)) 우리는 하나님의 지혜를 통해 어떤 축복을 받을 수 있는가?\n\n또한 [마태복음 7장 24\\~27절](https://www.churchofjesuschrist.org/study/scriptures/nt/matt/7?lang=kor\\&id=p24-p27#p24)과 [25장 1\\~13절](https://www.churchofjesuschrist.org/study/scriptures/nt/matt/25?lang=kor\\&id=p1-p13#p1)을 참조한다.\n\n**학습자들이 배운 것을 나누도록 돕는다.** “학습자들에게 구주와 그분의 복음에 대해 배우고 있는 것을 서로 이야기할 기회를 [준다]. 그럴 기회를 준다면 그들은 자신이 배운 진리들을 체화하고 표현할 수 있을 것이다. 또한 다른 환경에서도 진리를 나눌 수 있는 자신의 능력에 대해 자신감을 얻는 데 도움이 된다.”(『구주께서 보여 주신 방법으로 가르침』, [26쪽](https://www.churchofjesuschrist.org/study/manual/teaching-in-the-saviors-way-2022/07-part-2/11-invite-diligent-learning?lang=kor\\&id=p19#p19)) 예를 들어, 학습자들에게 잠언이나 전도서에서 하나님의 지혜에 대한 통찰을 얻은 참조 성구를 적어 보라고 할 수 있다. 그들에게 배운 것을 이야기해 보게 한다.\n\n[**잠언 1:7**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/1?lang=kor\\&id=p7#p7)**; **[**2:5**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/2?lang=kor\\&id=p5#p5)**; **[**3:7**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=kor\\&id=p7#p7)**; **[**15:33**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=kor\\&id=p33#p33)**; **[**16:6**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/16?lang=kor\\&id=p6#p6)**; **[**31:30**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/31?lang=kor\\&id=p30#p30)**; **[**전도서 12:13**](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/12?lang=kor\\&id=p13#p13)\n\n### “스스로 지혜롭게 여기지 말지어다 여호와를 경외하[라].”\n\n잠언과 전도서 전반에 걸쳐 발견되는 또 다른 주제는 “여호와를 경외하는 것”이다. 읽으면서 이 문구를 잘 살펴본다. 주님을 경외한다는 말은 어떤 의미라고 생각하는가? 데이비드 에이 베드나 장로의 말씀 “[그러므로 그들이 두려움을 가라앉히고](https://www.churchofjesuschrist.org/study/general-conference/2015/04/therefore-they-hushed-their-fears?lang=kor)”에서 통찰을 찾아본다.(『리아호나』, 2015년 5월호, 46\\~49쪽) 주님을 경외하는 것은 다른 종류의 두려움과 어떻게 다른가?\n\n또한 [잠언 8장 13절](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/8?lang=kor\\&id=p13#p13)을 참조한다.\n\n[**잠언 3:5\\~7**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=kor\\&id=p5-p7#p5)**; **[**4장**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/4?lang=kor)\n\n### svg\n\n[세미나리 아이콘](https://www.churchofjesuschrist.org/imgs/c83005ab249911ed8e2feeeeac1e6a13b807064c/full/%21250%2C/0/default)\n\n“너는 마음을 다하여 여호와를 신뢰하라.”\n\n누군가에게 “여호와를 신뢰하”는 것이 “[우리의] 명철”에 의지하는 편보다 낫다고 어떻게 설득할 수 있을까?([잠언 3:5](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=kor\\&id=p5#p5)) 여러분은 어떤 비유나 실물 공과를 활용하겠는가? [잠언 3장 5\\~7절](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=kor\\&id=p5-p7#p5)의 말씀을 깊이 생각하면서 다음 문장들을 어떻게 완성할지 생각해 본다. *주님을 신뢰하는 것은 …는 것과 같다. 우리 자신의 명철에 의지하는 것은 …는 것과 같다.*\n\n우리 자신의 명철을 의지하는 것은 왜 현명하지 못한가? 여러분은 주님께서 신뢰할 수 있는 분이라는 것을 어떻게 알게 되었는가?\n\n그렇다 하더라도 우리는 때때로 주님을 신뢰하기 어렵다고 느낄 수 있다. 왜 그럴까? 게릿 더블유 공 장로는 “[다시 신뢰하십시오](https://www.churchofjesuschrist.org/study/general-conference/2021/10/51gong?lang=kor)”(『리아호나』, 2021년 11월호, 97\\~99쪽)에서 몇 가지 이유와 유용한 조언을 제시한다. 이 말씀에는 누군가 주님에 대한 신뢰를 회복하는 데 도움이 될 어떤 이야기나 가르침이 나오는가?\n\n[잠언 3장 6절](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=kor\\&id=p6#p6)과 [잠언 4장](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/4?lang=kor)은 모두 인생을 “길”에 비유한다. 주님께서 “[여러분의] 길을 지도하시”게 한다는 말은 무슨 뜻이라고 생각하는가?([잠언 3:6](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=kor\\&id=p6#p6)) [4장](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/4?lang=kor)에서 “[여러분의] 발이 행할 길을 헤아[리]”는 데 도움이 되는 내용은 무엇인가?([26절 각주](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/4?lang=kor\\&id=p26#p26)) 예를 들어, [11\\~12절](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/4?lang=kor\\&id=p11-p12#p11)과 [18\\~19절](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/4?lang=kor\\&id=p18-p19#p18)은 옳은 길을 따라갈 때 받는 축복에 관하여 무엇을 가르치는가? [26\\~27절](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/4?lang=kor\\&id=p26-p27#p26)은 여러분에게 어떤 의미가 있는가?\n\nsvg또한 다음 자료들을 참조한다. [니파이후서 31:18\\~21](https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/31?lang=kor\\&id=p18-p21#p18); “Lord, I Would Follow Thee[나 주님 따르리]”, *Hymns*, 220장.\n\n[**잠언 15**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=kor)**; **[**16:24\\~32**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/16?lang=kor\\&id=p24-p32#p24)\n\n### “유순한 대답은 분노를 쉬게 하여도”\n\n[잠언 15장\\~16장](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=kor)에는 특히 사랑하는 이들과 대화하는 방식을 개선하는 데 영감이 될 내용이 나온다. 예를 들어, “유순한 대답”이 “분노를 쉬게” 했던 구체적인 경험을 생각해 본다.([잠언 15:1](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=kor\\&id=p1#p1))\n\n또한 구주께서 [잠언 15장 1\\~4, 18절](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=kor\\&id=p1-p4,p18#p1)의 가르침을 모범으로 보이셨던 때를 생각해 볼 수 있다.([마가복음 12:13\\~17](https://www.churchofjesuschrist.org/study/scriptures/nt/mark/12?lang=kor\\&id=p13-p17#p13); [요한복음 8:1\\~11](https://www.churchofjesuschrist.org/study/scriptures/nt/john/8?lang=kor\\&id=p1-p11#p1) 참조) 여러분은 다른 사람들과 교류할 때 어떻게 그분의 모범을 따를 수 있을까?\n\n[잠언 15장](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=kor)과 [16장 24\\~32절](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/16?lang=kor\\&id=p24-p32#p24)의 권고는 오늘날의 디지털 기기를 통한 소통에 어떻게 적용될 수 있을까? 소셜 미디어나 문자를 통해 소통하는 것에 관한 조언으로 쓰일 수 있는 구절을 찾아본다.\n\n또한 다음 자료들을 참조한다. 닐 엘 앤더슨, “[예수님을 따름: 화평하게 하는 자가 됨](https://www.churchofjesuschrist.org/study/general-conference/2022/04/15andersen?lang=kor)”, 『리아호나』, 2022년 5월호, 17\\~20쪽; 로널드 에이 래스번드, “[말은 중요합니다](https://www.churchofjesuschrist.org/study/general-conference/2024/04/41rasband?lang=kor)”, 『리아호나』, 2024년 5월호, 70\\~76쪽; 『청소년의 힘을 위하여: 선택을 위한 안내서』(2025), [30쪽](https://www.churchofjesuschrist.org/study/manual/for-the-strength-of-youth/06-love-god-love-your-neighbor?lang=kor\\&id=p_qUmpH#p_qUmpH).\n\n[여성과 갈매기들](https://www.churchofjesuschrist.org/imgs/69e9226301a611ef96b4eeeeac1e0cfa04738f9c/full/%21500%2C/0/default)\n\n*누가 현숙한 여인을 찾아 얻겠느냐? “ll”*, 루이스 파커\n\n[**잠언 31:10\\~31**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/31?lang=kor\\&id=p10-p31#p10)\n\n### “여호와를 경외하는 여자는 칭찬을 받을 것이라.”\n\n[잠언 31장 10\\~31절](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/31?lang=kor\\&id=p10-p31#p10)에는 “현숙한 여인”, 곧 영적인 힘과 능력, 영향력이 큰 여성이 묘사되어 있다. 현숙한 여인들에 관한 각 구절의 설명을 여러분의 말로 요약해 본다. 여러분은 이러한 특징 중 어떤 것을 본받을 수 있는가?\n\n[**전도서 1\\~3장**](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/1?lang=kor)**; **[**12장**](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/12?lang=kor)\n\n### 필멸의 삶은 일시적이다.\n\n[전도서 1\\~2장](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/1?lang=kor)에서 밝히듯, 세상의 많은 것이 “헛되”다(혹은 일시적이고 중요하지 않을 때가 많다)는 것을 기억하는 것은 왜 가치 있는 일일까? [전도서 12장](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/12?lang=kor)에 따르면, 삶에 영원한 가치를 가져다주는 것은 무엇인가?\n\n더 많은 아이디어를 얻으려면, 이번 달 『[리아호나](https://www.churchofjesuschrist.org/study/magazines/liahona?lang=kor)』 및 『[청소년의 힘을 위하여](https://www.churchofjesuschrist.org/study/magazines/for-the-strength-of-youth?lang=kor)』 잡지 기사를 참조한다.\n\n### 경전 도움말\n\n- [“징계하는 채찍”은 무엇을 뜻하는가?](https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/35-proverbs-1-4-15-16-22-31-ecclesiastes-1-3-11-12?lang=kor\\&id=p_zrYGD-p_vgHOp#p_zrYGD)\n- [“네 떡을 물 위에 던져라”라는 말은 어떤 의미인가?](https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/35-proverbs-1-4-15-16-22-31-ecclesiastes-1-3-11-12?lang=kor\\&id=p_mperO-p_uK5Qt#p_mperO)\n\n[클릭해서 내용 더 보기.](https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/35-proverbs-1-4-15-16-22-31-ecclesiastes-1-3-11-12?lang=kor)\n\n[어린이란 아이콘](https://www.churchofjesuschrist.org/imgs/1a99f017c4ee11ed9c00eeeeac1e6838b05c8916/full/%21100%2C/0/default)\n\n## svg어린이를 가르치기 위한 아이디어\n\n[**잠언 1:7**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/1?lang=kor\\&id=p7#p7)**; **[**2:5**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/2?lang=kor\\&id=p5#p5)**; **[**15:33**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=kor\\&id=p33#p33)**; **[**16:6**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/16?lang=kor\\&id=p6#p6)**; **[**전도서 12:13**](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/12?lang=kor\\&id=p13#p13)\n\n### “하나님을 경외”한다는 것은 하나님을 사랑하고 그분께 순종하는 것을 의미해요.\n\n- 아이들이 하나님을 경외하는 것에 관한 구절을 이해할 수 있도록 “경외”라는 말을 *경건*, *사랑*, 또는 *순종* 같은 말로 바꾸어 본다.(또한 [히브리서 12:28](https://www.churchofjesuschrist.org/study/scriptures/nt/heb/12?lang=kor\\&id=p28#p28) 참조) 그렇게 할 때, 이 구절들에 대한 생각이 어떻게 달라지는가? 우리는 주님을 경외한다는 것을 어떻게 나타내 보이는가?\n\n[**잠언 3:5\\~7**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=kor\\&id=p5-p7#p5)\n\n### 나는 마음을 다하여 주님을 신뢰할 수 있어요.\n\n- 아이들과 함께 [잠언 3장 5∼7절](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=kor\\&id=p5-p7#p5)에 어울리는 동작을 만들어 본다. 손으로 하트 만들기, 한쪽으로 기대기, 제자리 걷기, 눈 가리키기 등을 예로 들 수 있다. 우리가 온 마음으로 예수 그리스도를 신뢰한다는 것을 어떻게 나타낼 수 있을까?\n- “네 명철을 의지하지 말라”는 말의 의미를 보여 주기 위해 아이들에게 벽처럼 견고하고 안정적인 것에 기대 보라고 한다.([잠언 3:5](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=kor\\&id=p5#p5)) 그런 다음에는 빗자루처럼 견고하지 않은 것에 기대 보게 한다. 또는 책이나 종이처럼 견고한 정도가 다른 여러 물체에 막대기나 연필을 기대어 보게 할 수도 있다. “[자신의] 명철”에 의지하지 말고 “여호와를 신뢰하”는 것이 중요한 이유는 무엇인가?([5절](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=kor\\&id=p5#p5))\n\n[수심에 잠긴 여인과 꽃](https://www.churchofjesuschrist.org/imgs/6afc477401a311efa291eeeeac1ea1493ae259da/full/%21500%2C/0/default)\n\n*주님을 신뢰하는 법을 배움*, 캐슬린 피터슨\n\n[**잠언 15:1, 18**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=kor\\&id=p1,p18#p1)\n\n### 나는 친절한 말을 할 수 있어요.\n\n- svg아이들과 함께 화가 날 수 있는 상황을 생각해 본다. [잠언 15장 1절](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=kor\\&id=p1#p1)을 함께 읽고, 아이들이 생각한 그 상황에 이 구절을 적용해 보도록 도와준다. “유순한 대답”하기를 연습해 볼 수도 있다. “[사랑의 기도](https://www.churchofjesuschrist.org/study/manual/childrens-songbook/love-is-spoken-here?lang=kor)”와 같이 친절에 관한 노래는 이 원리를 더 강조할 수 있다.(『어린이 노래책』, 102\\~103쪽)\n- “노하기를 더디” 한다는 말의 의미를 이해하기 위해 자신(또는 아는 사람)이 화가 났지만 친절하기로 마음먹었던 경험을 서로 이야기해 본다.([잠언 15:18](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=kor\\&id=p18#p18)) 우리가 “노하기를 더디” 하는 사람이라면 *쉽게* 할 수 있는 일들을 생각해 보라고 한다. 예를 들어, 우리는 재빨리 예수님을 생각하고, 하나님 아버지께 도움을 구하고, 초등회 노래를 떠올리고, 가능하다면 그 자리를 떠날 수 있다.\n\n아이디어가 더 필요하면, 이번 달 『[친구들](https://www.churchofjesuschrist.org/study/magazines/friend?lang=kor)』 잡지 기사를 참조한다.\n\n[image](https://www.churchofjesuschrist.org/study/manual/games-stories-activities/2026/september/37-proverbs-1-4-15-16-22-31-ecclesiastes-1-3-11-12?lang=kor)\n\n ([image](https://www.churchofjesuschrist.org/imgs/1pjx4lx6kw64hwt6wvch06l8gtqq8h0srm6zaetb/full/%21320%2C/0/default))\n\n[두 마리의 양을 이끄시는 예수님](https://www.churchofjesuschrist.org/imgs/fed2b7e497f63b4989da4a089fefc5a1ea7e4fb1/full/%21320%2C/0/default)\n\n“너는 범사에 그를 인정하라 그리하면 네 길을 지도하시리라.”([잠언 3:6](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=kor\\&id=p6#p6)) *그가 나를 인도하시네*, 김용성. 이미지 제공: havenlight.com\n\n[초등회 활동 그림: 나는 친절한 말을 할 수 있어요](https://assets.churchofjesuschrist.org/8l/cg/8lcgpqaplwg44lzujavf3qtff8k7g9615ivjsjhi/2022_come_follow_me_coloring_page.pdf)\n\n ([image](https://www.churchofjesuschrist.org/imgs/zf5r4jk6bwwhdzk0gcqkmo7exyg0n712xqpj7qvt/full/%21320%2C/0/default))",
+    "en": "[Jesus Christ with Children](https://www.churchofjesuschrist.org/imgs/52b6edd501a011ef9567eeeeac1ef5a1500c2ff9/full/%21500%2C/0/default)\n\n*Jesus Christ with Children*, Dilleen Marsh\n\n**September 7–13: “He Shall Direct Thy Paths”**\n\n# [Proverbs 1–4](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/1?lang=eng); [15–16](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=eng); [22](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/22?lang=eng); [31](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/31?lang=eng); [Ecclesiastes 1–3](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/1?lang=eng); [11–12](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/11?lang=eng)\n\nYou might think of Proverbs as a book collecting the wise advice of loving parents (see [Proverbs 1:8](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/1?lang=eng&id=p8#p8)). Its central message is that life will go well when we seek wisdom, especially the wisdom of God. Yet the book that follows, Ecclesiastes, seems to say, “It is not quite that easy.” The Preacher in Ecclesiastes says that he devoted his heart to knowing wisdom, but found it like chasing the wind, with much sorrow ([Ecclesiastes 1:17–18](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/1?lang=eng&id=p17-p18#p17)). In various ways the book asks: “Can there be lasting meaning in a world where everything seems empty, temporary, and uncertain?”\n\nAlthough Proverbs and Ecclesiastes look at life from different perspectives, they teach similar truths. Ecclesiastes declares: “Let us hear the conclusion of the whole matter: Fear God, and keep his commandments: for this is the whole duty of man” ([Ecclesiastes 12:13](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/12?lang=eng&id=p13#p13)). A principle found throughout Proverbs is: “Trust in the Lord with all thine heart” ([Proverbs 3:5](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=eng&id=p5#p5); see also [verse 7](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=eng&id=p7#p7)). When we trust and follow the Lord Jesus Christ, life may not always be perfect, but it is always better.\n\nFor an overview of Proverbs and Ecclesiastes, see “Proverbs” and “Ecclesiastes” in the Guide to the Scriptures.\n\n[Study icon](https://www.churchofjesuschrist.org/imgs/df7bc1f3168311edaa54eeeeac1e79ae7f612244/full/%21100%2C/0/default)\n\n## Ideas for Learning at Home and at Church\n\n[**Proverbs 1–4**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/1?lang=eng); [**15–16**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=eng); [**Ecclesiastes 1–3**](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/1?lang=eng); [**11–12**](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/11?lang=eng)\n\n### “Incline thine ear unto wisdom”\n\nProverbs and Ecclesiastes are full of insights about wisdom. As you read [Proverbs 1–4](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/1?lang=eng), [15–16](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=eng), [Ecclesiastes 1–3](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/1?lang=eng), and [11–12](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/11?lang=eng), mark the word “wisdom” and related words such as “knowledge” and “understanding.” What thoughts about wisdom come to you from these passages? Drawing on those thoughts, how would you describe the wisdom that the Lord gives ([Proverbs 2:6](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/2?lang=eng&id=p6#p6))? What blessings can God's wisdom bring us?\n\nSee also [Matthew 7:24–27](https://www.churchofjesuschrist.org/study/scriptures/nt/matt/7?lang=eng&id=p24-p27#p24) and [25:1–13](https://www.churchofjesuschrist.org/study/scriptures/nt/matt/25?lang=eng&id=p1-p13#p1).\n\n**Help learners share what they learn.** “Give learners opportunities to talk with each other about what they are learning about the Savior and His gospel. These opportunities help them internalize and express the truths they have learned. They also help them gain confidence in their ability to share truth in other settings” (*Teaching in the Savior's Way*, [page 26](https://www.churchofjesuschrist.org/study/manual/teaching-in-the-saviors-way-2022/07-part-2/11-invite-diligent-learning?lang=eng&id=p19#p19); this quotation is translated from the supplied Korean text). For example, invite learners to write down a reference in Proverbs or Ecclesiastes that gave them insight into God's wisdom, and then talk about what they learned.\n\n[**Proverbs 1:7**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/1?lang=eng&id=p7#p7); [**2:5**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/2?lang=eng&id=p5#p5); [**3:7**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=eng&id=p7#p7); [**15:33**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=eng&id=p33#p33); [**16:6**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/16?lang=eng&id=p6#p6); [**31:30**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/31?lang=eng&id=p30#p30); [**Ecclesiastes 12:13**](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/12?lang=eng&id=p13#p13)\n\n### “Be not wise in thine own eyes: fear the Lord”\n\nAnother theme throughout Proverbs and Ecclesiastes is fearing the Lord. Watch for this expression as you read. What do you think it means to fear the Lord? Look for insights in Elder David A. Bednar's message [“Therefore They Hushed Their Fears”](https://www.churchofjesuschrist.org/study/general-conference/2015/04/therefore-they-hushed-their-fears?lang=eng) (*Liahona*, May 2015, pages 46–49). How is fearing the Lord different from other kinds of fear?\n\nSee also [Proverbs 8:13](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/8?lang=eng&id=p13#p13).\n\n[**Proverbs 3:5–7**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=eng&id=p5-p7#p5); [**chapter 4**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/4?lang=eng)\n\n[Seminary icon](https://www.churchofjesuschrist.org/imgs/c83005ab249911ed8e2feeeeac1e6a13b807064c/full/%21250%2C/0/default)\n\n### “Trust in the Lord with all thine heart”\n\nHow could you persuade someone that trusting the Lord is better than relying on our own understanding ([Proverbs 3:5](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=eng&id=p5#p5))? What analogy or object lesson would you use? As you ponder [Proverbs 3:5–7](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=eng&id=p5-p7#p5), consider how you would finish these sentences: *Trusting the Lord is like … . Relying on our own understanding is like … .*\n\nWhy is it unwise to rely on our own understanding? How have you come to know that the Lord can be trusted?\n\nEven so, we may sometimes find it difficult to trust the Lord. Why might that be? In [“Trust Again”](https://www.churchofjesuschrist.org/study/general-conference/2021/10/51gong?lang=eng) (*Liahona*, November 2021, pages 97–99), Elder Gerrit W. Gong offers some reasons and helpful counsel. Which stories or teachings in this message could help someone regain trust in the Lord?\n\nBoth [Proverbs 3:6](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=eng&id=p6#p6) and [Proverbs 4](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/4?lang=eng) compare life to a path. What does it mean to let the Lord direct your paths ([Proverbs 3:6](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=eng&id=p6#p6))? What in [chapter 4](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/4?lang=eng) helps you consider the path your feet are taking (see the [footnote to verse 26](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/4?lang=eng&id=p26#p26))? For example, what do [verses 11–12](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/4?lang=eng&id=p11-p12#p11) and [18–19](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/4?lang=eng&id=p18-p19#p18) teach about the blessings of following the right path? What do [verses 26–27](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/4?lang=eng&id=p26-p27#p26) mean to you?\n\nSee also [2 Nephi 31:18–21](https://www.churchofjesuschrist.org/study/scriptures/bofm/2-ne/31?lang=eng&id=p18-p21#p18); “Lord, I Would Follow Thee,” *Hymns*, no. 220.\n\n[**Proverbs 15**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=eng); [**16:24–32**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/16?lang=eng&id=p24-p32#p24)\n\n### “A soft answer turneth away wrath”\n\n[Proverbs 15–16](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=eng) can inspire us to improve how we speak, especially to those we love. For example, think of a particular experience when a soft answer turned away anger ([Proverbs 15:1](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=eng&id=p1#p1)).\n\nYou could also think of times when the Savior exemplified the teachings in [Proverbs 15:1–4, 18](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=eng&id=p1-p4,p18#p1) (see [Mark 12:13–17](https://www.churchofjesuschrist.org/study/scriptures/nt/mark/12?lang=eng&id=p13-p17#p13); [John 8:1–11](https://www.churchofjesuschrist.org/study/scriptures/nt/john/8?lang=eng&id=p1-p11#p1)). How can you follow His example in your interactions with others?\n\nHow could the counsel in [Proverbs 15](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=eng) and [16:24–32](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/16?lang=eng&id=p24-p32#p24) apply to communication through today's digital devices? Look for verses that could serve as advice about communicating on social media or by text message.\n\nSee also Neil L. Andersen, [“Following Jesus: Being a Peacemaker”](https://www.churchofjesuschrist.org/study/general-conference/2022/04/15andersen?lang=eng), *Liahona*, May 2022, pages 17–20; Ronald A. Rasband, [“Words Matter”](https://www.churchofjesuschrist.org/study/general-conference/2024/04/41rasband?lang=eng), *Liahona*, May 2024, pages 70–76; *For the Strength of Youth: A Guide for Making Choices* (2025), [page 30](https://www.churchofjesuschrist.org/study/manual/for-the-strength-of-youth/06-love-god-love-your-neighbor?lang=eng&id=p_qUmpH#p_qUmpH).\n\n[Woman and seagulls](https://www.churchofjesuschrist.org/imgs/69e9226301a611ef96b4eeeeac1e0cfa04738f9c/full/%21500%2C/0/default)\n\n*Who Can Find a Virtuous Woman? “ll”*, Louise Parker\n\n[**Proverbs 31:10–31**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/31?lang=eng&id=p10-p31#p10)\n\n### “A woman that feareth the Lord, she shall be praised”\n\n[Proverbs 31:10–31](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/31?lang=eng&id=p10-p31#p10) describes a virtuous woman—a woman of great spiritual strength, ability, and influence. Summarize in your own words what each verse says about virtuous women. Which of these qualities could you seek to develop?\n\n[**Ecclesiastes 1–3**](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/1?lang=eng); [**chapter 12**](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/12?lang=eng)\n\n### Mortal life is temporary.\n\nWhy is it valuable to remember that, as [Ecclesiastes 1–2](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/1?lang=eng) explains, much in the world is “vanity”—temporary, or often of little importance? According to [Ecclesiastes 12](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/12?lang=eng), what gives life eternal value?\n\nFor more ideas, see articles in this month's [*Liahona*](https://www.churchofjesuschrist.org/study/magazines/liahona?lang=eng) and [*For the Strength of Youth*](https://www.churchofjesuschrist.org/study/magazines/for-the-strength-of-youth?lang=eng) magazines.\n\n### Scripture Helps\n\n- [What does the rod of correction mean?](https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/35-proverbs-1-4-15-16-22-31-ecclesiastes-1-3-11-12?lang=eng&id=p_zrYGD-p_vgHOp#p_zrYGD)\n- [What does it mean to cast your bread upon the waters?](https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/35-proverbs-1-4-15-16-22-31-ecclesiastes-1-3-11-12?lang=eng&id=p_mperO-p_uK5Qt#p_mperO)\n\n[Open additional material.](https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/35-proverbs-1-4-15-16-22-31-ecclesiastes-1-3-11-12?lang=eng)\n\n[Children's section icon](https://www.churchofjesuschrist.org/imgs/1a99f017c4ee11ed9c00eeeeac1e6838b05c8916/full/%21100%2C/0/default)\n\n## Ideas for Teaching Children\n\n[**Proverbs 1:7**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/1?lang=eng&id=p7#p7); [**2:5**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/2?lang=eng&id=p5#p5); [**15:33**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=eng&id=p33#p33); [**16:6**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/16?lang=eng&id=p6#p6); [**Ecclesiastes 12:13**](https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/12?lang=eng&id=p13#p13)\n\n### Fearing God means loving and obeying Him.\n\n- To help children understand verses about fearing God, try replacing “fear” with words such as *reverence*, *love*, or *obedience* (see also [Hebrews 12:28](https://www.churchofjesuschrist.org/study/scriptures/nt/heb/12?lang=eng&id=p28#p28)). How does doing this change their understanding of the verses? How do we show that we fear the Lord?\n\n[**Proverbs 3:5–7**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=eng&id=p5-p7#p5)\n\n### I can trust the Lord with all my heart.\n\n- With the children, make up actions that go with [Proverbs 3:5–7](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=eng&id=p5-p7#p5). Examples include making a heart with your hands, leaning to one side, walking in place, or pointing to your eyes. How can we show that we trust Jesus Christ with our whole heart?\n- To illustrate what it means not to lean on your own understanding, invite the children to lean against something solid and stable, such as a wall ([Proverbs 3:5](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=eng&id=p5#p5)). Then invite them to lean on something less stable, such as a broom. Or lean a stick or pencil against objects of differing firmness, such as a book or a sheet of paper. Why is it important to trust in the Lord rather than lean on our own understanding ([verse 5](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=eng&id=p5#p5))?\n\n[Thoughtful woman and flowers](https://www.churchofjesuschrist.org/imgs/6afc477401a311efa291eeeeac1ea1493ae259da/full/%21500%2C/0/default)\n\n*Learning to Trust the Lord*, Kathleen Peterson\n\n[**Proverbs 15:1, 18**](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=eng&id=p1,p18#p1)\n\n### I can speak kindly.\n\n- With the children, think of situations in which someone might become angry. Read [Proverbs 15:1](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=eng&id=p1#p1) together and help them apply the verse to those situations. You could practice giving soft answers. A song about kindness, such as [“Love Is Spoken Here”](https://www.churchofjesuschrist.org/study/manual/childrens-songbook/love-is-spoken-here?lang=eng) (*Children's Songbook*, pages 102–103), can reinforce this principle.\n- To understand what it means to be slow to anger, share experiences when you or someone you know felt angry but chose to be kind ([Proverbs 15:18](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/15?lang=eng&id=p18#p18)). Invite the children to think of things they can do *quickly* when they are slow to anger. For example, we can quickly think of Jesus, ask Heavenly Father for help, remember a Primary song, or leave the situation when possible.\n\nFor more ideas, see articles in this month's [*Friend*](https://www.churchofjesuschrist.org/study/magazines/friend?lang=eng) magazine.\n\n[Activity material](https://www.churchofjesuschrist.org/study/manual/games-stories-activities/2026/september/37-proverbs-1-4-15-16-22-31-ecclesiastes-1-3-11-12?lang=eng)\n\n[Activity image](https://www.churchofjesuschrist.org/imgs/1pjx4lx6kw64hwt6wvch06l8gtqq8h0srm6zaetb/full/%21320%2C/0/default)\n\n[Jesus leading two sheep](https://www.churchofjesuschrist.org/imgs/fed2b7e497f63b4989da4a089fefc5a1ea7e4fb1/full/%21320%2C/0/default)\n\n“In all thy ways acknowledge him, and he shall direct thy paths” ([Proverbs 3:6](https://www.churchofjesuschrist.org/study/scriptures/ot/prov/3?lang=eng&id=p6#p6)). *He Leadeth Me*, by Yongsung Kim. Image courtesy of havenlight.com.\n\n[Primary activity picture: I can speak kindly](https://assets.churchofjesuschrist.org/8l/cg/8lcgpqaplwg44lzujavf3qtff8k7g9615ivjsjhi/2022_come_follow_me_coloring_page.pdf)\n\n[Activity image](https://www.churchofjesuschrist.org/imgs/zf5r4jk6bwwhdzk0gcqkmo7exyg0n712xqpj7qvt/full/%21320%2C/0/default)"
+  }
+}

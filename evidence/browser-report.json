@@ -1,0 +1,201 @@
+{
+  "mode": "isolated DOM + localStorage double",
+  "browser": "144.0.7559.96",
+  "checks": [
+    {
+      "name": "Clean initial render",
+      "status": "passed"
+    },
+    {
+      "name": "No external href in normal lesson links",
+      "status": "passed"
+    },
+    {
+      "name": "Local demo / unofficial notice displayed",
+      "status": "passed"
+    },
+    {
+      "name": "Conference opens in same reference pane",
+      "status": "passed"
+    },
+    {
+      "name": "Conference is unmistakably labeled summary",
+      "status": "passed"
+    },
+    {
+      "name": "Four locally selectable summary paragraphs",
+      "status": "passed"
+    },
+    {
+      "name": "Actual local unit ID stored",
+      "status": "passed"
+    },
+    {
+      "name": "Reference highlight saved",
+      "status": "passed"
+    },
+    {
+      "name": "Highlight painted on reference text",
+      "status": "passed"
+    },
+    {
+      "name": "Pane English text available",
+      "status": "passed"
+    },
+    {
+      "name": "Korean marks do not transfer by offsets to English",
+      "status": "passed"
+    },
+    {
+      "name": "Korean highlight returns",
+      "status": "passed"
+    },
+    {
+      "name": "Nested scripture opens in same pane",
+      "status": "passed"
+    },
+    {
+      "name": "Back restores reference and scroll",
+      "status": "passed"
+    },
+    {
+      "name": "Selected substring offsets are exact",
+      "status": "passed"
+    },
+    {
+      "name": "Composer has image above thought field",
+      "status": "passed"
+    },
+    {
+      "name": "Capture result identified honestly",
+      "status": "passed"
+    },
+    {
+      "name": "Empty thought validation",
+      "status": "passed"
+    },
+    {
+      "name": "Shared thought stores source language / revision / unit",
+      "status": "passed"
+    },
+    {
+      "name": "Presentation consent separate from class scope",
+      "status": "passed"
+    },
+    {
+      "name": "Image preserved with post",
+      "status": "passed"
+    },
+    {
+      "name": "Reply added locally",
+      "status": "passed"
+    },
+    {
+      "name": "Go to reference restores pinned version and quote",
+      "status": "passed"
+    },
+    {
+      "name": "Registration requires reviewed preview",
+      "status": "passed"
+    },
+    {
+      "name": "Registered full text replaces summary for ordinary link",
+      "status": "passed"
+    },
+    {
+      "name": "Old reflection returns to old archived summary instead of new text",
+      "status": "passed"
+    },
+    {
+      "name": "Unregistered text shows internal missing state",
+      "status": "passed"
+    },
+    {
+      "name": "Opaque original ID resolves exactly",
+      "status": "passed"
+    },
+    {
+      "name": "Missing English is not silently Korean text",
+      "status": "passed"
+    },
+    {
+      "name": "Lesson reference audit includes conference and manual kinds",
+      "status": "passed"
+    },
+    {
+      "name": "Conference audit shows 4 canonical documents",
+      "status": "passed"
+    },
+    {
+      "name": "Content export excludes notes, images, comments and marks",
+      "status": "passed"
+    },
+    {
+      "name": "Content pack includes registered original paragraphs",
+      "status": "passed"
+    },
+    {
+      "name": "Content pack remains importable",
+      "status": "passed"
+    },
+    {
+      "name": "HTML import strips active markup and unsafe links",
+      "status": "passed"
+    },
+    {
+      "name": "Plain pasted paragraphs have explicit local IDs",
+      "status": "passed"
+    },
+    {
+      "name": "Only consented class reflections enter presentation",
+      "status": "passed"
+    },
+    {
+      "name": "Presentation starts",
+      "status": "passed"
+    },
+    {
+      "name": "Storage round trip restores reflection and highlights",
+      "status": "passed"
+    },
+    {
+      "name": "Mobile reference fits 390px viewport",
+      "status": "passed"
+    },
+    {
+      "name": "Mobile pane marks background inert",
+      "status": "passed"
+    },
+    {
+      "name": "Mobile insight composer is usable",
+      "status": "passed"
+    },
+    {
+      "name": "Mobile Escape closes both modal and pane",
+      "status": "passed"
+    },
+    {
+      "name": "No runtime page errors",
+      "status": "passed"
+    },
+    {
+      "name": "No external popups",
+      "status": "passed"
+    },
+    {
+      "name": "No external content network fetches",
+      "status": "passed"
+    }
+  ],
+  "pageErrors": [],
+  "popups": 0,
+  "externalRequests": [],
+  "captureKind": "dom-reference-viewport",
+  "notTested": [
+    "live Vercel deployment",
+    "real mobile hardware",
+    "Safari and Firefox",
+    "native localStorage persistence and quota",
+    "HTTP browser navigation blocked by container policy"
+  ]
+}

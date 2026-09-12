@@ -1,0 +1,75 @@
+{
+  "mode": "isolated DOM + storage double",
+  "sourceLinksChecked": 96,
+  "checks": [
+    {
+      "name": "Every Korean source link opens a pane without exceptions",
+      "status": "passed"
+    },
+    {
+      "name": "No errors while resolving all links",
+      "status": "passed"
+    },
+    {
+      "name": "Lesson range selection remains exact",
+      "status": "passed"
+    },
+    {
+      "name": "Private lesson insight saved",
+      "status": "passed"
+    },
+    {
+      "name": "Private insight not shared or queued",
+      "status": "passed"
+    },
+    {
+      "name": "Chapter range represented with tabs",
+      "status": "passed"
+    },
+    {
+      "name": "Proverbs 3 fully available",
+      "status": "passed"
+    },
+    {
+      "name": "Chapter tab resolves registered excerpt",
+      "status": "passed"
+    },
+    {
+      "name": "User-supplied manual excerpt p19",
+      "status": "passed"
+    },
+    {
+      "name": "Lesson import automatically audits reference URLs",
+      "status": "passed"
+    },
+    {
+      "name": "New lesson reader appears",
+      "status": "passed"
+    },
+    {
+      "name": "Imported lesson links use same general resolver",
+      "status": "passed"
+    },
+    {
+      "name": "Lesson content pack round trip",
+      "status": "passed"
+    },
+    {
+      "name": "Import validation is atomic",
+      "status": "passed"
+    },
+    {
+      "name": "Reference registration storage failure remains visible",
+      "status": "passed"
+    },
+    {
+      "name": "Failed registration keeps prior library",
+      "status": "passed"
+    },
+    {
+      "name": "No runtime errors",
+      "status": "passed"
+    }
+  ],
+  "errors": []
+}

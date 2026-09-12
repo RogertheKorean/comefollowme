@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-09-12T22:23:34.663684+00:00",
+  "nodeUnitTests": 36,
+  "browserDOMChecks": 46,
+  "browserRegressionChecks": 17,
+  "sourceLinkOccurrencesRendered": 96,
+  "captureKind": "dom-reference-viewport",
+  "browser": "144.0.7559.96",
+  "staticServerHttp200": true,
+  "httpResponseMatchesBuild": true,
+  "liveVercelDeployed": false,
+  "databaseConnected": false,
+  "testMode": "isolated DOM + localStorage double",
+  "limitations": [
+    "live Vercel deployment",
+    "real mobile hardware",
+    "Safari and Firefox",
+    "native localStorage persistence and quota",
+    "HTTP browser navigation blocked by container policy"
+  ],
+  "productionDependencies": 0,
+  "publicHtmlSha256": "642d0d9f5cea726cffdc3e230b9ec8f4e045cfbfe5b33ea02e41e874ed51836b"
+}

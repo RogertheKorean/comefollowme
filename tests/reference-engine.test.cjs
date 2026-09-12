@@ -1,0 +1,57 @@
+const test=require('node:test');
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const E=require('../src/reference-engine.js');
+const church=E.CHURCH;
+const scripture=church+'/study/scriptures/ot/prov/3';
+const talk=church+'/study/general-conference/2015/04/therefore-they-hushed-their-fears';
+const baseDoc={url:talk,title:'Test',language:'ko',coverage:'full',blocks:[{id:'p1',markdown:'Original test paragraph.',sourceId:true}]};
+test('numeric verse range and nonconsecutive verses',()=>assert.deepEqual(E.parse(scripture+'?lang=kor&id=p1-p4,p18#p1').verses,[1,2,3,4,18]));
+test('escaped Markdown ampersand',()=>assert.equal(E.parse(scripture+'?lang=kor\\&id=p5-p7#p5').targets.ids.length,3));
+test('HTML entities in URLs',()=>assert.equal(E.parse(scripture+'?lang=eng&amp;id=p5').language,'en'));
+test('Church key is independent of language, query and hash',()=>assert.equal(E.parse(talk+'?lang=kor&id=p4#p4').key,E.parse(talk+'?lang=eng').key));
+test('legacy Church domain normalized',()=>assert.equal(E.parse('http://lds.org/study/scriptures/ot/prov/3/').key,'ot/prov/3'));
+test('non-Church query keeps resource identity',()=>assert.notEqual(E.parse('https://example.org/read?id=1').key,E.parse('https://example.org/read?id=2').key));
+test('opaque range uses document order',()=>{const t=E.targetSpec('p_zrYGD-p_vgHOp');assert.deepEqual(E.resolveTargets(t,[{id:'p_zrYGD'},{id:'p_middle'},{id:'p_vgHOp'}]).ids,['p_zrYGD','p_middle','p_vgHOp']);});
+test('opaque range with missing endpoint is not fabricated',()=>assert.equal(E.resolveTargets(E.targetSpec('p_zrYGD-p_vgHOp'),[{id:'p_zrYGD'}]).missing.length,1));
+test('reversed range reports missing',()=>assert.equal(E.resolveTargets(E.targetSpec('p_start-p_end'),[{id:'p_end'},{id:'p_start'}]).missing.length,1));
+test('numeric missing targets reported explicitly',()=>assert.deepEqual(E.resolveTargets(E.targetSpec('p4-p6'),[{id:'p5'}]).missing,['p4','p6']));
+test('invalid excessive numeric range rejected',()=>assert.equal(E.targetSpec('p1-p9999999').invalid,true));
+test('malformed fragment is invalid not a guessed paragraph',()=>assert.equal(E.parse(talk+'#%E0%A4%A').targets.invalid,true));
+test('chapter range extracted from visible label',()=>assert.deepEqual(E.parse(scripture,'잠언 3~4장').chapters,[3,4]));
+test('verse label does not become chapter range',()=>assert.deepEqual(E.parse(scripture,'잠언 3:5~7').chapters,[3]));
+test('conference and manual types',()=>{assert.equal(E.parse(talk).kind,'conference');assert.equal(E.parse(church+'/study/manual/example/one').kind,'manual');});
+test('collections and assets are classified',()=>{assert.equal(E.parse(church+'/study/magazines/liahona').kind,'collection');assert.equal(E.parse('https://assets.churchofjesuschrist.org/a.pdf').kind,'pdf');assert.equal(E.parse(church+'/imgs/example/full/default').kind,'image');});
+test('relative nested links retain source base',()=>assert.equal(E.parse('../therefore-they-hushed-their-fears?lang=kor','',church+'/study/general-conference/2015/04/path/one').key,'/study/general-conference/2015/04/therefore-they-hushed-their-fears'));
+test('hash-only nested link retains source document',()=>assert.deepEqual(E.parse('#p_qUmpH','',talk+'?lang=kor').targets.ids,['p_qUmpH']));
+test('dangerous URL schemes and credential URLs rejected',()=>{for(const u of ['javascript:alert(1)','data:text/html,bad','file:///tmp/a','https://a:b@example.org','https://example.org/\nattack'])assert.equal(E.parse(u),null);});
+test('lookalike host not classified as Church scripture',()=>assert.equal(E.parse('https://www.churchofjesuschrist.org.evil.example/study/scriptures/ot/prov/3').kind,'article'));
+test('Markdown scanner handles bold labels and nested brackets',()=>{const r=E.extractLinks('[**잠언 [인용]**]('+scripture+'?lang=kor\\&id=p5#p5)');assert.equal(r.length,1);assert.deepEqual(r[0].verses,[5]);});
+test('balanced parentheses inside URL',()=>assert.equal(E.extractLinks('[Read](https://example.org/(v1)/a)').length,1));
+test('bare and autolinks do not duplicate Markdown links',()=>assert.equal(E.extractLinks('[one]('+talk+') '+scripture+' <https://example.org/read>').length,3));
+test('escaped label marker not treated as Markdown',()=>{const r=E.extractLinks('\\[literal](https://example.org/a)');assert.equal(r[0].label,'https://example.org/a');});
+test('document strips supplied executable metadata',()=>{const d=E.validateDocument({...baseDoc,html:'<script>x</script>',key:'wrong',revision:'wrong'});assert.ok(!('html'in d));assert.equal(d.key,E.parse(talk).key);assert.notEqual(d.revision,'wrong');});
+test('document revision stable through validation round trip',()=>{const d=E.validateDocument(baseDoc);assert.equal(E.validateDocument(d).revision,d.revision);});
+test('content version changes when quote changes',()=>assert.notEqual(E.validateDocument(baseDoc).revision,E.validateDocument({...baseDoc,blocks:[{id:'p1',markdown:'Changed.'}]}).revision));
+test('duplicate and unsafe original IDs rejected',()=>{assert.throws(()=>E.validateDocument({...baseDoc,blocks:[baseDoc.blocks[0],baseDoc.blocks[0]]}));assert.throws(()=>E.validateDocument({...baseDoc,blocks:[{id:'x" onclick="bad',markdown:'x'}]}));});
+test('unsupported language / ambiguous coverage rejected',()=>{assert.throws(()=>E.validateDocument({...baseDoc,language:'fr'}));assert.throws(()=>E.validateDocument({...baseDoc,coverage:'ready'}));});
+test('empty and excessive content rejected',()=>{assert.throws(()=>E.validateDocument({...baseDoc,blocks:[]}));assert.throws(()=>E.validateDocument({...baseDoc,blocks:[{id:'p1',markdown:'x'.repeat(30001)}]}));});
+test('bundled reference records validate; all conference records are summaries',()=>{const bundle=JSON.parse(fs.readFileSync(path.join(__dirname,'../content/references.json')));assert.equal(bundle.documents.length,10);const docs=bundle.documents.map(E.validateDocument);const talks=docs.filter(x=>x.kind==='conference');assert.equal(talks.length,8);assert.ok(talks.every(x=>x.coverage==='summary'&&x.blocks.every(b=>!b.sourceId)));});
+test('every supplied lesson Markdown link is internally classifiable',()=>{const lesson=JSON.parse(fs.readFileSync(path.join(__dirname,'../content/lesson.json')));const links=E.extractLinks(lesson.raw.ko);assert.ok(links.length>60);assert.ok(links.some(r=>r.kind==='conference'));assert.ok(links.some(r=>r.kind==='manual'));});
+test('production build contains no unresolved tokens or remote script loads',()=>{const html=fs.readFileSync(path.join(__dirname,'../public/index.html'),'utf8');assert.ok(!/\/\*__[A-Z_]+__\*\//.test(html));assert.ok(!/<script[^>]*\ssrc=/i.test(html));assert.equal(html,fs.readFileSync(path.join(__dirname,'../index.html'),'utf8'));});
+test('lesson validator strips non-content fields and rejects unsafe IDs',()=>{const l={id:'demo',version:'v1',title:{ko:'시연'},sourceUrl:{ko:'https://example.org/a'},sections:[{id:'intro',ko:'소개'}],blocks:[{id:'b1',sectionId:'intro',kind:'text',ko:'테스트'}],notes:[{secret:'must never be exported'}]};const v=E.validateLesson(l);assert.ok(!('notes'in v));assert.throws(()=>E.validateLesson({...l,blocks:[{...l.blocks[0],id:'x" onclick="oops'}]}));assert.deepEqual(E.validateLesson(v),v);});
+test('deployment pack is bundled without a server or dependency install',()=>{
+ const os=require('node:os'),cp=require('node:child_process');const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'together-build-'));
+ try{for(const dir of ['src','content','scripts'])fs.cpSync(path.join(__dirname,'..',dir),path.join(tmp,dir),{recursive:true});
+ const custom={...baseDoc,url:'https://example.org/registered',title:'Build-only test'};
+ const lesson={id:'build-demo',version:'v1',title:{ko:'빌드 검증'},sourceUrl:{ko:'https://example.org/lesson'},sections:[{id:'intro',ko:'소개'}],blocks:[{id:'b1',sectionId:'intro',kind:'text',ko:'테스트'}]};
+ fs.writeFileSync(path.join(tmp,'content/deployment-content.json'),JSON.stringify({schema:'together-content-pack-v3',documents:[custom],lessons:[lesson]}));
+ const run=cp.spawnSync(process.execPath,[path.join(tmp,'scripts/build.mjs')],{encoding:'utf8'});assert.equal(run.status,0,run.stderr);
+ const html=fs.readFileSync(path.join(tmp,'public/index.html'),'utf8');const refs=JSON.parse(html.match(/<script id="reference-data"[^>]*>(.*?)<\/script>/s)[1]);const deployed=JSON.parse(html.match(/<script id="deployment-data"[^>]*>(.*?)<\/script>/s)[1]);assert.ok(refs.documents.some(d=>d.title==='Build-only test'));assert.equal(deployed.lessons[0].id,'build-demo');assert.equal(deployed.documents.length,1);
+ }finally{fs.rmSync(tmp,{recursive:true,force:true});}
+});
+test('invalid deployment lesson fails at build time, not just in the UI',()=>{
+ const os=require('node:os'),cp=require('node:child_process');const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'together-invalid-'));
+ try{for(const dir of ['src','content','scripts'])fs.cpSync(path.join(__dirname,'..',dir),path.join(tmp,dir),{recursive:true});fs.writeFileSync(path.join(tmp,'content/deployment-content.json'),JSON.stringify({schema:'together-content-pack-v3',documents:[],lessons:[{id:'bad'}]}));assert.notEqual(cp.spawnSync(process.execPath,[path.join(tmp,'scripts/build.mjs')]).status,0);}finally{fs.rmSync(tmp,{recursive:true,force:true});}
+});
