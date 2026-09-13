@@ -44,4 +44,4 @@ Event posters use the private `together-event-posters` bucket with a 5 MB limit 
 
 For a multi-table operation, expose a narrowly scoped transaction function and repeat the live role check inside it. Browser visibility checks improve the interface but do not replace database policies.
 
-The content preparation tools remain browser-local. They can import a lesson, register reference text, and export `deployment-content.json`; they do not publish that content to Supabase. Publishing content still requires reviewing the export, replacing the repository file, and deploying the build. Study prompts and calendar events are separate Supabase-backed records.
+Lesson imports now publish through the server-checked `together_publish_lesson` RPC for confirmed `admin` and `editor` accounts. Public readers load published immutable revisions without an account. A staff member's unfinished import remains a private device draft until reviewed and published. Reference-library text registration still uses local storage and content-pack deployment; it does not publish through the lesson RPC. See [PUBLISHED_LESSONS.md](PUBLISHED_LESSONS.md).

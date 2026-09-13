@@ -32,7 +32,7 @@ const bundle=deployment;
 let html=read('src/shell.html');
 const replacements={
  '/*__CSS__*/':read('src/styles.css'),
- '/*__ENHANCED_CSS__*/':read('src/enhancements.css')+'\n'+read('src/references.css')+'\n'+read('src/cloud.css')+'\n'+read('src/prompts.css')+'\n'+read('src/calendar.css')+'\n'+read('src/drafts.css')+'\n'+read('src/mobile.css'),
+ '/*__ENHANCED_CSS__*/':read('src/enhancements.css')+'\n'+read('src/references.css')+'\n'+read('src/cloud.css')+'\n'+read('src/prompts.css')+'\n'+read('src/calendar.css')+'\n'+read('src/drafts.css')+'\n'+read('src/importer.css')+'\n'+read('src/mobile.css'),
  '/*__CAPTURE__*/':read('src/capture.js'),
  '/*__APP__*/':read('src/app.js'),
  '/*__ENHANCEMENTS__*/':read('src/enhancements.js'),
@@ -42,6 +42,9 @@ const replacements={
  '/*__CLOUD_MODEL__*/':read('src/cloud-model.js'),
  '/*__CLOUD__*/':read('src/cloud.js'),
  '/*__ACCESS__*/':read('src/access.js'),
+ '/*__IMPORT_MODEL__*/':read('src/import-model.js'),
+ '/*__PUBLISHING__*/':read('src/lesson-publishing.js'),
+ '/*__IMPORTER__*/':read('src/importer.js'),
  '/*__DASHBOARD__*/':read('src/dashboard.js'),
  '/*__CALENDAR_MODEL__*/':read('src/calendar-model.js'),
  '/*__DRAFTS__*/':read('src/drafts.js'),

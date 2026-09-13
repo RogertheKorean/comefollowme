@@ -2,7 +2,24 @@
 
 ## Current release checks
 
-Version 4.2.0 was checked on 2026-09-13 against the configured Supabase project:
+Version 4.3.0 was checked on 2026-09-13 against the configured Supabase project:
+
+- 74 unit/build checks, including bilingual metadata extraction, missing-field
+  handling, date ranges, exact reviewed publication, identity changes, schema
+  grants, conflicts, and refresh probes that avoid reloading unchanged history.
+- 4 live publishing backend checkpoints: admin/editor publishing, idempotent
+  retries, historical versions, immediate PT409 stale-write errors, and denied
+  ordinary/teacher/anonymous/malformed/direct writes. One tracked lesson history
+  and five disposable identities were removed in finally.
+- 6 import UI checkpoints: source-first order, metadata corrections, repeated
+  headings, preview invalidation, server publication and anonymous visitor reads,
+  existing lesson edits, real concurrent-edit conflicts, reload-safe private
+  drafts, and Chromium/WebKit editors at 320 px. Its tracked editor and lesson
+  history were removed in finally. Evidence: `evidence/importer-live.json` and
+  `evidence/import-chromium-320.png`, `evidence/import-webkit-320.png`.
+
+The unchanged community and authentication flows also have the following
+passing checks from version 4.2.0 on the same date:
 
 - 52 unit/build checks: dates, organization filters, anchor validation, public-only
   browser configuration, and 800 ms draft debounce, unchanged writes, identity

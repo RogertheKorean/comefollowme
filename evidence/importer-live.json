@@ -1,0 +1,13 @@
+{
+  "testedAt": "2026-09-13T09:55:54.488Z",
+  "origin": "http://127.0.0.1:4174",
+  "results": [
+    "Input-first order, extracted title/date/source, manual corrections and clearing missing metadata",
+    "Reviewed exact payload retries safely, publishes to server, clears its draft, and reaches an unsigned visitor",
+    "Publishing an edit shows one latest card while retaining the previous readable revision",
+    "A real concurrent edit produces an immediate conflict message and preserves the operator’s work",
+    "An unfinished import survives reload and background render, with review required again",
+    "Chromium and WebKit 320px editor/preview fit the viewport with 16px inputs and no runtime errors"
+  ],
+  "cleanup": "Finally removes revisions owned by the tracked disposable editor"
+}

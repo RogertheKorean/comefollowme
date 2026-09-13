@@ -74,6 +74,8 @@ body.scripture-open .workspace.reading{grid-template-columns:minmax(0,1fr);margi
 .local-draft-status[data-draft-status="saved"],.draft-save-status[data-status="saved"],.prompt-draft-status[data-status="saved"],[data-prompt-draft-status][data-status="saved"]{color:#648676}
 .local-draft-status[data-draft-status="error"],.draft-save-status[data-status="error"],.prompt-draft-status[data-status="error"],[data-prompt-draft-status][data-status="error"]{color:#9b493c}
 
+.import-form{border:0;padding:0;margin:0;min-width:0}.import-existing{display:flex;align-items:end;gap:12px;flex-wrap:wrap}.import-existing .field{flex:1;min-width:180px;margin:0}.import-existing select{width:100%;max-width:100%}.import-workspace .panel{scroll-margin-top:95px}.import-workspace .code-area{min-height:240px}.import-status{background:var(--mint);padding:12px 14px;border-radius:8px;font-size:13px}.import-reading-preview{margin:22px 0;padding:20px;border:1px solid var(--line);border-radius:10px;background:var(--paper);overflow-wrap:anywhere}.import-paragraphs{max-height:540px;overflow:auto;margin-top:20px}.import-pair{display:grid;grid-template-columns:22px minmax(0,1fr);gap:16px;border-top:1px solid var(--line);padding:18px 0}.import-pair:has([lang=en]){grid-template-columns:22px minmax(0,1fr) minmax(0,1fr)}.import-pair small{color:var(--muted)}.import-pair p,.import-pair h1,.import-pair h2,.import-pair h3{margin:0 0 10px}.import-pair a{overflow-wrap:anywhere}.import-workspace .checkline{margin-top:18px}.import-workspace .alert.error{margin:14px 0}.import-workspace [data-import=publish]{margin-top:10px}@media(max-width:760px){.import-workspace .fields-two{display:block}.import-workspace input,.import-workspace textarea,.import-workspace select{font-size:16px;max-width:100%}.import-workspace .code-area{min-height:180px}.import-existing .btn{width:100%}.import-workspace .btn{white-space:normal;min-height:44px}.import-reading-preview{padding:14px}.import-pair,.import-pair:has([lang=en]){grid-template-columns:18px minmax(0,1fr);gap:10px}.import-pair [lang=en]{grid-column:2}.import-paragraphs{max-height:460px}}
+
 /* Phone layouts share the same content and preserve native text selection and zoom. */
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:90px}
 button,a,input,textarea,select{-webkit-tap-highlight-color:transparent}
@@ -463,7 +465,8 @@ state.filters={query:'',type:'all',lang:'all',section:'all',...state.filters};
 let currentSection='intro',selectedAnchor=null,selectedRange=null,transientAnchor=null,observer=null,composer=null,modalKind='',modalSession=0,returnFocus=null,presentationIndex=0,showNames=false,importPreview=null,draftTimer=null;
 function tr(ko,en){return state.language==='ko'?ko:en;}
 function lessonKey(l){return l.id+'@'+l.version;}
-function lessons(){return [BASE,...state.customLessons];}
+function lessons(){return [...new Map([BASE,...state.customLessons,...(window.TogetherPublishedContent?.lessons||[])].map(l=>[lessonKey(l),l])).values()];}
+function latestLessons(){const available=new Map([BASE,...state.customLessons].map(l=>[l.id,l]));for(const l of window.TogetherPublishedContent?.latest||[])available.set(l.id,l);return [...available.values()];}
 function currentLesson(){return lessons().find(l=>lessonKey(l)===state.activeLesson)||BASE;}
 function lessonForAnchor(a){return lessons().find(l=>lessonKey(l)===a?.lessonKey);}
 function lang(){return state.language;}
@@ -535,7 +538,7 @@ function feedResultsHTML(){
 function emptyHTML(title,sub){return `<div class="empty-state">${icon('note')}<h3>${title}</h3><p>${sub}</p></div>`;}
 function mineHTML(){let notes=ownNotes().filter(n=>state.myScope==='all'||n.scope===state.myScope).sort((a,b)=>b.created.localeCompare(a.created));return `<main class="workspace"><div class="stream-wrap">${pageIntro(tr('내 마음에 남은 기록','The thoughts I’m keeping'),tr('조용히 기록하고, 준비되었을 때 나누세요.','Reflect privately. Share when you are ready.'),`<button class="text-btn" data-action="export">${icon('download','small')}${tr('JSON 내보내기','Export JSON')}</button>`)}<div class="demo-strip">${icon('lock','small')}${tr('이 기기의 브라우저 저장 공간입니다. 실제 비밀 보관함이 아니므로 민감한 개인정보를 넣지 마세요.','This is browser-local demo storage, not a secure vault. Do not enter sensitive personal information.')}</div>${state.draft?`<div class="draft-banner"><span>${icon('edit','small')} ${tr('이어서 쓸 임시 기록이 있어요.','You have an unfinished reflection.')}</span><button class="text-btn" data-action="resume-draft">${tr('이어 쓰기','Continue')}${icon('arrow','small')}</button></div>`:''}<div class="scope-tabs">${[['all',tr('모든 기록','All notes')],['private',tr('나만 보기','Private')],['class',tr('반원 공유','Shared')]].map(([v,t])=>`<button data-my-scope="${v}" class="${state.myScope===v?'active':''}">${t}</button>`).join('')}</div>${notes.length?`<div class="stream-grid">${notes.map(n=>noteCard(n,{mine:true})).join('')}</div>`:`${emptyHTML(tr('한 문장부터 시작해 보세요.','Start with a single passage.'),tr('공과에서 문장을 선택하고 인사이트를 남기면 여기에 모입니다.','Select a passage in the lesson and add a reflection. It will appear here.'))}<div class="actions-row" style="justify-content:center;margin-top:20px"><button class="btn primary" data-nav="read">${icon('book')}${tr('공과 읽기','Read the lesson')}</button></div>`}<p class="notice-foot">${tr('브라우저 데이터를 지우면 기록도 삭제됩니다. 내보내기 파일에는 비공개 기록·인용문·캡처가 포함되므로 보관에 주의하세요.','Clearing browser data deletes these notes. Exports contain private reflections, quotations, and captures; store them carefully.')}</p></div></main>`;}
 function classroomHTML(){const queued=queueNotes(),available=sharedNotes().filter(n=>eligible(n)&&!state.queue.includes(n.id));return `<main class="workspace"><div class="stream-wrap">${pageIntro(tr('한 주의 발견을, 주일에 함께.','Bring the week’s discoveries to class.'),tr('작성자가 나눔을 허용한 기록만 발표 화면에 담습니다.','Only reflections explicitly approved by their authors can be presented.'))}<div class="demo-strip">${icon('screen','small')}<span>${tr('역할 전환은 화면 시연입니다. 실제 교사 권한 인증이 아닙니다.','Role switching is a UI demonstration, not real teacher authorization.')}</span><select id="demoRole" aria-label="${tr('데모 역할','Demo role')}"><option value="member" ${state.role==='member'?'selected':''}>${tr('성도 보기','Member view')}</option><option value="teacher" ${state.role==='teacher'?'selected':''}>${tr('교사 보기','Teacher view')}</option></select></div><div class="stream-banner"><div><span class="eyebrow">SUNDAY SCHOOL · SHARING BOARD</span><strong>${tr('이번 주 나눔 보드','This week’s sharing board')}</strong><p>${tr('반원 공유 + 발표 동의가 모두 있는 기록만 포함됩니다.','Both class sharing and presentation consent are required.')}</p></div><button class="btn primary" data-action="present" ${!queued.length||state.role!=='teacher'?'disabled':''}>${icon('play')}${tr('나눔 시작','Start presenting')} · ${queued.length}</button></div>${state.role!=='teacher'?`<div class="alert" style="margin-bottom:22px">${tr('위에서 ‘교사 보기’를 선택하면 나눔 순서 편집과 발표 모드를 체험할 수 있습니다.','Choose Teacher view above to try ordering reflections and presenting them.')}</div>`:''}<div class="queue-layout"><section><div class="section-row" style="margin-top:0"><h2>${tr('나눌 순서','Presentation order')} <span class="muted">${queued.length}</span></h2><small>${tr('비공개 기록 제외','Private notes excluded')}</small></div>${queued.length?queued.map((n,i)=>`<article class="queue-card"><div class="queue-number">${String(i+1).padStart(2,'0')}</div><div class="queue-content"><span class="note-type ${n.type}">${typeLabel(n.type)}</span><p>${esc(noteBody(n))}</p><blockquote class="note-quote clamp">${esc(noteQuote(n))}</blockquote><div class="queue-controls"><span>${esc(authorName(n))} · ${tr('나눔 허용','Consent given')}</span><div><button data-action="queue-up" data-id="${n.id}" ${i===0||state.role!=='teacher'?'disabled':''} aria-label="${tr('위로 이동','Move up')}">${icon('up')}</button><button data-action="queue-down" data-id="${n.id}" ${i===queued.length-1||state.role!=='teacher'?'disabled':''} aria-label="${tr('아래로 이동','Move down')}">${icon('down')}</button><button data-action="queue-toggle" data-id="${n.id}" ${state.role!=='teacher'?'disabled':''} aria-label="${tr('나눔에서 빼기','Remove from board')}">${icon('close')}</button></div></div></div></article>`).join(''):emptyHTML(tr('나눔 보드가 비어 있어요.','Your board is empty.'),tr('발표를 허용한 기록을 담아 주세요.','Add a reflection with presentation consent.'))}</section><section><div class="section-row" style="margin-top:0"><h2>${tr('나눔에 담을 수 있는 기록','Available to present')}</h2><small>${available.length}</small></div>${available.length?available.map(n=>noteCard(n)).join(''):emptyHTML(tr('모두 담았어요.','You’re all set.'),tr('추가로 발표가 허용된 기록이 여기에 나타납니다.','More eligible reflections will appear here.'))}</section></div><p class="notice-foot">${tr('발표 동의를 취소하거나 기록을 비공개로 바꾸면 이 보드에서도 제외됩니다. 실제 서비스에서는 서버에서 접근 권한을 다시 검증해야 합니다.','Withdrawing consent or making a reflection private removes it from this board. A production service must also enforce permissions on the server.')}</p></div></main>`;}
-function importHTML(){const l=currentLesson();return `<main class="workspace"><div class="stream-wrap">${pageIntro(tr('공과를 넣으면, 학습 공간이 됩니다.','Turn a lesson into a shared study space.'),tr('첨부하신 Markdown 형식을 그대로 입력할 수 있습니다.','Paste the same Markdown format as the supplied lesson.'))}<div class="panel"><label class="field" style="margin-bottom:0"><span>${tr('이 브라우저에 있는 공과','Lessons in this browser')}</span><select id="lessonPicker" style="max-width:100%;width:100%">${lessons().map(x=>`<option value="${esc(lessonKey(x))}" ${lessonKey(x)===lessonKey(l)?'selected':''}>${esc(x.title[lang()]||x.title.ko)} · ${esc(x.date[lang()]||x.date.ko)} · ${x.version.slice(0,8)}</option>`).join('')}</select></label></div><div class="panel"><h2>${tr('1. 공과 기본 정보','1. Lesson details')}</h2><p class="help">${tr('아래 입력란에는 이번에 첨부하신 공과가 예시로 채워져 있습니다. 자동으로 웹사이트를 수집하지 않습니다.','The supplied lesson is prefilled as an example. This does not crawl or fetch websites.')}</p><div class="fields-two"><label class="field"><span>${tr('한국어 제목','Korean title')}</span><input id="importTitleKO" maxlength="160" value="${esc(BASE.title.ko)}"></label><label class="field"><span>${tr('영어 제목','English title')}</span><input id="importTitleEN" maxlength="160" value="${esc(BASE.title.en)}"></label></div><div class="fields-two"><label class="field"><span>${tr('공과 기간','Lesson date')}</span><input id="importDate" maxlength="100" value="2026-09-07 — 2026-09-13"></label><label class="field"><span>${tr('원문 URL','Source URL')}</span><input id="importURL" type="url" value="${esc(BASE.sourceUrl.ko)}"></label></div></div><div class="panel"><h2>${tr('2. 언어별 원문 넣기','2. Add each language')}</h2><p class="help">${tr('제목·문단·성구 링크·목록을 읽기 화면으로 변환합니다. HTML 코드는 실행하지 않습니다. 첨부본의 svg 표시는 가져오기 오류로 정리합니다.','Headings, paragraphs, scripture links, and lists become the reading view. HTML is not executed. Stray svg export markers are removed.')}</p><div class="fields-two"><div><label class="field"><span>한국어 · Markdown</span><textarea id="importKO" class="code-area" aria-label="한국어 Markdown">${esc(BASE.raw.ko)}</textarea></label><label class="field"><span>${tr('한국어 파일 선택','Korean Markdown file')}</span><input type="file" id="fileKO" accept=".md,.txt,text/plain,text/markdown"></label></div><div><label class="field"><span>English · Markdown</span><textarea id="importEN" class="code-area" aria-label="English Markdown">${esc(BASE.raw.en)}</textarea><small>${tr('예시 영어는 공식본이 아닌 시연용 번역입니다.','The sample English is a prototype translation, not the official edition.')}</small></label><label class="field"><span>${tr('영어 파일 선택','English Markdown file')}</span><input type="file" id="fileEN" accept=".md,.txt,text/plain,text/markdown"></label></div></div><button class="btn" data-action="preview-import">${icon('eye')}${tr('문단 연결 미리 보기','Preview paragraph pairing')}</button><div id="importPreview"></div></div><div class="panel"><h2>${tr('3. 확인 후 적용','3. Review and apply')}</h2><label class="checkline"><input id="importAlignment" type="checkbox"><span>${tr('두 언어의 문단이 같은 내용·순서로 연결되는지 직접 확인했습니다. 영문이 없으면 한국어만 사용합니다.','I checked that the paired paragraphs correspond in meaning and order. Without English, this will be Korean-only.')}</span></label><label class="checkline"><input id="importRights" type="checkbox"><span>${tr('이 자료의 이용 범위를 확인했습니다. 실제 배포 전에는 콘텐츠·이미지의 재게시 권한을 별도로 확인하겠습니다.','I have considered the use of this material and will verify content and image permissions before any real distribution.')}</span></label><div class="alert">${tr('적용은 이 브라우저에서만 이루어집니다. 반원에게 게시되거나 서버로 전송되지 않습니다. 기존 기록과 이전 공과 버전은 보존됩니다.','Applying is local to this browser. Nothing is published or sent to a server. Existing reflections and lesson versions are preserved.')}</div><div class="actions-row" style="margin-top:20px"><button class="btn primary" data-action="apply-import">${icon('check')}${tr('이 브라우저에 적용','Apply in this browser')}</button></div></div></div></main>`;}
+function importHTML(){return window.TogetherImporter?.html()||'';}
 function setupReadingObserver(){
  const passages=$$('.passage', $('#readerCard'));
  observer=new IntersectionObserver(()=>{if(state.view!=='read')return;const b=visibleBlock();if(b){state.lastBlock=b.dataset.block;if(currentSection!==b.dataset.section){currentSection=b.dataset.section;const rail=$('#rightRail');if(rail)rail.innerHTML=railHTML();}}updateProgress();},{rootMargin:'-110px 0px -40% 0px',threshold:[0,.2,.5,1]});
@@ -593,16 +596,13 @@ function sendReply(id){const n=state.notes.find(n=>n.id===id),input=$('#replyTex
 function showBlockNotes(blockId){const ns=sharedNotes().filter(n=>n.anchor.segments?.some(s=>s.blockId===blockId));showModal(modalHead(tr('이 문단에 남긴 생각','Thoughts on this passage'),tr('같은 원문에서 시작된 대화입니다.','A conversation connected to the same passage.'))+`<div class="modal-body">${ns.map(n=>noteCard(n)).join('')}<button class="btn primary full" data-action="compose-from-modal" data-block="${blockId}">${icon('spark')}${tr('나도 인사이트 남기기','Add my reflection')}</button></div>`,{kind:'block-notes',size:'medium'});}
 function showAbout(){showModal(modalHead(tr('함께 · 인터랙티브 프로토타입','Together · interactive prototype'),tr('공식 교회 앱이 아닌, 학습·나눔 흐름을 검토하기 위한 시제품입니다.','An unofficial prototype for evaluating the study and sharing flow.'))+`<div class="modal-body"><div class="panel"><h2>${tr('작동하는 기능','Working interactions')}</h2><p class="help">${tr('첨부본 읽기, 한국어/영어 전환, 오른쪽 성구 패널, 성구·공과 형광펜, 선택 위치 저장, 읽기 영역 이미지 + 생각, 인사이트·댓글·공감, 내 기록, 발표 동의와 나눔 보드, Markdown 입력, JSON 내보내기.','Lesson reading, Korean/English switching, a scripture side panel, verse and lesson highlights, precise source anchors, source-image reflections, replies/reactions, a personal journal, consent-aware classroom mode, Markdown input, and JSON export.')}</p><h2>${tr('연결되지 않은 기능','Not connected')}</h2><p class="help">${tr('실제 사용자 계정, 서버 데이터베이스, 여러 기기 동기화, 자동 번역 서비스, 배포·회원 초대. 역할과 공개 범위는 화면 시뮬레이션입니다.','Real accounts, a server database, cross-device synchronization, an automatic translation service, hosting, and member invitations. Roles and visibility are UI simulations.')}</p></div><div class="alert">${tr('한국어 본문은 업로드한 자료에서 가져왔습니다. 영어는 그 한국어의 시연용 번역이며 공식 영문판이 아닙니다. 이미지·활동지는 원본 링크로 보존합니다. 자료를 실제 서비스에 재게시하기 전에 이용 권한을 확인해야 합니다.','The Korean text comes from the supplied file. English is a prototype translation, not the official edition. Artwork and activity sheets remain original links. Verify reuse permissions before publishing the material in a real service.')}</div><p class="notice-foot">${tr('나만 보기 선택은 서버 보안이 아닙니다. 기록은 암호화되지 않은 로컬 브라우저 저장소에 남습니다. 샘플 성도와 샘플 경험은 모두 가상입니다.','The Private choice is not server security. Notes are stored unencrypted in this browser. All sample members and experiences are fictional.')}</p></div>`,{kind:'about',size:'medium'});}
 function parseImportBlocks(raw){
- const chunks=String(raw).replace(/\r\n?/g,'\n').trim().split(/\n\s*\n/);let section='intro',sections=[{id:'intro',ko:'공과 소개',en:'Lesson introduction'}],occ=new Map(),blocks=[];
- for(let text of chunks){text=text.replace(/^(#{1,3}\s*|-\s*)?svg(?=[“"가-힣]|$)/gm,'$1').trim();if(!text||/^#{1,3}$/.test(text))continue;const h=text.match(/^(#{2,3})\s+(.+)$/);if(h){section='s-'+hash(plain(h[2]));sections.push({id:section,ko:plain(h[2]),en:plain(h[2])});}const digest=hash(text),num=(occ.get(digest)||0)+1;occ.set(digest,num);let kind='text';if(/^\[[^\]]+\]\(https?:\/\/[^)]+\/imgs\//.test(text))kind='media';blocks.push({id:`b-${digest}-${num}`,sectionId:section,kind,raw:text});}
+ const chunks=String(raw).replace(/\r\n?/g,'\n').trim().split(/\n\s*\n/);let section='intro',sections=[{id:'intro',ko:'공과 소개',en:'Lesson introduction'}],occ=new Map(),headings=new Map(),blocks=[];
+ for(let text of chunks){text=text.replace(/^(#{1,3}\s*|-\s*)?svg(?=[“"가-힣]|$)/gm,'$1').trim();if(!text||/^#{1,3}$/.test(text))continue;const h=text.match(/^(#{2,3})\s+(.+)$/);if(h){const name=plain(h[2]),key=hash(name),count=(headings.get(key)||0)+1;headings.set(key,count);section=`s-${key}-${count}`;sections.push({id:section,ko:name,en:name});}const digest=hash(text),num=(occ.get(digest)||0)+1;occ.set(digest,num);let kind='text';if(/^\[[^\]]+\]\(https?:\/\/[^)]+\/imgs\//.test(text))kind='media';blocks.push({id:`b-${digest}-${num}`,sectionId:section,kind,raw:text});}
  return {blocks,sections};
 }
-function bindFileInputs(){for(const [input,target] of [['fileKO','importKO'],['fileEN','importEN']]){$('#'+input)?.addEventListener('change',async e=>{const file=e.target.files[0];if(!file)return;if(file.size>400000){toast(tr('Markdown 파일은 400KB 이하로 선택해 주세요.','Please use a Markdown file under 400KB.'),true);return;}try{$('#'+target).value=await file.text();importPreview=null;$('#importPreview').innerHTML='';toast(tr('파일을 읽었습니다. 문단 연결을 다시 확인해 주세요.','File loaded. Please review the paragraph pairing.'));}catch{toast(tr('파일을 읽지 못했습니다.','The file could not be read.'),true);}});}}
-function buildImportPreview(){const ko=$('#importKO').value,en=$('#importEN').value;if(!ko.trim()){toast(tr('한국어 원문을 입력해 주세요.','Please enter the Korean source text.'),true);$('#importKO').focus();return null;}if(ko.length>400000||en.length>400000){toast(tr('각 언어는 400,000자 이하로 입력해 주세요.','Limit each language to 400,000 characters.'),true);return null;}const kp=parseImportBlocks(ko),ep=en.trim()?parseImportBlocks(en):{blocks:[],sections:[]};if(!kp.blocks.length){toast(tr('읽을 수 있는 문단이 없습니다.','No readable paragraphs found.'),true);return null;}return {raw:{ko,en},ko:kp,en:ep,paired:ep.blocks.length===0||ep.blocks.length===kp.blocks.length,fingerprint:hash(ko+'\u0000'+en)};}
-function previewImport(){const p=buildImportPreview();if(!p)return;importPreview=p;$('#importPreview').innerHTML=`<div class="badges"><span class="pill">한국어 ${p.ko.blocks.length} ${tr('블록','blocks')}</span><span class="pill gray">English ${p.en.blocks.length} blocks</span><span class="pill ${p.paired?'':'gold'}">${p.en.blocks.length===0?tr('한국어만 사용','Korean only'):p.paired?tr('블록 수 일치 · 의미 검토 필요','Counts match · review meanings'):tr('블록 수 불일치','Block count mismatch')}</span></div><div class="alert">${tr('문단 수가 같다고 번역 대응이 정확한 것은 아닙니다. 아래에서 내용을 대조해 주세요. 실제 운영에서는 번역별 문단 매핑을 검수해야 합니다.','Equal counts do not prove correct translation alignment. Compare the content below. Production needs a reviewed mapping for each translation.')}</div><div class="align-preview"><table><thead><tr><th>#</th><th>한국어</th><th>English</th></tr></thead><tbody>${p.ko.blocks.map((b,i)=>`<tr class="${p.en.blocks.length&&!p.en.blocks[i]?'mismatch':''}"><td>${i+1}</td><td>${esc(plain(b.raw))}</td><td>${p.en.blocks[i]?esc(plain(p.en.blocks[i].raw)):tr('영문 없음','No English')}</td></tr>`).join('')}</tbody></table></div>`;}
-function applyImport(){const p=buildImportPreview();if(!p)return;if(!importPreview||importPreview.fingerprint!==p.fingerprint){toast(tr('원문이 바뀌었거나 아직 미리 보지 않았습니다. 문단 연결을 먼저 확인해 주세요.','Please preview the current content before applying it.'),true);return;}if(!p.paired){toast(tr('두 언어의 블록 수를 맞추거나 영문 입력을 비워 주세요.','Align the block counts, or leave English blank.'),true);return;}if(!$('#importAlignment').checked||!$('#importRights').checked){toast(tr('문단 연결 확인과 자료 이용 범위 확인을 모두 선택해 주세요.','Confirm the paragraph pairing and content-use review.'),true);return;}const titleKO=$('#importTitleKO').value.trim(),titleEN=$('#importTitleEN').value.trim(),date=$('#importDate').value.trim(),url=safeUrl($('#importURL').value);if(!titleKO||!date||!url){toast(tr('한국어 제목·기간·올바른 원문 URL을 입력해 주세요.','Enter a Korean title, date, and valid source URL.'),true);return;}const sourceKO=new URL(url),sourceEN=new URL(url);sourceKO.searchParams.set('lang','kor');sourceEN.searchParams.set('lang','eng');const id='import-'+hash(sourceKO.pathname+titleKO),version=p.fingerprint;const l={id,version,title:{ko:titleKO,en:titleEN||titleKO},date:{ko:date,en:date},sourceUrl:{ko:sourceKO.href,en:sourceEN.href},sourceLabel:'User-entered Markdown',translationStatus:'user-provided-unverified',alignment:p.en.blocks.length?'user-confirmed-block-pairing':'korean-only',raw:p.raw,sections:p.ko.sections,blocks:p.ko.blocks.map((b,i)=>({id:b.id,conceptId:`${id}-${version}-pair-${i}`,sectionId:b.sectionId,kind:b.kind,ko:b.raw,en:p.en.blocks[i]?.raw||''}))};
- for(const s of l.sections){const i=p.ko.blocks.findIndex(b=>b.sectionId===s.id&&/^#{2,3}\s/.test(b.raw));if(i>=0&&p.en.blocks[i])s.en=plain(p.en.blocks[i].raw);}
- if(!state.customLessons.some(x=>lessonKey(x)===lessonKey(l)))state.customLessons.push(l);state.activeLesson=lessonKey(l);state.language='ko';state.view='read';state.filters={query:'',type:'all',lang:'all',section:'all'};currentSection='intro';const ok=saveState();render();scrollTo({top:0,behavior:'instant'});toast(ok?tr('이 브라우저에 적용했습니다. 기존 공과와 기록은 보존됩니다.','Applied in this browser. Previous lessons and notes are preserved.'):tr('저장 공간이 부족합니다. 새로고침하지 말고 내보내기로 보관해 주세요.','Storage is full. Export your notes before reloading.'),!ok);}
+function bindFileInputs(){window.TogetherImporter?.bind();}
+function previewImport(){return window.TogetherImporter?.review();}
+function applyImport(){return window.TogetherImporter?.publish();}
 function toggleLike(id){const n=state.notes.find(n=>n.id===id);if(!n||n.scope!=='class')return;const at=n.likes.indexOf('me');if(at>=0)n.likes.splice(at,1);else n.likes.push('me');saveState();refreshPreservingScroll();if(modalKind==='thread'){const note=$('.modal .note-card');if(note)note.outerHTML=noteCard(n);}}
 function toggleQueue(id){const n=state.notes.find(n=>n.id===id);if(state.role!=='teacher'){toast(tr('교사 보기에서 체험할 수 있습니다.','Try this in Teacher view.'));return;}if(!eligible(n)){toast(tr('반원 공유와 발표 동의가 모두 필요합니다.','Class sharing and presentation consent are both required.'),true);return;}const idx=state.queue.indexOf(id);if(idx>=0)state.queue.splice(idx,1);else state.queue.push(id);saveState();refreshPreservingScroll();toast(idx>=0?tr('나눔 보드에서 뺐습니다.','Removed from the sharing board.'):tr('나눔 보드에 담았습니다.','Added to the sharing board.'));}
 function moveQueue(id,delta){if(state.role!=='teacher')return;const q=queueNotes(),i=q.findIndex(n=>n.id===id),other=q[i+delta];if(i<0||!other)return;const a=state.queue.indexOf(id),b=state.queue.indexOf(other.id);[state.queue[a],state.queue[b]]=[state.queue[b],state.queue[a]];saveState();refreshPreservingScroll();}
@@ -1514,23 +1514,239 @@ if(cloud.enabled){
  refresh();
 })();
 </script>
+<script>/* Pure metadata extraction for pasted bilingual lesson Markdown. */
+(function(root){
+ 'use strict';
+ const TITLE_LIMIT=160,DATE_LIMIT=100;
+ const MONTHS={january:1,jan:1,february:2,feb:2,march:3,mar:3,april:4,apr:4,may:5,june:6,jun:6,july:7,jul:7,august:8,aug:8,september:9,sep:9,october:10,oct:10,november:11,nov:11,december:12,dec:12};
+
+ function text(value){return typeof value==='string'?value:'';}
+ function compact(value){return text(value).replace(/\r\n?/g,'\n').replace(/\\([\\`*_{}\[\]()#+.!~:-])/g,'$1').replace(/[~—–]/g,'–').replace(/\s+/g,' ').trim();}
+ function cleanMarkdown(value){return compact(text(value).replace(/!?(?:\[([^\]]*)\]\([^)]*\))/g,'$1').replace(/<https?:\/\/[^>]+>/gi,'').replace(/<[^>]*>/g,'').replace(/^[>#\s]+/,'').replace(/[*_`]/g,'')).replace(/^[“"'‘]+|[”"'’]+$/g,'').trim();}
+ function limited(value,limit){return text(value).trim().slice(0,limit);}
+ function validDate(year,month,day){const d=new Date(Date.UTC(year,month-1,day));return d.getUTCFullYear()===year&&d.getUTCMonth()===month-1&&d.getUTCDate()===day;}
+ function iso(year,month,day){return validDate(year,month,day)?`${year}-${String(month).padStart(2,'0')}-${String(day).padStart(2,'0')}`:'';}
+ function invalidDate(raw,warnings){if(warnings)warnings.add('invalid-date');return raw;}
+ function normalizeDate(value,warnings){
+  const raw=compact(value).replace(/\s*–\s*/g,'–');
+  let m=raw.match(/^(\d{4})-(\d{2})-(\d{2})(?:\s*(?:\/|–|to)\s*(\d{4})-(\d{2})-(\d{2}))?$/i);
+  if(m){const start=iso(+m[1],+m[2],+m[3]),end=m[4]?iso(+m[4],+m[5],+m[6]):'';return start&&(!m[4]||end)&&(!end||start<=end)?(end?`${start}/${end}`:start):invalidDate(raw,warnings);}
+  m=raw.match(/^(?:(\d{4})\s*년\s*)?(\d{1,2})\s*월\s*(\d{1,2})\s*일?(?:\s*[–-]\s*(?:(\d{4})\s*년\s*)?(?:(\d{1,2})\s*월\s*)?(\d{1,2})\s*일?)?$/);
+  if(m){
+   let startYear=m[1]?+m[1]:0,endYear=m[4]?+m[4]:0;const startMonth=+m[2],startDay=+m[3],endMonth=m[5]?+m[5]:startMonth,endDay=m[6]?+m[6]:0;
+   if(endDay&&startYear&&!endYear)endYear=endMonth<startMonth?startYear+1:startYear;
+   if(endDay&&!startYear&&endYear&&startMonth>endMonth)startYear=endYear-1;
+   if(startYear&&(!endDay||endYear)){const start=iso(startYear,startMonth,startDay),end=endDay?iso(endYear,endMonth,endDay):'';if(start&&(!endDay||end)&&(!end||start<=end))return end?`${start}/${end}`:start;return invalidDate(raw,warnings);}
+   if((startMonth<1||startMonth>12||startDay<1||startDay>new Date(Date.UTC(2024,startMonth,0)).getUTCDate())||(endDay&&(endMonth<1||endMonth>12||endDay<1||endDay>new Date(Date.UTC(2024,endMonth,0)).getUTCDate())))invalidDate(raw,warnings);
+   if(endYear||startYear)return raw;
+   return `${startMonth}월 ${startDay}일${endDay?`–${endMonth===startMonth?'':`${endMonth}월 `}${endDay}일`:''}`;
+  }
+  m=raw.match(/^([A-Za-z.]+)\s+(\d{1,2})(?:,?\s*(\d{4}))?\s*[–-]\s*([A-Za-z.]+)?\s*(\d{1,2})(?:,?\s*(\d{4}))?$/);
+  if(m&&MONTHS[m[1].replace('.','').toLowerCase()]&&MONTHS[(m[4]||m[1]).replace('.','').toLowerCase()]){
+   const sm=MONTHS[m[1].replace('.','').toLowerCase()],em=MONTHS[(m[4]||m[1]).replace('.','').toLowerCase()];let sy=m[3]?+m[3]:0,ey=m[6]?+m[6]:0;
+   if(sy&&!ey)ey=em<sm?sy+1:sy;
+   if(!sy&&ey)sy=sm>em?ey-1:ey;
+   if(sy&&ey){const start=iso(sy,sm,+m[2]),end=iso(ey,em,+m[5]);if(start&&end&&start<=end)return `${start}/${end}`;return invalidDate(raw,warnings);}
+   return `${m[1].replace(/\.$/,'')} ${+m[2]}–${m[4]?`${m[4].replace(/\.$/,'')} `:''}${+m[5]}`;
+  }
+  m=raw.match(/^([A-Za-z.]+)\s+(\d{1,2})(?:,?\s*(\d{4}))?$/);
+  if(m&&MONTHS[m[1].replace('.','').toLowerCase()]){const year=m[3]?+m[3]:0,month=MONTHS[m[1].replace('.','').toLowerCase()],result=year&&iso(year,month,+m[2]);return year?(result||invalidDate(raw,warnings)):`${m[1].replace(/\.$/,'')} ${+m[2]}`;}
+  return raw;
+ }
+ function splitFrontmatter(markdown){
+  const source=text(markdown),m=source.match(/^\s*---\s*\n([\s\S]*?)\n---\s*(?:\n|$)/);if(!m)return {front:{},body:source};
+  const front={},parents=[];
+  for(const line of m[1].split('\n')){const item=line.match(/^(\s*)([A-Za-z0-9_.-]+)\s*:\s*(.*?)\s*$/);if(!item||item[2]==='---')continue;const depth=Math.floor(item[1].replace(/\t/g,'  ').length/2);parents.length=depth;const key=item[2].toLowerCase(),value=item[3].replace(/^['"]|['"]$/g,'');if(value){front[[...parents,key].join('.')]=value;}else parents[depth]=key;}
+  return {front,body:source.slice(m[0].length)};
+ }
+ function frontValue(front,keys){for(const key of keys){if(front[key]!==undefined)return front[key];}return '';}
+ function labeled(lines,pattern){for(const line of lines){const m=cleanMarkdown(line).match(pattern);if(m&&m[1])return m[1];}return '';}
+ function datedTitle(lines,warnings){
+  for(const line of lines){
+   const value=cleanMarkdown(line);let m=value.match(/^(\d{4}-\d{2}-\d{2}(?:\s*(?:\/|–|-)\s*\d{4}-\d{2}-\d{2})?)\s*[:：]\s*(.+)$/);
+   if(!m)m=value.match(/^((?:(?:\d{4}\s*년\s*)?\d{1,2}\s*월\s*\d{1,2}\s*일?(?:\s*[–-]\s*(?:(?:\d{4}\s*년\s*)?(?:\d{1,2}\s*월\s*)?\d{1,2}\s*일?)?)?))\s*[:：]\s*(.+)$/);
+   if(!m)m=value.match(/^((?:[A-Za-z.]+\s+\d{1,2}(?:,?\s*\d{4})?(?:\s*[–-]\s*(?:[A-Za-z.]+\s*)?\d{1,2}(?:,?\s*\d{4})?)?))\s*:\s*(.+)$/);
+   if(m){const date=normalizeDate(m[1],warnings),title=cleanMarkdown(m[2]);if(date&&title)return {date,title};}
+  }
+  return {date:'',title:''};
+ }
+ function linkOnlyHeading(raw){const value=raw.replace(/^\s*#\s+/,'').trim();return /\[[^\]]+\]\([^)]*\)/.test(value)&&!value.replace(/\[[^\]]+\]\([^)]*\)/g,'').replace(/[;,.\s]/g,'');}
+ function headingTitle(lines){for(const raw of lines){if(!/^\s*#\s+/.test(raw)||linkOnlyHeading(raw))continue;const value=cleanMarkdown(raw);if(value)return value;}return '';}
+ function validSource(value){try{const url=new URL(text(value).trim());return url.protocol==='https:'&&!url.username&&!url.password?url.toString():'';}catch{return '';}}
+ function firstUrl(value){const match=text(value).match(/https:\/\/[^\s)>\]]+/i);return match?match[0]:'';}
+ function labeledSource(lines){for(const line of lines){const m=cleanMarkdown(line).match(/^(?:source(?:\s*url)?|출처|자료\s*주소|(?:공과\s*)?원문\s*(?:url|주소))\s*[:：]\s*(.+)$/i);if(m)return firstUrl(line)||m[1];}return '';}
+ function clearLessonManual(lines){
+  for(const raw of lines){const url=validSource(firstUrl(raw));if(!url)continue;const parsed=new URL(url),path=parsed.pathname.toLowerCase();
+   const standalone=cleanMarkdown(raw)===url||/\b(this|this week'?s) lesson\b|(?:이번|이)\s*공과/i.test(cleanMarkdown(raw));
+   const churchHost=parsed.hostname==='churchofjesuschrist.org'||parsed.hostname.endsWith('.churchofjesuschrist.org');
+   if(standalone&&churchHost&&/^\/study\/manual\/come-follow-me-[^/]+\/\d+\/?$/.test(path)&&!parsed.searchParams.has('id')&&!parsed.hash)return url;
+  }return '';
+ }
+ function sourceFrom(front,lines,warnings){
+  const explicit=frontValue(front,['sourceurl','source_url','source-url','source.url','lesson.sourceurl','lesson.source_url'])||labeledSource(lines);
+  if(explicit){const url=validSource(firstUrl(explicit)||explicit);if(url)return url;warnings.add('invalid-source-url');}
+  return clearLessonManual(lines);
+ }
+ function parseLanguage(markdown,language,warnings){
+  const parsed=splitFrontmatter(markdown),lines=parsed.body.split('\n'),front=parsed.front;
+  const titleKeys=language==='ko'?['title.ko','title_ko','title-korean','korean.title','title']:['title.en','title_en','title-english','english.title','title'];
+  const explicitTitle=frontValue(front,titleKeys)||labeled(lines,language==='ko'?/^(?:제목|공과\s*제목)\s*[:：]\s*(.+)$/:/^(?:(?:lesson\s+)?title)\s*[:：]\s*(.+)$/i);
+  const explicitDate=frontValue(front,['date','lesson.date','lesson_date','lesson-date','period','lesson.period','lesson_period'])||labeled(lines,/^(?:date|lesson\s*date|날짜|공과\s*(?:날짜|기간)|기간)\s*[:：]\s*(.+)$/i);
+  const dated=datedTitle(lines,warnings),title=cleanMarkdown(explicitTitle)||dated.title||headingTitle(lines),date=normalizeDate(explicitDate,warnings)||dated.date;
+  return {title:limited(title,TITLE_LIMIT),date:limited(date,DATE_LIMIT),source:sourceFrom(front,lines,warnings)};
+ }
+ function extractMetadata(input){
+  const warnings=new Set(),ko=parseLanguage(input&&input.ko,'ko',warnings),en=parseLanguage(input&&input.en,'en',warnings);
+  if(/^\d{4}-\d{2}-\d{2}(?:\/\d{4}-\d{2}-\d{2})?$/.test(ko.date)&&/^\d{4}-\d{2}-\d{2}(?:\/\d{4}-\d{2}-\d{2})?$/.test(en.date)&&ko.date!==en.date)warnings.add('ambiguous-date');
+  return {title:{ko:ko.title,en:en.title},date:ko.date||en.date,sourceUrl:ko.source||en.source,warnings:[...warnings]};
+ }
+ const api={extractMetadata};
+ if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.TogetherImportModel=api;
+})(typeof window!=='undefined'?window:globalThis);
+</script>
+<script>/* Public lesson revisions and operator-only publishing through Supabase RLS/RPC. */
+(function(global){
+ 'use strict';
+
+ const PAGE_SIZE=200;
+ const clone=value=>value==null?value:JSON.parse(JSON.stringify(value));
+ const utf8Size=value=>typeof TextEncoder==='function'?new TextEncoder().encode(value).byteLength:typeof Buffer!=='undefined'?Buffer.byteLength(value,'utf8'):value.length*3;
+ function canonical(value){
+  if(Array.isArray(value))return '['+value.map(canonical).join(',')+']';
+  if(value&&typeof value==='object')return '{'+Object.keys(value).sort().map(key=>JSON.stringify(key)+':'+canonical(value[key])).join(',')+'}';
+  return JSON.stringify(value);
+ }
+ function errorWithCode(message,code){const error=new Error(message);error.code=code;return error;}
+
+ function createPublishing(options={}){
+  const getCloud=options.getCloud||(()=>global.TogetherCloud||null);
+  const getAccess=options.getAccess||(()=>global.TogetherAccess||null);
+  const engine=options.engine||global.ReferenceEngine;
+  const emit=options.emit||((name,detail)=>{
+   if(global.document?.dispatchEvent&&typeof global.CustomEvent==='function')global.document.dispatchEvent(new global.CustomEvent(name,{detail}));
+  });
+  let rows=[],loaded=false,loadGeneration=0;
+  const api={ready:null,error:null,load,publish,getLessons,getLatest,getLatestLessons};
+
+  function checkedLesson(value){
+   if(!engine?.validateLesson)throw errorWithCode('Lesson validation is unavailable.','validation_unavailable');
+   let lesson;
+   try{lesson=engine.validateLesson(value);}catch(error){throw errorWithCode(error?.message||'Invalid lesson content.','invalid_lesson');}
+   if(canonical(lesson)!==canonical(value))throw errorWithCode('Publish the exact validated lesson that was reviewed.','review_mismatch');
+   if(utf8Size(JSON.stringify(lesson))>2500000)throw errorWithCode('The reviewed lesson exceeds the 2.5 MB publishing limit.','invalid_lesson_size');
+   return lesson;
+  }
+  function normalizedRow(row){
+   if(!row||typeof row!=='object'||row.lesson_id!==row.lesson?.id||row.version!==row.lesson?.version)throw errorWithCode('The lesson service returned an invalid revision.','invalid_server_row');
+   const lesson=checkedLesson(row.lesson);
+   const revision=Number(row.revision_number);
+   if(!Number.isSafeInteger(revision)||revision<1)throw errorWithCode('The lesson service returned an invalid revision number.','invalid_server_row');
+   return {lesson_id:row.lesson_id,version:row.version,lesson,revision_number:revision,published_at:String(row.published_at||'')};
+  }
+  function snapshots(source){
+   const all=source.map(row=>clone(row.lesson));
+   const latest=new Map();
+   for(const row of source){const previous=latest.get(row.lesson_id);if(!previous||row.revision_number>previous.revision_number)latest.set(row.lesson_id,row);}
+   return {lessons:all,latest:[...latest.values()].sort((a,b)=>a.revision_number-b.revision_number).map(row=>clone(row.lesson))};
+  }
+  function getLessons(){return snapshots(rows).lessons;}
+  function getLatestLessons(){return snapshots(rows).latest;}
+  function getLatest(id){
+   if(typeof id!=='string')return null;
+   let match=null;
+   for(const row of rows)if(row.lesson_id===id&&(!match||row.revision_number>match.revision_number))match=row;
+   return match?clone(match.lesson):null;
+  }
+  function announce(source){const detail=snapshots(rows);detail.source=source;emit('together:lessons',detail);return detail.lessons;}
+
+  async function load(source='load'){
+   const generation=++loadGeneration,cloud=getCloud();
+   if(!cloud?.enabled||!cloud.client){rows=[];loaded=true;api.error=null;return announce(source);}
+   try{
+    if(loaded){
+     const {data,error,count}=await cloud.client.from('together_published_lessons').select('revision_number',{count:'exact'}).order('revision_number',{ascending:false}).limit(1);
+     if(error)throw error;
+     if(generation!==loadGeneration)return getLessons();
+     const remoteMax=Array.isArray(data)&&data.length?Number(data[0].revision_number):0;
+     const localMax=rows.reduce((max,row)=>Math.max(max,row.revision_number),0);
+     if(Number(count)===rows.length&&remoteMax===localMax){const recovered=!!api.error;api.error=null;return recovered?announce(source):getLessons();}
+    }
+    const found=[];
+    for(let offset=0;;offset+=PAGE_SIZE){
+     let query=cloud.client.from('together_published_lessons').select('lesson_id,version,lesson,revision_number,published_at').order('revision_number',{ascending:true}).range(offset,offset+PAGE_SIZE-1);
+     const {data,error}=await query;
+     if(error)throw error;
+     if(generation!==loadGeneration)return getLessons();
+     const page=Array.isArray(data)?data:[];
+     found.push(...page.map(normalizedRow));
+     if(page.length<PAGE_SIZE)break;
+    }
+    if(generation!==loadGeneration)return getLessons();
+    rows=found;loaded=true;api.error=null;return announce(source);
+   }catch(error){
+    if(generation===loadGeneration){api.error=error;emit('together:lessons-error',{error,source});}
+    throw error;
+   }
+  }
+
+  async function publish(reviewedLesson,{expectedVersion=null}={}){
+   const lesson=checkedLesson(reviewedLesson);
+   if(expectedVersion!==null&&(typeof expectedVersion!=='string'||!/^[-\w]{1,100}$/.test(expectedVersion)))throw errorWithCode('Invalid expected lesson version.','invalid_expected_version');
+   const cloud=getCloud(),user=cloud?.user;
+   if(!cloud?.enabled||!cloud.client)throw errorWithCode('Lesson publishing is not configured.','publishing_unavailable');
+   if(!user?.id||user.is_anonymous)throw errorWithCode('Sign in with a confirmed operator account before publishing.','named_sign_in_required');
+   if(!getAccess()?.can?.('content'))throw errorWithCode('Admin or editor access is required to publish lessons.','content_access_required');
+   const userId=user.id,cloudRevision=cloud.revision;
+   const sameIdentity=()=>getCloud()?.user?.id===userId&&!getCloud()?.user?.is_anonymous&&getCloud()?.revision===cloudRevision;
+   try{
+    const {data,error}=await cloud.client.rpc('together_publish_lesson',{p_lesson:lesson,p_expected_version:expectedVersion});
+    if(error)throw error;
+    if(!sameIdentity())throw errorWithCode('The signed-in account changed while the lesson was publishing. Reload published lessons before continuing.','identity_changed');
+    const returned=data?.lesson;
+    if(!returned||canonical(checkedLesson(returned))!==canonical(lesson))throw errorWithCode('The lesson service returned different content.','publish_response_mismatch');
+    await load('publish');
+    if(!sameIdentity())throw errorWithCode('The signed-in account changed while the lesson was publishing. Reload published lessons before continuing.','identity_changed');
+    api.error=null;
+    return clone(returned);
+   }catch(error){throw error;}
+  }
+
+  return api;
+ }
+
+ const exported={createPublishing,canonical};
+ if(typeof module!=='undefined'&&module.exports)module.exports=exported;
+ if(global.document){const publishing=createPublishing();global.TogetherPublishing=publishing;publishing.ready=publishing.load().catch(()=>publishing.getLessons());}
+})(typeof globalThis!=='undefined'?globalThis:this);
+</script>
 <script>'use strict';
 const beforeDashboardNav=navEntries;
 navEntries=function(){return [['dashboard','book',E('주별 공과','Weekly lessons')],...beforeDashboardNav()];};
 let dashboardQuery='';
+window.TogetherPublishedContent={lessons:window.TogetherPublishing?.getLessons()||[],latest:window.TogetherPublishing?.getLatestLessons()||[]};
 function dashboardHTML(){
- const list=lessons().filter(l=>Object.values(l.title).join(' ').concat(' ',Object.values(l.date||{}).join(' ')).toLowerCase().includes(dashboardQuery.toLowerCase()));
- const all=lessons(),selected=currentLesson();
- return `<main class="workspace dashboard"><div class="dashboard-hero"><div><div class="eyebrow">COME, FOLLOW ME</div><h1>${E('한 주의 말씀,<br>함께 나누는 생각.','A week of study.<br>A thought to share.')}</h1><p>${E('공과를 고르고, 마음에 남는 말씀을 읽고 기록해 보세요.','Choose a lesson, find a passage that stays with you, and reflect.')}</p><button class="btn primary" data-week="${esc(lessonKey(selected))}">${E('이어서 공부하기','Continue studying')}${icon('arrow')}</button></div><div class="dashboard-quote">${icon('book','large')}<span>${E('배우고 · 기록하고 · 나누다','LEARN · REFLECT · SHARE')}</span><strong>${esc(selected.title[lang()]||selected.title.ko)}</strong><small>${esc(selected.date?.[lang()]||selected.date?.ko||'')}</small></div></div><div class="dashboard-section"><div><div class="eyebrow">YOUR WEEKLY STUDY</div><h2>${E('주별 공과 모아보기','Explore weekly lessons')}</h2><p>${E('등록된 공과를 날짜별 카드에서 열어 보세요.','Open an available lesson from its weekly card.')}</p></div><label class="week-search">${icon('search')}<input id="weekSearch" type="search" value="${esc(dashboardQuery)}" placeholder="${E('제목 또는 날짜 검색','Search by title or date')}" aria-label="${E('주별 공과 검색','Search weekly lessons')}"></label></div><div id="weeklyCards" class="week-grid">${weeklyCardsHTML(list)}</div><div class="dashboard-note">${icon('info','small')}<p>${E(`현재 학습 본문이 등록된 공과는 ${all.length}개입니다. 새로운 공과를 등록하면 카드가 자동으로 추가됩니다.`,`There ${all.length===1?'is':'are'} ${all.length} available lesson${all.length===1?'':'s'}. New lessons appear here when their content is added.`)}</p></div></main>`;
+ const list=latestLessons().filter(l=>Object.values(l.title).join(' ').concat(' ',Object.values(l.date||{}).join(' ')).toLowerCase().includes(dashboardQuery.toLowerCase()));
+ const all=latestLessons(),selected=currentLesson();
+ return `<main class="workspace dashboard"><div class="dashboard-hero"><div><div class="eyebrow">COME, FOLLOW ME</div><h1>${E('한 주의 말씀,<br>함께 나누는 생각.','A week of study.<br>A thought to share.')}</h1><p>${E('공과를 고르고, 마음에 남는 말씀을 읽고 기록해 보세요.','Choose a lesson, find a passage that stays with you, and reflect.')}</p><button class="btn primary" data-week="${esc(lessonKey(selected))}">${E('이어서 공부하기','Continue studying')}${icon('arrow')}</button></div><div class="dashboard-quote">${icon('book','large')}<span>${E('배우고 · 기록하고 · 나누다','LEARN · REFLECT · SHARE')}</span><strong>${esc(selected.title[lang()]||selected.title.ko)}</strong><small>${esc(selected.date?.[lang()]||selected.date?.ko||'')}</small></div></div><div class="dashboard-section"><div><div class="eyebrow">YOUR WEEKLY STUDY</div><h2>${E('주별 공과 모아보기','Explore weekly lessons')}</h2><p>${E('등록된 공과를 날짜별 카드에서 열어 보세요.','Open an available lesson from its weekly card.')}</p></div><label class="week-search">${icon('search')}<input id="weekSearch" type="search" value="${esc(dashboardQuery)}" placeholder="${E('제목 또는 날짜 검색','Search by title or date')}" aria-label="${E('주별 공과 검색','Search weekly lessons')}"></label></div>${window.TogetherPublishing?.error?`<p class="alert" role="status">${E('새 공과를 불러오지 못했습니다. 연결을 확인하고 다시 시도해 주세요.','Could not load published lessons. Check your connection and try again.')} <button class="text-btn" data-published-retry>${E('다시 불러오기','Retry')}</button></p>`:''}<div id="weeklyCards" class="week-grid">${weeklyCardsHTML(list)}</div><div class="dashboard-note">${icon('info','small')}<p>${E(`현재 학습 본문이 등록된 공과는 ${all.length}개입니다. 새로운 공과를 등록하면 카드가 자동으로 추가됩니다.`,`There ${all.length===1?'is':'are'} ${all.length} available lesson${all.length===1?'':'s'}. New lessons appear here when their content is added.`)}</p></div></main>`;
 }
 function weeklyCardsHTML(list){return list.map((l,i)=>{
  const key=lessonKey(l),week=l.id.match(/(?:cfm-)?(20\d{2})-(\d{1,2})$/),count=state.notes.filter(n=>n.scope==='class'&&n.anchor.lessonKey===key&&(!cloud.enabled||n.remote)).length;
  return `<button class="week-card" data-week="${esc(key)}"><div class="week-card-cover tone-${i%3}"><span>${week?'WEEK '+week[2].padStart(2,'0'):E('공과','LESSON')}</span>${icon('book','large')}<small>${week?week[1]:'COME, FOLLOW ME'}</small></div><div class="week-card-content"><div class="week-card-date">${esc(l.date?.[lang()]||l.date?.ko||E('추가한 공과','Added lesson'))}</div><h3>${esc(l.title[lang()]||l.title.ko)}</h3><p>${l===BASE?E('잠언 · 전도서','Proverbs · Ecclesiastes'):E('읽기 자료와 연결된 인사이트','Reading and linked reflections')}</p><div class="week-card-footer"><span>${icon('chat','small')}${count} ${E('개의 나눔','reflections')}</span><strong>${E('공부하기','Open lesson')}${icon('arrow','small')}</strong></div></div></button>`;
  }).join('')+(window.TogetherAccess?.can('content')?`<button class="week-card add-week" data-nav="import">${icon('plus','large')}<strong>${E('새 공과 준비','Prepare a lesson')}</strong><span>${E('다음 주의 공부를 준비해 보세요.','Prepare another week of study.')}</span></button>`:'');}
 document.addEventListener('click',event=>{const el=event.target.closest('[data-week]');if(!el)return;const lesson=lessons().find(l=>lessonKey(l)===el.dataset.week);if(!lesson)return;state.activeLesson=lessonKey(lesson);state.filters={query:'',type:'all',lang:'all',section:'all'};currentSection='intro';navigate('read');});
-document.addEventListener('input',event=>{if(event.target.id!=='weekSearch')return;dashboardQuery=event.target.value;$('#weeklyCards').innerHTML=weeklyCardsHTML(lessons().filter(l=>Object.values(l.title).join(' ').concat(' ',Object.values(l.date||{}).join(' ')).toLowerCase().includes(dashboardQuery.toLowerCase())));});
+document.addEventListener('input',event=>{if(event.target.id!=='weekSearch')return;dashboardQuery=event.target.value;$('#weeklyCards').innerHTML=weeklyCardsHTML(latestLessons().filter(l=>Object.values(l.title).join(' ').concat(' ',Object.values(l.date||{}).join(' ')).toLowerCase().includes(dashboardQuery.toLowerCase())));});
 // The dashboard is the landing page on every visit. Choosing a card opens the reader.
 state.view='dashboard';render();
+
+// Public lesson updates refresh cards while preserving the currently open revision.
+document.addEventListener('together:lessons',event=>{window.TogetherPublishedContent=event.detail;if(state.view==='dashboard')refreshPreservingScroll();});
+document.addEventListener('together:lessons-error',()=>{if(state.view==='dashboard')refreshPreservingScroll();});
+let lessonRefreshRunning=false;
+async function refreshPublishedLessons(){if(lessonRefreshRunning||document.hidden||!window.TogetherPublishing||document.activeElement?.matches('input,textarea')||$('#modal')?.open)return;lessonRefreshRunning=true;try{await TogetherPublishing.load();}catch{}finally{lessonRefreshRunning=false;}}
+setInterval(()=>void refreshPublishedLessons(),60000);
+window.addEventListener('focus',()=>void refreshPublishedLessons());
+window.addEventListener('online',()=>void refreshPublishedLessons());
+document.addEventListener('click',event=>{if(event.target.closest('[data-published-retry]'))void refreshPublishedLessons();});
 </script>
 <script>/* Calendar rules shared by the browser and focused date/filter tests. */
 (function(root){
@@ -1674,6 +1890,97 @@ state.view='dashboard';render();
   try{return `local@${env.location?.origin||'unknown'}`;}catch{return 'local@unknown';}
  }
 });
+</script>
+<script>/* Staff lesson authoring: source -> extracted details -> reviewed public revision. */
+'use strict';
+(function(){
+ const fields={importKO:'ko',importEN:'en',importTitleKO:'titleKO',importTitleEN:'titleEN',importDate:'date',importURL:'url'};
+ let draft=null,actor=null,parsed=null,reviewed=null,busy=false,error='',notice='',fileRead=0;
+ const userId=()=>window.TogetherCloud?.user?.id||null;
+ const allowed=()=>window.TogetherAccess?.can('content')===true;
+ const fresh=()=>({ko:'',en:'',titleKO:'',titleEN:'',date:'',url:'',id:null,editing:false,expectedVersion:null,analyzed:'',alignment:false,rights:false});
+ const contentKey=d=>JSON.stringify([d.ko,d.en]);
+ const reviewKey=d=>JSON.stringify([d.ko,d.en,d.titleKO,d.titleEN,d.date,d.url,d.id,d.expectedVersion]);
+ function session(){
+  if(!draft||actor!==userId()){
+   actor=userId();draft=fresh();parsed=null;reviewed=null;error='';notice='';
+   if(actor)try{const saved=JSON.parse(window.TogetherDrafts?.read('lesson-import','editor')?.body||'null');if(saved&&typeof saved==='object'){
+    for(const key of ['ko','en','titleKO','titleEN','date','url'])if(typeof saved[key]==='string')draft[key]=saved[key].slice(0,key==='ko'||key==='en'?400000:key==='url'?4096:160);
+    if(typeof saved.id==='string'&&/^[-\w]{1,100}$/.test(saved.id))draft.id=saved.id;
+    if(typeof saved.expectedVersion==='string'&&/^[-\w]{1,100}$/.test(saved.expectedVersion))draft.expectedVersion=saved.expectedVersion;
+    draft.editing=saved.editing===true;
+    if(saved.analyzed===contentKey(draft))draft.analyzed=saved.analyzed;
+    notice=E('작성 중이던 공과를 복원했습니다. 게시 전 미리보기를 다시 확인하세요.','Your unfinished lesson was restored. Preview it again before publishing.');
+   }}catch{}
+  }
+  return draft;
+ }
+ function persist(){if(actor&&draft)window.TogetherDrafts?.save('lesson-import','editor',{body:JSON.stringify({...draft,alignment:false,rights:false})});}
+ function field(id,label,type='text',max=160){return `<label class="field"><span>${label}</span><input id="${id}" type="${type}" maxlength="${max}" value="${esc(draft[fields[id]])}" placeholder="${E('본문 분석 후 확인하거나 직접 입력','Review extracted details or enter manually')}"></label>`;}
+ function html(){
+  if(!allowed())return '';const d=session();const available=latestLessons();
+  return `<main class="workspace import-workspace"><div class="stream-wrap">${pageIntro(E('본문을 넣고, 공과를 게시하세요.','Add the text. Publish a lesson.'),E('본문 분석 → 기본 정보 확인 → 미리보기와 게시','Analyze text → review details → preview and publish'))}
+  <fieldset class="import-form" ${busy?'disabled':''}>
+  <div class="panel import-existing"><label class="field"><span>${E('기존 공과 수정','Edit an existing lesson')}</span><select id="importLessonPicker"><option value="">${E('수정할 공과 선택','Choose a lesson to edit')}</option>${available.map(l=>`<option value="${esc(lessonKey(l))}">${esc(l.title[lang()]||l.title.ko)} · ${esc(l.date[lang()]||l.date.ko)}</option>`).join('')}</select></label><button class="btn" data-import="load">${E('선택한 공과 불러오기','Load selected lesson')}</button><button class="text-btn" data-import="new">${E('새 공과 작성','Start a new lesson')}</button></div>
+  <section class="panel" id="importSourceSection"><h2>${E('1. 원문 넣고 분석하기','1. Add and analyze the text')}</h2><p class="help">${E('Markdown을 붙여 넣거나 파일을 선택하세요. 제목·기간·원문 주소를 찾아 기본 정보를 채웁니다.','Paste Markdown or choose a file. We look for its title, dates and source URL to fill the lesson details.')}</p>
+  <div class="fields-two"><div><label class="field"><span>한국어 · Markdown</span><textarea id="importKO" class="code-area" maxlength="400000" aria-label="한국어 Markdown" placeholder="${E('한국어 공과 본문을 붙여 넣으세요.','Paste the Korean lesson text.')}">${esc(d.ko)}</textarea></label><label class="field"><span>${E('한국어 파일 선택','Korean Markdown file')}</span><input type="file" id="fileKO" accept=".md,.txt,text/plain,text/markdown"></label></div><div><label class="field"><span>${E('English · Markdown (선택)','English · Markdown (optional)')}</span><textarea id="importEN" class="code-area" maxlength="400000" aria-label="English Markdown" placeholder="${E('영어 원문이 없으면 비워 두세요.','Leave blank if English is unavailable.')}">${esc(d.en)}</textarea></label><label class="field"><span>${E('영어 파일 선택','English Markdown file')}</span><input type="file" id="fileEN" accept=".md,.txt,text/plain,text/markdown"></label></div></div>
+  <button class="btn primary" data-import="analyze">${icon('spark')}${E('본문 분석 · 기본 정보 채우기','Analyze text and fill details')}</button></section>
+  <section class="panel" id="importDetailsSection"><h2>${E('2. 공과 기본 정보 확인','2. Review lesson details')}</h2><p class="help">${E('찾지 못한 항목은 비워 둡니다. 자동 입력된 값도 자유롭게 수정할 수 있습니다.','Missing details stay blank. You can edit every extracted value.')}</p><p id="importNotice" class="import-status" role="status">${esc(notice||E('1번에서 본문을 분석해 주세요.','Analyze the text in step 1.'))}</p>
+  <div class="fields-two">${field('importTitleKO',E('한국어 제목','Korean title'))}${field('importTitleEN',E('영어 제목 (선택)','English title (optional)'))}</div><div class="fields-two">${field('importDate',E('공과 기간','Lesson date'), 'text',100)}${field('importURL',E('공과 원문 URL','Lesson source URL'),'url',4096)}</div><p class="help">${E('원문 주소가 본문에 없다면 직접 입력하세요. 참조 성구나 이미지 주소는 공과 원문 주소로 사용하지 않습니다.','Enter the lesson URL if it is absent from the text. Scripture and image references are not treated as the lesson URL.')}</p></section>
+  <section class="panel" id="importReviewSection"><h2>${E('3. 미리 보고 게시','3. Preview and publish')}</h2><button class="btn" data-import="review">${icon('eye')}${E('게시 전 미리보기','Preview before publishing')}</button><div id="importPreview">${reviewed?previewHTML(reviewed.lesson):''}</div>
+  <label class="checkline"><input id="importAlignment" type="checkbox" ${d.alignment?'checked':''}><span>${E('공과 기본 정보와 본문을 확인했습니다. 두 언어를 넣었다면 문단별 내용과 순서도 확인했습니다.','I reviewed the details and text, including paragraph order and meaning when both languages are present.')}</span></label><label class="checkline"><input id="importRights" type="checkbox" ${d.rights?'checked':''}><span>${E('이 자료를 사이트 방문자에게 공개할 수 있는지 확인했습니다.','I have confirmed this material can be shared with site visitors.')}</span></label>
+  <p class="help">${E('게시하면 모든 방문자의 주별 공과에 표시됩니다. 수정본을 게시해도 이전 공과 버전과 그 기록은 보존됩니다.','Publishing adds the lesson to everyone’s weekly dashboard. Earlier revisions and their reflections remain available.')}</p><div id="importError" class="alert error" role="alert" ${error?'':'hidden'}>${esc(error)}</div><button class="btn primary" data-import="publish" ${busy||!reviewed?'disabled':''}>${icon('upload')}${busy?E('게시 중…','Publishing…'):d.expectedVersion?E('수정 내용 게시','Publish changes'):E('공과 게시','Publish lesson')}</button><p class="help" id="importDraftStatus" role="status">${E('작성 중인 내용은 이 기기에 임시 저장됩니다. 게시 전에는 공개되지 않습니다.','Unfinished work is saved on this device. It remains private until you publish.')}</p></section></fieldset></div></main>`;
+ }
+ function invalidate(){reviewed=null;draft.alignment=false;draft.rights=false;error='';for(const id of ['importAlignment','importRights'])if($('#'+id))$('#'+id).checked=false;if($('#importPreview'))$('#importPreview').innerHTML='';if($('[data-import="publish"]'))$('[data-import="publish"]').disabled=true;if($('#importError'))$('#importError').hidden=true;}
+ function paint(){if(state.view==='import')refreshPreservingScroll();}
+ function fail(message){error=message;const target=$('#importError');if(target){target.textContent=message;target.hidden=false;target.scrollIntoView({block:'nearest'});}else toast(message,true);}
+ function getBlocks(){const d=session();if(!d.ko.trim())throw Error(E('한국어 원문을 입력해 주세요.','Enter the Korean text.'));const ko=parseImportBlocks(d.ko),en=d.en.trim()?parseImportBlocks(d.en):{blocks:[],sections:[]};if(!ko.blocks.length)throw Error(E('읽을 수 있는 문단이 없습니다.','No readable paragraphs found.'));return {ko,en};}
+ function analyze(){if(!allowed()||busy)return;const d=session();try{
+  parsed=getBlocks();const key=contentKey(d),same=d.analyzed===key;let warnings=[];
+  if(!same){const m=window.TogetherImportModel.extractMetadata({ko:d.ko,en:d.en});warnings=m.warnings||[];Object.assign(d,{titleKO:m.title.ko,titleEN:m.title.en,date:m.date,url:m.sourceUrl});d.analyzed=key;}
+  const missing=[[d.titleKO,E('한국어 제목','Korean title')],[d.date,E('기간','dates')],[d.url,E('원문 URL','source URL')]].filter(([v])=>!v).map(([,label])=>label);
+  notice=missing.length?E(`본문을 분석했습니다. ${missing.join(' · ')}은 직접 입력해 주세요.`,`Text analyzed. Please enter: ${missing.join(', ')}.`):E('기본 정보를 채웠습니다. 게시 전에 내용을 확인해 주세요.','Details are filled in. Review them before publishing.');
+  if(warnings.some(w=>['invalid-date','ambiguous-date'].includes(w)))notice+=' '+E('날짜가 올바른지 확인해 주세요.','Please verify the dates.');
+  invalidate();persist();paint();$('#importDetailsSection')?.scrollIntoView({block:'start',behavior:'smooth'});
+ }catch(e){fail(e.message);}}
+ function canonical(value){try{const u=new URL(value);if(u.protocol!=='https:'||u.username||u.password)return '';return u.origin+u.pathname.replace(/\/$/,'');}catch{return '';}}
+ async function digest(value){return [...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(value)))].map(x=>x.toString(16).padStart(2,'0')).join('');}
+ async function review(){if(!allowed()||busy)return;const d=session(),who=actor;try{
+  if(d.analyzed!==contentKey(d))throw Error(E('본문이 바뀌었습니다. 1번의 본문 분석을 먼저 눌러 주세요.','Analyze the current text in step 1 first.'));
+  const blocks=getBlocks(),before=reviewKey(d);parsed=blocks;if(blocks.en.blocks.length&&blocks.en.blocks.length!==blocks.ko.blocks.length)throw Error(E('두 언어의 문단 수가 다릅니다. 순서를 맞추거나 영어를 비워 주세요.','Paragraph counts differ. Align the two texts or leave English blank.'));
+  if(!d.titleKO.trim()||!d.date.trim()||!canonical(d.url))throw Error(E('한국어 제목·기간·올바른 HTTPS 공과 원문 URL을 입력해 주세요.','Enter a Korean title, dates and a valid HTTPS lesson URL.'));
+  await window.TogetherPublishing.ready;
+  if(userId()!==who||draft!==d||before!==reviewKey(d))return;
+  if(!d.id){const match=latestLessons().find(l=>canonical(l.sourceUrl.ko)===canonical(d.url));d.id=match?.id||'import-'+(await digest(canonical(d.url))).slice(0,24);d.expectedVersion=window.TogetherPublishing.getLatest(d.id)?.version||null;}
+  const key=reviewKey(d),version=await digest(JSON.stringify([d.id,d.expectedVersion,d.ko,d.en,d.titleKO.trim(),d.titleEN.trim(),d.date.trim(),d.url.trim()]));
+  if(userId()!==who||draft!==d||key!==reviewKey(d))return;
+  const sourceKO=new URL(d.url),sourceEN=new URL(d.url);sourceKO.searchParams.set('lang','kor');sourceEN.searchParams.set('lang','eng');
+  const sections=blocks.ko.sections.map(s=>({...s}));for(const s of sections){const i=blocks.ko.blocks.findIndex(b=>b.sectionId===s.id&&/^#{2,3}\s/.test(b.raw));if(i>=0&&blocks.en.blocks[i])s.en=plain(blocks.en.blocks[i].raw);}
+  const lesson=ReferenceEngine.validateLesson({id:d.id,version,title:{ko:d.titleKO.trim(),en:d.en.trim()?d.titleEN.trim():''},date:{ko:d.date.trim(),en:d.date.trim()},sourceUrl:{ko:sourceKO.href,en:d.en.trim()?sourceEN.href:''},sourceLabel:'Published Markdown',translationStatus:'user-provided-unverified',alignment:d.en.trim()?'user-confirmed-block-pairing':'korean-only',raw:{ko:d.ko,en:d.en},sections,blocks:blocks.ko.blocks.map((b,i)=>({id:b.id,conceptId:`${d.id}-${version}-${i}`,sectionId:b.sectionId,kind:b.kind,ko:b.raw,en:blocks.en.blocks[i]?.raw||''}))});
+  reviewed={key,lesson};error='';persist();paint();$('#importPreview')?.scrollIntoView({block:'start',behavior:'smooth'});
+ }catch(e){fail(e.message);}}
+ function previewHTML(l){return `<article class="import-reading-preview"><div class="eyebrow">${E('방문자에게 표시될 내용','VISITOR PREVIEW')}</div><h2>${esc(l.title.ko)}</h2><p>${esc(l.date.ko)}</p><a href="${esc(l.sourceUrl.ko)}" target="_blank" rel="noopener noreferrer">${E('공과 원문 열기','Open original lesson')}${icon('external','small')}</a><p class="help">${l.blocks.length} ${E('문단 · 아래에서 전체 내용을 확인하세요.','paragraphs · review the complete text below.')}</p><div class="import-paragraphs">${l.blocks.map((b,i)=>`<section class="import-pair"><small>${i+1}</small><div>${markdown(b.ko)}</div>${l.raw.en?`<div lang="en">${markdown(b.en)}</div>`:''}</section>`).join('')}</div></article>`;}
+ async function publish(){if(!allowed()||busy)return;const d=session(),who=actor,packet=reviewed;
+  if(!packet||packet.key!==reviewKey(d)){fail(E('현재 내용으로 미리보기를 다시 확인해 주세요.','Preview the current content before publishing.'));return;}
+  if(!d.alignment||!d.rights){fail(E('본문 검토와 공개 확인을 모두 선택해 주세요.','Confirm both the content review and permission to publish.'));return;}
+  busy=true;error='';paint();try{
+   const lesson=await window.TogetherPublishing.publish(packet.lesson,{expectedVersion:d.expectedVersion});
+   if(userId()!==who||draft!==d)return;
+   window.TogetherDrafts?.clear('lesson-import','editor');draft=fresh();parsed=null;reviewed=null;notice='';state.activeLesson=lessonKey(lesson);currentSection='intro';saveState();navigate('dashboard');toast(E('공과를 게시했습니다. 모든 방문자가 볼 수 있습니다.','Lesson published. It is visible to every visitor.'));
+  }catch(e){if(userId()===who&&draft===d){error=['40001','PT409'].includes(e.code)||/conflict|changed|stale/i.test(e.message||'')?E('다른 담당자가 이 공과를 수정했습니다. 입력 내용은 유지했습니다. 최신 공과를 불러와 변경 사항을 확인해 주세요.','Another editor updated this lesson. Your work is kept. Load the latest lesson and review the changes.'):e.code==='invalid_lesson_size'?E('공과 분량이 게시 한도(2.5 MB)를 넘습니다. 본문을 나누거나 불필요한 내용을 줄여 주세요.','This lesson exceeds the 2.5 MB publishing limit. Split the material or remove unnecessary text.'):e.code==='42501'?E('게시 권한을 확인해 주세요. 관리자 또는 콘텐츠 담당자만 게시할 수 있습니다.','Only an administrator or content editor can publish.'):E('게시 결과를 확인하지 못했습니다. 입력 내용은 유지했습니다. 연결을 확인한 뒤 다시 게시해 주세요.','Publication could not be confirmed. Your work is kept. Check your connection and try publishing again.');}}
+  finally{busy=false;paint();}
+ }
+ function loadSelected(){if(busy||!allowed())return;const selected=$('#importLessonPicker')?.value,l=lessons().find(x=>lessonKey(x)===selected);if(!l)return;draft={...fresh(),ko:l.raw.ko,en:l.raw.en,titleKO:l.title.ko,titleEN:l.title.en,date:l.date.ko,url:l.sourceUrl.ko,id:l.id,editing:true,expectedVersion:window.TogetherPublishing?.getLatest(l.id)?.version||null};draft.analyzed=contentKey(draft);parsed=null;reviewed=null;error='';notice=E('공과를 불러왔습니다. 수정한 뒤 미리보기를 확인하고 게시하세요.','Lesson loaded. Edit, preview and publish your changes.');persist();paint();}
+ function bind(){
+  for(const [id,key]of [['fileKO','ko'],['fileEN','en']])$('#'+id)?.addEventListener('change',async e=>{const f=e.target.files[0],d=session(),who=actor,token=++fileRead;if(!f)return;if(f.size>400000){fail(E('400 KB 이하의 Markdown 또는 텍스트 파일을 선택해 주세요.','Choose a Markdown or text file under 400 KB.'));return;}try{const text=await f.text();if(d!==draft||who!==userId()||token!==fileRead)return;d[key]=text;if(!d.editing){d.id=null;d.expectedVersion=null;}invalidate();persist();paint();}catch{fail(E('파일을 읽지 못했습니다.','Could not read the file.'));}});
+ }
+ document.addEventListener('input',event=>{const key=fields[event.target.id];if(!key||state.view!=='import'||busy)return;const d=session();d[key]=event.target.value;if(!d.editing&&['ko','en','url'].includes(key)){d.id=null;d.expectedVersion=null;}if(key==='ko'||key==='en')fileRead++;invalidate();persist();});
+ document.addEventListener('change',event=>{if(event.target.id==='importAlignment'||event.target.id==='importRights'){session()[event.target.id==='importAlignment'?'alignment':'rights']=event.target.checked;}});
+ document.addEventListener('click',event=>{const action=event.target.closest('[data-import]')?.dataset.import;if(!action)return;if(action==='analyze')analyze();if(action==='review')void review();if(action==='publish')void publish();if(action==='load')loadSelected();if(action==='new'&&!busy&&allowed()){window.TogetherDrafts?.clear('lesson-import','editor');draft=fresh();parsed=null;reviewed=null;notice='';error='';paint();}});
+ document.addEventListener('together:draft-status',event=>{if(event.detail.kind!=='lesson-import')return;const node=$('#importDraftStatus');if(node)node.textContent=event.detail.status==='error'?E('이 기기에 임시 저장하지 못했습니다. 입력 내용은 화면에 남아 있습니다.','Could not save the draft on this device. Your text is still on screen.'):event.detail.status==='saved'?E('이 기기에 임시 저장됨 · 게시 전에는 공개되지 않습니다.','Draft saved on this device · private until published.'):E('입력 중…','Typing…');});
+ window.TogetherImporter={html,analyze,review,publish,bind,getDraft:()=>({...session()})};
+ importHTML=html;bindFileInputs=bind;previewImport=review;applyImport=publish;
+})();
 </script>
 <script>/* Public study questions.  Reading and replies are public; only staff can author prompts. */
 'use strict';
