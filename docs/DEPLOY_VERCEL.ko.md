@@ -1,28 +1,25 @@
-# GitHub → Vercel 배포
+# GitHub · Vercel · Supabase 배포
 
-ZIP 압축 해제 후 최상위 내용물을 저장소에 올리세요. ZIP 자체를 업로드하는 방식이 아닙니다.
+저장소는 `RogertheKorean/comefollowme`, Vercel 프로젝트는 `comefollowme`입니다. 서비스 주소는 https://comefollowme.vercel.app 입니다.
 
-```text
-저장소 최상위
-├── package.json
-├── package-lock.json
-├── vercel.json
-├── src/
-├── content/
-├── scripts/
-└── public/
-```
+## 빌드
 
-Vercel에서 GitHub 저장소를 Import하고 Framework Preset **Other**, Root Directory **`.`**, Build Command **`npm run build`**, Output Directory **`public`**로 확인한 뒤 배포합니다. `vercel.json`에 빌드·출력 설정이 들어 있습니다. 환경변수나 데이터베이스 키가 필요하지 않습니다.
+Vercel Framework **Other**, Root Directory **`.`**, Build Command **`npm run build`**, Output Directory **`public`**, Install Command **빈 문자열**로 설정합니다. `vercel.json`에도 같은 설정이 있습니다.
 
-`src/` 또는 `content/`를 수정한 후 커밋하면 빌드 결과가 다시 생성됩니다. `public/index.html`만 수정하면 다음 빌드에 덮어써집니다.
+Production, Preview, Development 환경에 `SUPABASE_URL`과 `SUPABASE_PUBLISHABLE_KEY`를 등록합니다. publishable 키는 브라우저에서 사용하도록 만들어진 공개 키입니다. secret/service_role 키와 SMTP 앱 비밀번호를 Vercel 프런트엔드 환경변수로 등록하지 않습니다.
 
-관리 화면에서 붙여 넣은 참조 본문을 함께 배포하려면 **콘텐츠 팩 내보내기** 결과로 `content/deployment-content.json`을 교체합니다. 브라우저에 등록만 한 자료는 다른 기기에 자동 전달되지 않습니다. 이 파일에는 인사이트·개인 기록을 넣지 마세요.
+`src/` 또는 `content/`를 수정하고 빌드합니다. Git 연결이 설정되면 push 후 Vercel이 배포합니다. 연결되지 않은 계정에서는 인증된 Vercel CLI로 `vercel --prod`를 실행할 수 있습니다. `.vercel`, `.env*`, 개인 기록 내보내기 파일은 커밋하지 않습니다.
 
-## 배포 후 확인
+## 서버 설정
 
-첫 화면 → 연차대회 패널 체험 → 문단 선택 → 인사이트 첨부 → 생각 작성 → 우리 반에 나누기 → 새로고침 후 기록 확인 순서로 점검합니다. 다른 브라우저에서는 그 기록이 보이지 않는 것이 현재 데모의 정상 동작입니다.
+Supabase 프로젝트에 `supabase/migrations/`를 순서대로 적용합니다. 인증 설정의 서비스 URL과 Redirect URLs가 실제 도메인을 가리키는지 확인합니다. 이메일 로그인·가입 확인·비회원 인증이 사용됩니다.
 
-비공개 GitHub 저장소 여부와 배포 사이트 공개 여부는 별개입니다. 검색 제외 설정은 접근 제어가 아닙니다. 실제 개인 정보는 기록하지 말고 시연용 정보만 사용하세요. 동일 주소에 로컬로 등록한 본문이 있으면 그 브라우저에서는 로컬 자료가 우선할 수 있습니다. 기본 배포 자료로 돌아가려면 시연 초기화 후 확인합니다.
+`supabase/config.toml`의 Gmail SMTP 비밀번호는 `env(SMTP_PASSWORD)`에서 읽습니다. 설정을 다시 push할 때 비밀번호 환경변수가 필요합니다. `.env.smtp.local`은 로컬 입력용 파일이며 빌드에 읽히지 않습니다.
 
-실제 계정에 대한 배포는 이 전달물 제작 과정에서 수행하지 않았습니다. 상세 검증 범위는 TESTING.md를 참고하세요.
+## 확인
+
+주별 카드 → 공과 → 참조자료와 공식 원문 → 회원/비회원 참여 → 인사이트 저장 → 다른 브라우저의 공유 글 확인 → 댓글 → 새로고침 후 유지 순서로 점검합니다. 비공개 글은 다른 계정과 로그아웃한 방문자에게 보이지 않아야 합니다.
+
+모바일의 입력창과 원문 패널, 비밀번호 재설정 링크도 확인합니다. 테스트 범위와 실기기 검증 여부는 `TESTING.md`에 기록합니다.
+
+읽기 자료 등록은 브라우저 로컬 작업입니다. 공통 배포 자료를 바꾸려면 콘텐츠 팩으로 `content/deployment-content.json`을 교체한 뒤 재배포합니다. 개인 인사이트 내보내기는 콘텐츠 팩과 다릅니다.

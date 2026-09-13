@@ -1,24 +1,34 @@
-# Verification for this delivery
+# Together Insights verification
 
-## Passed
+## Current release checks
 
-- Production static build with Node and no external dependencies.
-- **36 Node unit/integration tests**: URL normalization, numeric/discontinuous and opaque selectors, chapter ranges, safe protocols, Markdown extraction, missing locations, content revisions, document/lesson validation, content-pack build inclusion, failure on malformed deployment data, identical root/public output.
-- **46 Chromium DOM workflow checks**: conference reading, language separation, selections, highlight, capture, empty-input validation, posting, replies, exact return to source, nested back navigation, full-text registration, version pinning, missing language display, library audit, private-data-free content pack, HTML sanitization, consent/presentation, storage serialization, mobile layout and Escape behavior.
-- **17 additional Chromium regression checks**: every source link renders a pane without exceptions, original lesson selection/private notes, chapter navigation, manual p19, importing a new lesson with automatic reference discovery, atomic pack validation, and injected storage failure recovery.
-- No runtime page errors, external popups or external content fetches observed in the workflow run.
-- Captures in this Chromium run were actual local DOM reading-area PNGs (`dom-reference-viewport`), not fallback quote cards.
-- The included local HTTP server returned 200 and bytes identical to `public/index.html`.
+- Node build and unit/integration suite: **42 passed**. Includes reference parsing,
+  anchor validation, cloud ownership mapping, stale remote cache removal, snapshot
+  restrictions, deployment content inclusion, and rejection of privileged browser keys.
+- Live Supabase + Chromium suite: **14 passed**. Creates disposable identities and
+  deletes them in `finally`; the successful run removed all four identities and
+  their dependent test records.
+- Gmail SMTP: successful TLS connection and authentication with the supplied app
+  password; SMTP configuration successfully applied to the Supabase project.
 
-Machine-readable records are in `evidence/verification-summary.json`, `browser-report.json` and `regression-report.json`. Node output is included as `node-test-results.txt`. Screenshots use clean demo content; test-only registered replacement paragraphs are not bundled into the application.
+Live checks cover two email/password identities; public/private RLS; forged-owner,
+signed-out and other-user write denial; comments/reactions and reaction uniqueness;
+guest participation through both API and visible UI; dashboard and removal of demo
+banners; explicit original-source links; a real captured source-anchor reflection;
+cross-browser comments after reload; failed reply retry with stable identity;
+same-browser sign-out/account switch privacy; password recovery in a fresh browser,
+new password acceptance and old password rejection. No runtime page errors occurred.
 
-## Important test boundary
+The recovery test uses an administrator-generated link without sending mail to a
+real recipient. Gmail authentication and remote configuration are established;
+inbox delivery and spam placement were not tested by that run.
 
-This execution environment's browser policy blocks HTTP/file navigation, including the local server. Browser UI tests therefore used Playwright `set_content` to run the actual built HTML and a **localStorage test double**. Serialization was carried into a fresh browser document to check the app's storage round trip. Storage-full behavior was tested by injected failure.
+Machine-readable current results: `evidence/cloud-verification.json`. Earlier
+`browser-report.json`, `regression-report.json`, and screenshots numbered 01-06
+describe the original v3 local demo; they are historical evidence, not current
+cloud/mobile release claims.
 
-These results do **not** establish native localStorage persistence/quota behavior, actual Vercel deployment success, Safari/Firefox compatibility, or real iOS/Android touch behavior. Mobile checks used Chromium with a 390 × 844 viewport. The local server was independently checked through HTTP, not through an allowed browser navigation. There is no backend or live multi-member sharing to test.
-
-## Reproduce
+## Reproduction
 
 ```sh
 npm run build
@@ -26,17 +36,26 @@ npm test
 npm start
 ```
 
-In another terminal, with Python Playwright and a Chromium browser installed:
+The live browser test is `tests/cloud-live.cjs`. It requires the Supabase JS SDK
+and Playwright as test tools, a Chromium browser, public project configuration in
+`.env.local`, and `SUPABASE_SECRET_KEY` available only to the test process. Do not
+put that privileged key into source, Vercel frontend variables, or browser code.
+The test creates and removes disposable users and posts against the configured
+project; execute it only against an authorized project.
 
-```sh
-python tests/browser_smoke.py --url http://127.0.0.1:4173
-```
+Optional environment variables `SUPABASE_MODULE`, `PLAYWRIGHT_MODULE`, and
+`CHROMIUM_EXECUTABLE` can select already installed test tools. `TEST_SITE_URL`
+defaults to `http://127.0.0.1:4173` and may target the deployed app for release checks.
 
-`CHROMIUM_EXECUTABLE` may point to a local browser executable. The standard URL mode tests real origin storage. The restricted-environment checks can be reproduced with:
+## Mobile verification boundary
 
-```sh
-python tests/browser_smoke.py --isolated
-python tests/regression_checks.py
-```
+Chromium and WebKit UI checks passed at 320/360/390/430 x 844 and 844 x 390.
+They cover touch targets, dashboard, reading, source drawer, paragraph selection,
+composer, keyboard viewport simulation, and email/guest forms. An isolated WebKit
+cloud probe established successful TLS, OPTIONS and REST HTTP 200, permitted
+origins/headers, and a connected ready app. Earlier generic access-control messages
+during rapid navigation were reproduced as cancelled in-flight requests.
 
-Playwright is only a test dependency. It is not required to build, host or use this prototype. The repository does not automatically run browser tests on Vercel.
+Phone viewport, touch, keyboard layout, and browser engine results are recorded
+separately in the mobile evidence. Browser emulation does not establish behavior
+on every physical Android/iPhone, in-app browser, or vehicle Bluetooth system.

@@ -37,7 +37,7 @@ function addReaderLaunch(){
  const host=$('.flow-strip');if(!host||$('.v3-launch'))return;
  host.insertAdjacentHTML('afterend',`<section class="v3-launch"><div><span class="eyebrow">LINKED READING · v3</span><strong>${E('연차대회 말씀도, 읽던 자리에서.','Conference messages, without losing your place.')}</strong><p>${E('옆에서 읽고 · 문장을 표시하고 · 생각을 나누세요.','Read beside the lesson. Highlight a thought. Share an insight.')}</p></div><div class="buttons"><button class="btn primary" data-v3="demo-talk">${icon('split')}${E('연차대회 패널 체험','Try a conference reference')}</button><button class="btn" data-v3="library">${icon('link')}${E('연결 상태 보기','Review linked content')}</button></div></section>`);
 }
-render=function(){renderBeforeLibrary();if(state.view==='read')addReaderLaunch();internalizeLinks();if(state.view==='library')$('#floatingHint').hidden=true;};
+render=function(){renderBeforeLibrary();internalizeLinks();if(state.view==='library')$('#floatingHint').hidden=true;};
 previewImport=function(){previewBeforeAudit();if(!importPreview)return;const items=auditLinks($('#importKO').value+'\n\n'+$('#importEN').value,$('#importURL').value);$('#importPreview').insertAdjacentHTML('afterbegin',`<section class="import-audit"><h3>${E('자동으로 찾은 참조자료','Automatically discovered references')} <span class="pill">${items.length}</span></h3><p>${E('공과를 적용하기 전 본문·언어·정확한 위치의 준비 상태를 확인하세요.','Check text, language and exact positions before applying the lesson.')}</p>${auditTable(items,{compact:true})}</section>`);internalizeLinks($('#importPreview'));};
 function parseReferenceText(text,format='markdown'){
  if(typeof text!=='string'||text.length>600000)throw Error(E('600,000자 이하의 본문을 넣어 주세요.','Limit the input to 600,000 characters.'));

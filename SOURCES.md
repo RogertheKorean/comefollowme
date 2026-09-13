@@ -36,3 +36,7 @@ Link identity parsing is used by this independent app; it does not imply Gospel 
 ## Prototype artifacts
 
 All sample members, comments and experiences are fictional UI demonstration content. New test-only registration text is generated in temporary test pages and is not in the release content bundle.
+
+## Browser SDK
+
+Supabase JavaScript SDK 2.112.4 is vendored in `src/vendor/` under the MIT license. The license is in `licenses/SUPABASE_JS_LICENSE.txt`. Authentication, email delivery and database access use the configured Supabase project. Privileged keys and SMTP credentials are not part of the browser bundle.

@@ -7,3 +7,8 @@ __pycache__/
 *.pyc
 *.log
 Together_My_Journal*.json
+supabase/.temp/
+supabase/.branches/
+.browser-cache/
+.vercel
+.env*

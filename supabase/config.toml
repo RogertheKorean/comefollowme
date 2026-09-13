@@ -1,0 +1,32 @@
+project_id = "comefollowme"
+
+[auth]
+enabled = true
+site_url = "https://comefollowme.vercel.app"
+additional_redirect_urls = ["https://comefollowme.vercel.app/", "https://comefollowme.vercel.app/?auth=reset", "http://127.0.0.1:4173/", "http://127.0.0.1:4173/?auth=reset"]
+enable_signup = true
+enable_anonymous_sign_ins = true
+minimum_password_length = 8
+
+[auth.email]
+enable_signup = true
+double_confirm_changes = true
+enable_confirmations = true
+max_frequency = "1m0s"
+otp_length = 8
+
+[auth.mfa.totp]
+enroll_enabled = true
+verify_enabled = true
+
+[auth.rate_limit]
+email_sent = 30
+
+[auth.email.smtp]
+enabled = true
+host = "smtp.gmail.com"
+port = 587
+user = "rogernhpark@gmail.com"
+pass = "env(SMTP_PASSWORD)"
+admin_email = "rogernhpark@gmail.com"
+sender_name = "함께 · Together Insights"

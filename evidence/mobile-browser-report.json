@@ -1,0 +1,14 @@
+{
+  "browser": "Chromium mobile emulation (not a physical Android or iOS device)",
+  "url": "http://127.0.0.1:4173",
+  "checked": [
+    "320x844",
+    "360x844",
+    "390x844",
+    "430x844",
+    "844x390 landscape"
+  ],
+  "findings": [],
+  "pageErrors": [],
+  "networkWarnings": []
+}

@@ -1,0 +1,21 @@
+{
+  "testedAt": "2026-09-12T23:57:23.325Z",
+  "results": [
+    "Email/password authentication for two independent users",
+    "Shared posts are readable; private posts are hidden from guests and other users",
+    "RLS rejects forged owners, signed-out writes and other users editing/deleting",
+    "Replies and reactions persist across identities, with one reaction per person",
+    "Anonymous Auth can participate while retaining separate ownership",
+    "Dashboard removes demo guides and the community describes its live public visibility",
+    "Prominent official-source link opens the selected language in a new tab",
+    "Reader composer persists its source anchor, capture and insight to Supabase",
+    "Two real browser sessions exchange replies and retain them after reload",
+    "A failed reply keeps its text and reuses one stable identity on retry",
+    "Signed-out reply prompt creates a guest session and saves through the visible UI",
+    "Switching accounts in one browser purges the previous account private records",
+    "Recovery link opens the reset form; new password works and old password fails",
+    "Desktop/mobile workflows have no runtime errors"
+  ],
+  "emailDeliveryTested": false,
+  "temporaryUsersRemoved": "See successful cleanup output"
+}

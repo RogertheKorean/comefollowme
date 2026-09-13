@@ -1,0 +1,14 @@
+.env
+.env*
+.git
+.codex
+.browser-cache
+node_modules
+supabase
+tests
+evidence
+docs
+__pycache__
+*.log
+*.pyc
+Together_My_Journal*.json

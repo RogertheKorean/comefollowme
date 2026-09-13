@@ -4,7 +4,7 @@
 
 `Markdown links → normalized URL → canonical document key → language → registered version → original paragraph selectors → right-side reader`
 
-The browser never fetches Church pages and has no remote proxy, API key, crawler, iframe reader, or undocumented Gospel Library API. Unknown references do not fall through to external navigation. `src/library.js` intercepts normal reference clicks before legacy listeners. The anchors themselves use `href="#reference"`; the real URL is a data attribute. Source details provide a copy button, not an external navigation button.
+The browser never fetches Church pages and has no remote proxy, API key, crawler, iframe reader, or undocumented Gospel Library API. Unknown references do not fall through to external navigation. `src/library.js` intercepts normal reference clicks before legacy listeners. The anchors themselves use `href="#reference"`; the real URL is a data attribute. Source details provide a copy button. A prominent explicit external link in the reference header opens the original page in a new tab, using the selected language. This link is exempted from internal reference navigation.
 
 ## Identity and targets
 

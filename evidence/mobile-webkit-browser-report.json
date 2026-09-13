@@ -1,0 +1,22 @@
+{
+  "browser": "WebKit mobile emulation (not a physical Android or iOS device)",
+  "url": "http://127.0.0.1:4173",
+  "checked": [
+    "320x844",
+    "360x844",
+    "390x844",
+    "430x844",
+    "844x390 landscape"
+  ],
+  "findings": [],
+  "pageErrors": [],
+  "networkWarnings": [
+    "/cbvshayydunhnkpsuahn.supabase.co/rest/v1/together_notes?select=*%2Ctogether_comments%28id%2Cowner_id%2Cauthor%2Cbody%2Ccreated_at%29%2Ctogether_reactions%28owner_id%29&order=created_at.desc%2Cid.asc&offset=0&limit=200 due to access control checks.",
+    "/cbvshayydunhnkpsuahn.supabase.co/rest/v1/together_notes?select=*%2Ctogether_comments%28id%2Cowner_id%2Cauthor%2Cbody%2Ccreated_at%29%2Ctogether_reactions%28owner_id%29&order=created_at.desc%2Cid.asc&offset=0&limit=200 due to access control checks.",
+    "/cbvshayydunhnkpsuahn.supabase.co/rest/v1/together_notes?select=*%2Ctogether_comments%28id%2Cowner_id%2Cauthor%2Cbody%2Ccreated_at%29%2Ctogether_reactions%28owner_id%29&order=created_at.desc%2Cid.asc&offset=0&limit=200 due to access control checks.",
+    "/cbvshayydunhnkpsuahn.supabase.co/rest/v1/together_notes?select=*%2Ctogether_comments%28id%2Cowner_id%2Cauthor%2Cbody%2Ccreated_at%29%2Ctogether_reactions%28owner_id%29&order=created_at.desc%2Cid.asc&offset=0&limit=200 due to access control checks.",
+    "/cbvshayydunhnkpsuahn.supabase.co/rest/v1/together_notes?select=*%2Ctogether_comments%28id%2Cowner_id%2Cauthor%2Cbody%2Ccreated_at%29%2Ctogether_reactions%28owner_id%29&order=created_at.desc%2Cid.asc&offset=0&limit=200 due to access control checks.",
+    "/cbvshayydunhnkpsuahn.supabase.co/rest/v1/together_notes?select=*%2Ctogether_comments%28id%2Cowner_id%2Cauthor%2Cbody%2Ccreated_at%29%2Ctogether_reactions%28owner_id%29&order=created_at.desc%2Cid.asc&offset=0&limit=200 due to access control checks.",
+    "/cbvshayydunhnkpsuahn.supabase.co/rest/v1/together_notes?select=*%2Ctogether_comments%28id%2Cowner_id%2Cauthor%2Cbody%2Ccreated_at%29%2Ctogether_reactions%28owner_id%29&order=created_at.desc%2Cid.asc&offset=0&limit=200 due to access control checks."
+  ]
+}
