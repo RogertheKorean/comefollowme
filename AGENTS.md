@@ -23,3 +23,7 @@ the orchestration approach used in Bright Unified.
 - Preserve user changes. If workspace permissions require a staging copy,
   synchronize reviewed files to the requested repository before committing and deploying.
 - Do not modify Bright Unified; it is a reference for this workflow only.
+- For new product features, first show an interactive mockup covering the visitor
+  view, creation, editing, filters, and role differences. The user explicitly
+  requested this workflow. Keep sample data and preview actions clearly separate
+  from production. A mockup request does not authorize publishing its sample data.

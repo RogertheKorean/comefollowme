@@ -1,0 +1,61 @@
+{
+  "browser": "WebKit production mobile emulation (not physical iOS)",
+  "url": "https://comefollowme.vercel.app",
+  "viewport": "390x844",
+  "restResponses": [
+    {
+      "status": 200,
+      "url": "https://cbvshayydunhnkpsuahn.supabase.co/rest/v1/together_notes?select=*%2Ctogether_comments%28id%2Cowner_id%2Cauthor%2Cbody%2Ccreated_at%29%2Ctogether_reactions%28owner_id%29&order=created_at.desc%2Cid.asc&offset=0&limit=200"
+    }
+  ],
+  "nonCancelRequestFailures": [],
+  "pageErrors": [],
+  "checks": [
+    {
+      "name": "dashboard has no horizontal overflow",
+      "ok": true,
+      "detail": "{\"scrollWidth\":390,\"bodyWidth\":390,\"viewport\":390,\"cloud\":{\"ready\":true,\"status\":\"connected\"}}"
+    },
+    {
+      "name": "reader has no horizontal overflow",
+      "ok": true,
+      "detail": "{\"scrollWidth\":390,\"bodyWidth\":390,\"viewport\":390}"
+    },
+    {
+      "name": "official source is visible",
+      "ok": true,
+      "detail": "{\"visible\":true,\"href\":\"https://www.churchofjesuschrist.org/study/general-conference/2015/04/therefore-they-hushed-their-fears?lang=kor\",\"text\":\"공식 원문 열기한국어 · 새 탭\"}"
+    },
+    {
+      "name": "auth signup form fits with 44px targets and 16px inputs",
+      "ok": true,
+      "detail": "{\"modal\":{\"x\":8,\"y\":8,\"width\":374,\"height\":654.3125,\"top\":8,\"right\":382,\"bottom\":662.3125,\"left\":8},\"viewport\":{\"w\":390,\"h\":844},\"controls\":[{\"tag\":\"BUTTON\",\"w\":44,\"h\":44,\"font\":14},{\"tag\":\"INPUT\",\"w\":340,\"h\":47.59375,\"font\":16},{\"tag\":\"INPUT\",\"w\":340,\"h\":47.59375,\"font\":16},{\"tag\":\"INPUT\",\"w\":340,\"h\":47.59375,\"font\":16},{\"tag\":\"INPUT\",\"w\":340,\"h\":47.59375,\"font\":16},{\"tag\":\"BUTTON\",\"w\":340,\"h\":46,\"font\":12},{\"tag\":\"BUTTON\",\"w\":130.921875,\"h\":44,\"font\":14}]}"
+    },
+    {
+      "name": "auth signin form fits with 44px targets and 16px inputs",
+      "ok": true,
+      "detail": "{\"modal\":{\"x\":8,\"y\":8,\"width\":374,\"height\":517.15625,\"top\":8,\"right\":382,\"bottom\":525.15625,\"left\":8},\"viewport\":{\"w\":390,\"h\":844},\"controls\":[{\"tag\":\"BUTTON\",\"w\":44,\"h\":44,\"font\":14},{\"tag\":\"INPUT\",\"w\":340,\"h\":47.59375,\"font\":16},{\"tag\":\"INPUT\",\"w\":340,\"h\":47.59375,\"font\":16},{\"tag\":\"BUTTON\",\"w\":340,\"h\":46,\"font\":12},{\"tag\":\"BUTTON\",\"w\":340,\"h\":44,\"font\":12},{\"tag\":\"BUTTON\",\"w\":151.375,\"h\":44,\"font\":14},{\"tag\":\"BUTTON\",\"w\":151.375,\"h\":44,\"font\":14}]}"
+    },
+    {
+      "name": "auth guest form fits with 44px targets and 16px inputs",
+      "ok": true,
+      "detail": "{\"modal\":{\"x\":8,\"y\":8,\"width\":374,\"height\":418.546875,\"top\":8,\"right\":382,\"bottom\":426.546875,\"left\":8},\"viewport\":{\"w\":390,\"h\":844},\"controls\":[{\"tag\":\"BUTTON\",\"w\":44,\"h\":44,\"font\":14},{\"tag\":\"INPUT\",\"w\":340,\"h\":47.59375,\"font\":16},{\"tag\":\"BUTTON\",\"w\":340,\"h\":46,\"font\":12},{\"tag\":\"BUTTON\",\"w\":340,\"h\":44,\"font\":12}]}"
+    },
+    {
+      "name": "Supabase REST returned HTTP 200",
+      "ok": true,
+      "detail": "[{\"status\":200,\"url\":\"https://cbvshayydunhnkpsuahn.supabase.co/rest/v1/together_notes?select=*%2Ctogether_comments%28id%2Cowner_id%2Cauthor%2Cbody%2Ccreated_at%29%2Ctogether_reactions%28owner_id%29&order=created_at.desc%2Cid.asc&offset=0&limit=200\"}]"
+    },
+    {
+      "name": "no non-cancel network request failures",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "name": "no page errors",
+      "ok": true,
+      "detail": "[]"
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,77 @@
+{
+  "physicalDevice": false,
+  "results": [
+    {
+      "engine": "Chromium",
+      "width": 320,
+      "label": "dashboard",
+      "passed": true
+    },
+    {
+      "engine": "Chromium",
+      "width": 320,
+      "label": "optional nickname",
+      "passed": true
+    },
+    {
+      "engine": "Chromium",
+      "width": 320,
+      "label": "anonymous composer",
+      "passed": true
+    },
+    {
+      "engine": "Chromium",
+      "width": 390,
+      "label": "dashboard",
+      "passed": true
+    },
+    {
+      "engine": "Chromium",
+      "width": 390,
+      "label": "optional nickname",
+      "passed": true
+    },
+    {
+      "engine": "Chromium",
+      "width": 390,
+      "label": "anonymous composer",
+      "passed": true
+    },
+    {
+      "engine": "WebKit",
+      "width": 320,
+      "label": "dashboard",
+      "passed": true
+    },
+    {
+      "engine": "WebKit",
+      "width": 320,
+      "label": "optional nickname",
+      "passed": true
+    },
+    {
+      "engine": "WebKit",
+      "width": 320,
+      "label": "anonymous composer",
+      "passed": true
+    },
+    {
+      "engine": "WebKit",
+      "width": 390,
+      "label": "dashboard",
+      "passed": true
+    },
+    {
+      "engine": "WebKit",
+      "width": 390,
+      "label": "optional nickname",
+      "passed": true
+    },
+    {
+      "engine": "WebKit",
+      "width": 390,
+      "label": "anonymous composer",
+      "passed": true
+    }
+  ]
+}

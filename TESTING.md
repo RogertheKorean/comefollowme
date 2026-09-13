@@ -6,18 +6,19 @@
   anchor validation, cloud ownership mapping, stale remote cache removal, snapshot
   restrictions, deployment content inclusion, and rejection of privileged browser keys.
 - Live Supabase + Chromium suite: **14 passed**. Creates disposable identities and
-  deletes them in `finally`; the successful run removed all four identities and
+  deletes them in `finally`; the successful run removed all seven identities and
   their dependent test records.
 - Gmail SMTP: successful TLS connection and authentication with the supplied app
   password; SMTP configuration successfully applied to the Supabase project.
 
-Live checks cover two email/password identities; public/private RLS; forged-owner,
-signed-out and other-user write denial; comments/reactions and reaction uniqueness;
-guest participation through both API and visible UI; dashboard and removal of demo
-banners; explicit original-source links; a real captured source-anchor reflection;
-cross-browser comments after reload; failed reply retry with stable identity;
-same-browser sign-out/account switch privacy; password recovery in a fresh browser,
-new password acceptance and old password rejection. No runtime page errors occurred.
+Live checks cover public/private RLS; forged-owner and other-user write denial;
+comments/reactions and reaction uniqueness; read-only visits and optional nickname
+settings without creating identities; first anonymous signup failure with retained
+input; first anonymous reply/insight/reaction without an auth screen; stable retry
+identities; anonymous session reuse after reload; metadata spoofing and self-grant
+denial; a trusted temporary teacher role; explicit original-source links;
+cross-browser comments; account-switch private-record isolation; and real password
+recovery. No runtime page errors occurred.
 
 The recovery test uses an administrator-generated link without sending mail to a
 real recipient. Gmail authentication and remote configuration are established;
@@ -48,6 +49,11 @@ Optional environment variables `SUPABASE_MODULE`, `PLAYWRIGHT_MODULE`, and
 defaults to `http://127.0.0.1:4173` and may target the deployed app for release checks.
 
 ## Mobile verification boundary
+
+The immediate-participation update passed 12 focused Chromium/WebKit layout
+checks at 320 and 390 pixels: dashboard, optional nickname, and anonymous composer.
+No auth screen was required and read-only use created no identity. Results are
+recorded in `evidence/guest-mobile-report.json`.
 
 Chromium and WebKit UI checks passed at 320/360/390/430 x 844 and 844 x 390.
 They cover touch targets, dashboard, reading, source drawer, paragraph selection,

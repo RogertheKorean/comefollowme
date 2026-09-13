@@ -41,6 +41,7 @@ const replacements={
  '/*__SUPABASE__*/':read('src/vendor/supabase-2.112.4.js'),
  '/*__CLOUD_MODEL__*/':read('src/cloud-model.js'),
  '/*__CLOUD__*/':read('src/cloud.js'),
+ '/*__ACCESS__*/':read('src/access.js'),
  '/*__DASHBOARD__*/':read('src/dashboard.js'),
  '/*__MOBILE__*/':read('src/mobile.js'),
  '/*__CLOUD_CONFIG__*/':cloudConfig,
