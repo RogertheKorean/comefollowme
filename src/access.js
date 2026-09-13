@@ -1,14 +1,27 @@
 /* Server-backed staff access for local content preparation and presentation tools. */
 'use strict';
 (function(){
- const access={role:null,refresh,can};
+ const EVENT_ORGANIZATIONS=['all','primary','relief','elders','youth','sunday-school'];
+ const access={role:null,organizations:[],refresh,can,canManageEvent,allowedEventOrganizations};
  const permissions={content:new Set(['admin','editor']),present:new Set(['admin','teacher']),prompts:new Set(['admin','teacher'])};
- let refreshGeneration=0,lastRoleCheck=0,roleUserId=null;
+ let refreshGeneration=0,lastRoleCheck=0,roleUserId=null,announcedUserId;
  window.TogetherAccess=access;
  state.role='member';
 
- function can(permission){const user=currentUser();return !!user&&!user.is_anonymous&&user.id===roleUserId&&permissions[permission]?.has(access.role)===true;}
+ function verifiedIdentity(){const user=currentUser();return !!user&&!user.is_anonymous&&user.id===roleUserId;}
+ function can(permission){if(!verifiedIdentity())return false;if(permission==='events')return access.role==='admin'||access.organizations.length>0;return permissions[permission]?.has(access.role)===true;}
+ function allowedEventOrganizations(){if(!verifiedIdentity())return [];if(access.role==='admin'||access.organizations.includes('all'))return [...EVENT_ORGANIZATIONS];return EVENT_ORGANIZATIONS.filter(org=>access.organizations.includes(org));}
+ function canManageEvent(row){
+  if(!verifiedIdentity()||!Array.isArray(row?.organizations)||!row.organizations.length)return false;
+  if(access.role==='admin'||access.organizations.includes('all'))return row.organizations.every(org=>EVENT_ORGANIZATIONS.includes(org));
+  return !row.organizations.includes('all')&&row.organizations.every(org=>access.organizations.includes(org));
+ }
  function currentUser(){return window.TogetherCloud?.user||null;}
+ function announceAccess(){
+  const userId=currentUser()?.id||null;
+  if(userId!==announcedUserId){announcedUserId=userId;document.dispatchEvent(new CustomEvent('together:identity',{detail:{userId}}));}
+  document.dispatchEvent(new CustomEvent('together:access',{detail:{userId,role:access.role,organizations:[...access.organizations]}}));
+ }
  function leaveRestrictedUI(){
   if((['import','library'].includes(state.view)&&!can('content'))||(state.view==='classroom'&&!can('present')))state.view='read';
   if(!can('content')&&modalKind==='reference-register')closeModal(false);
@@ -26,19 +39,26 @@
  async function refresh(user){
   const generation=++refreshGeneration;
   const requested=arguments.length?user:currentUser();
-  access.role=null;roleUserId=null;state.role='member';
-  if(!requested?.id||requested.is_anonymous||!window.TogetherCloud?.client){leaveRestrictedUI();repaint();return null;}
+  access.role=null;access.organizations=[];roleUserId=null;state.role='member';
+  if(!requested?.id||requested.is_anonymous||!window.TogetherCloud?.client){leaveRestrictedUI();repaint();announceAccess();return null;}
   const requestedId=requested.id;
   lastRoleCheck=Date.now();
-  const {data,error}=await window.TogetherCloud.client.from('together_staff').select('role').eq('user_id',requestedId).maybeSingle();
+  const [staffResult,managerResult]=await Promise.all([
+   window.TogetherCloud.client.from('together_staff').select('role').eq('user_id',requestedId).maybeSingle(),
+   window.TogetherCloud.client.from('together_event_managers').select('organization').eq('user_id',requestedId)
+  ]);
   if(generation!==refreshGeneration)return access.role;
   const active=currentUser();
-  if(error||active?.id!==requestedId||active?.is_anonymous){access.role=null;state.role='member';leaveRestrictedUI();repaint();return null;}
-  access.role=permissions.content.has(data?.role)||permissions.present.has(data?.role)||permissions.prompts.has(data?.role)?data.role:null;
+  if(active?.id!==requestedId||active?.is_anonymous){access.role=null;access.organizations=[];state.role='member';leaveRestrictedUI();repaint();announceAccess();return null;}
+  const role=staffResult.error?null:staffResult.data?.role;
+  access.role=permissions.content.has(role)||permissions.present.has(role)||permissions.prompts.has(role)?role:null;
+  const granted=new Set(managerResult.error?[]:(managerResult.data||[]).map(row=>row.organization));
+  access.organizations=EVENT_ORGANIZATIONS.filter(org=>granted.has(org));
   roleUserId=requestedId;
   state.role=can('present')?'teacher':'member';
   leaveRestrictedUI();
   repaint();
+  announceAccess();
   return access.role;
  }
 

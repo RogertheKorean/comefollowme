@@ -1,0 +1,4 @@
+.local-draft-status,.draft-save-status,.prompt-draft-status,[data-prompt-draft-status]{min-height:1.5em;color:var(--muted);font-size:13px;line-height:1.5}
+.local-draft-status[data-draft-status="saving"],.draft-save-status[data-status="saving"],.prompt-draft-status[data-status="saving"],[data-prompt-draft-status][data-status="saving"]{color:#8a7049}
+.local-draft-status[data-draft-status="saved"],.draft-save-status[data-status="saved"],.prompt-draft-status[data-status="saved"],[data-prompt-draft-status][data-status="saved"]{color:#648676}
+.local-draft-status[data-draft-status="error"],.draft-save-status[data-status="error"],.prompt-draft-status[data-status="error"],[data-prompt-draft-status][data-status="error"]{color:#9b493c}

@@ -1,0 +1,18 @@
+{
+  "testedAt": "2026-09-13T09:01:36.304Z",
+  "origin": "http://127.0.0.1:4174",
+  "results": [
+    "Teacher UI preview and publish create a publicly readable prompt with blank reference stored as null",
+    "Editing the open prompt leaves a separately tracked teacher prompt untouched",
+    "A real reader selection opens a new prefilled prompt editor and does not overwrite the prior prompt",
+    "A teacher-authenticated fresh short-link reload resolves the requested prompt without remaining loading",
+    "The 320px mobile editor fits its viewport and keeps readable 16px URL input text",
+    "Prompt author UI flow completed without browser runtime errors"
+  ],
+  "temporaryPromptIds": [
+    "ffd6f929-28ff-41ef-be1b-19be9a382e07",
+    "440e1b02-c786-4443-921e-abba7f20b43b",
+    "dccd5188-1375-4a15-bb5b-375f307e0817"
+  ],
+  "temporaryTeacherRemoved": true
+}

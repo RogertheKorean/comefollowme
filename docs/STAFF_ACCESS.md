@@ -27,8 +27,21 @@ using (public.together_has_role(array['admin','editor']::text[]))
 with check (public.together_has_role(array['admin','editor']::text[]));
 ```
 
-The planned study-prompt feature will use `array['admin','teacher']`. Its schema and UI are currently an unshipped draft while the user reviews an interactive mockup. They are not included in this release. The intended rules allow teachers to manage their own prompts and admins to manage all prompts; public reading and owned anonymous replies will use database policies. All displayed text must be escaped.
+Study prompts use `array['admin','teacher']`. A teacher can change or delete only prompts they created; an admin can manage every prompt. The immutable 12-character slug is for routing, not secrecy. Prompt and reply reads are public. Reply insert and delete policies bind each reply to its email or anonymous Supabase identity. The UI must escape prompt authors, reply authors, titles, questions, reading text, and reference labels because these are untrusted values.
+
+Calendar management is separate from the general staff roles. `together_event_managers` grants one or more organizations to a confirmed, nonanonymous user. Valid identifiers are `all`, `primary`, `relief`, `elders`, `youth`, and `sunday-school`. An explicit `all` grant permits every organization; otherwise every organization targeted by an event must appear in the manager's grants. The `admin` staff role can manage all events. The `editor` and `teacher` roles do not grant calendar access by themselves.
+
+An admin can provision or revoke one calendar grant with the server-checked RPC. It returns `false` when no confirmed account matches the email:
+
+```sql
+select public.together_set_event_manager('manager@example.com','primary',true);
+select public.together_set_event_manager('manager@example.com','primary',false);
+```
+
+Calendar event slugs, IDs, creators, and timestamps are immutable to browser clients. Published and cancelled events are public; drafts are visible only to an admin or a manager whose grants cover every target organization. Event updates check both the stored and replacement organization arrays. `TogetherAccess.organizations`, `can('events')`, `canManageEvent(row)`, and `allowedEventOrganizations()` mirror these rules for interface visibility while database policies remain authoritative.
+
+Event posters use the private `together-event-posters` bucket with a 5 MB limit and PNG, JPEG, or WebP MIME types. Object paths must be `EVENT_UUID/RANDOM_FILENAME.ext`. Visitors use Storage `download(path)` and a temporary blob URL; they can download only the path attached to a published or cancelled event. Managers can upload, read, and delete files only inside event folders they manage. Upload without overwrite, update `poster_path` last, then remove the old file. Delete the poster through the Storage API before deleting its event row because direct deletion from `storage.objects` leaves the underlying file orphaned.
 
 For a multi-table operation, expose a narrowly scoped transaction function and repeat the live role check inside it. Browser visibility checks improve the interface but do not replace database policies.
 
-The content preparation tools remain browser-local. They can import a lesson, register reference text, and export `deployment-content.json`; they do not publish that content to Supabase. Publishing content still requires reviewing the export, replacing the repository file, and deploying the build. Ward calendar and study-prompt screens are currently design previews, not available production features.
+The content preparation tools remain browser-local. They can import a lesson, register reference text, and export `deployment-content.json`; they do not publish that content to Supabase. Publishing content still requires reviewing the export, replacing the repository file, and deploying the build. Study prompts and calendar events are separate Supabase-backed records.

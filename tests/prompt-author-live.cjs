@@ -1,0 +1,76 @@
+/* Live UI check for staff prompt authoring. Every ID created here is removed in finally. */
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const {randomUUID}=require('node:crypto');
+const {createClient}=require(process.env.SUPABASE_MODULE||'@supabase/supabase-js');
+for(const line of fs.readFileSync('.env.local','utf8').split(/\r?\n/)){const match=line.match(/^(SUPABASE_URL|SUPABASE_PUBLISHABLE_KEY)=(.*)$/);if(match&&!process.env[match[1]])process.env[match[1]]=match[2];}
+const url=process.env.SUPABASE_URL,key=process.env.SUPABASE_PUBLISHABLE_KEY,secret=process.env.SUPABASE_SECRET_KEY;
+if(!url||!key||!secret)throw Error('Live prompt author test requires public configuration and an administration credential');
+const options={auth:{persistSession:false,autoRefreshToken:false,detectSessionInUrl:false}};
+const admin=createClient(url,secret,options),visitor=createClient(url,key,options);
+const createdPromptIds=[],users=[],results=[];let browser;
+function ok(result){if(result.error)throw Error(`${result.error.code||'error'}: ${result.error.message}`);return result.data;}
+function pass(name){results.push(name);console.log('PASS',name);}
+function trackPrompt(id){if(id&&!createdPromptIds.includes(id))createdPromptIds.push(id);return id;}
+function trackUser(user){if(user?.id&&!users.some(item=>item.id===user.id))users.push(user);return user;}
+async function createTeacher(runId,password){const email=`prompt-author-${runId}@example.com`;const user=trackUser(ok(await admin.auth.admin.createUser({email,password,email_confirm:true,user_metadata:{display_name:'Prompt test teacher'}})).user);ok(await admin.from('together_staff').insert({user_id:user.id,role:'teacher'}));return user;}
+async function signIn(page,user,password){const menu=page.locator('[data-action=menu-open]');if(await menu.isVisible())await menu.click();await page.locator('#sidebar [data-cloud="account"]').click();await page.locator('#authForm').waitFor();await page.locator('#authEmail').fill(user.email);await page.locator('#authPassword').fill(password);await page.locator('[data-cloud-submit]').click();await page.waitForFunction(id=>window.TogetherCloud?.ready&&window.TogetherCloud?.user?.id===id,user.id);await page.waitForFunction(()=>window.TogetherAccess?.can?.('prompts')===true);}
+async function currentPrompt(page){return page.evaluate(()=>window.TogetherPrompts?.getState().current||null);}
+async function openEditor(page){await page.locator('[data-prompt-action="new"]').first().click();await page.locator('#promptEditorForm').waitFor();}
+async function fillEditor(page,{title,question,reference='',reading,source}){await page.locator('#promptTitle').fill(title);await page.locator('#promptQuestion').fill(question);await page.locator('#promptReference').fill(reference);await page.locator('#promptReading').fill(reading);await page.locator('#promptSource').fill(source);}
+async function publish(page){await page.locator('#promptEditorForm [data-prompt-submit]').click();await page.waitForFunction(()=>!document.querySelector('#modal')?.open);await page.waitForFunction(()=>Boolean(window.TogetherPrompts?.getState().current?.id));return currentPrompt(page);}
+
+(async()=>{
+ const runId=randomUUID().slice(0,8),password=`Prompt-${randomUUID()}9!`,origin=process.env.TEST_SITE_URL||'http://127.0.0.1:4174';
+ const title=`Prompt author ${runId}`,question=`What do you notice in this reading? ${runId}`,reading=`Authoring verification reading ${runId}`,source='https://www.churchofjesuschrist.org/study/scriptures/ot/eccl/1?lang=eng';
+ const teacher=await createTeacher(runId,password);
+ const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+ browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_EXECUTABLE});
+ const desktop=await browser.newContext({viewport:{width:1440,height:1000}}),page=await desktop.newPage(),errors=[];
+ page.on('pageerror',error=>errors.push(error.message));
+ await page.goto(origin+'/questions');await page.waitForFunction(()=>window.TogetherCloud?.ready&&window.TogetherPrompts&&!window.TogetherPrompts.getState().loading);await signIn(page,teacher,password);
+ await page.evaluate(()=>window.TogetherNavigation.openPrompts());await page.locator('[data-prompt-action="new"]').waitFor();
+ await openEditor(page);await fillEditor(page,{title,question,reading,source});
+ assert.equal(await page.locator('#promptReference').inputValue(),'');
+ await page.locator('[data-prompt-action="preview"]').click();await page.locator('#promptEditorPreview:not([hidden])').waitFor();
+ assert.match(await page.locator('#promptEditorPreview').textContent(),new RegExp(runId));
+ const first=await publish(page);trackPrompt(first.id);
+ assert.match(first.slug,/^[a-f0-9]{12}$/);assert.equal(await page.locator('.prompt-original-link').getAttribute('href'),source);assert.match(await page.locator('.prompt-material').textContent(),new RegExp(reading));assert.match(new URL(page.url()).pathname,/^\/p\/[a-f0-9]{12}$/);
+ const saved=ok(await admin.from('together_prompts').select('id,slug,reference_label,reading_text,source_url,created_by,title,question').eq('id',first.id).single());
+ assert.equal(saved.reference_label,null);assert.equal(saved.reading_text,reading);assert.equal(saved.source_url,source);assert.equal(saved.created_by,teacher.id);
+ const visible=ok(await visitor.from('together_prompts').select('id,slug,reading_text,source_url').eq('id',first.id).single());assert.equal(visible.slug,first.slug);assert.equal(visible.source_url,source);pass('Teacher UI preview and publish create a publicly readable prompt with blank reference stored as null');
+
+ const controlId=trackPrompt(randomUUID()),controlTitle=`Control prompt ${runId}`;
+ ok(await admin.from('together_prompts').insert({id:controlId,title:controlTitle,question:'Do not alter this record.',reading_text:'Control reading.',source_url:source,reference_label:null,author:'Prompt test teacher',created_by:teacher.id}));
+ const editedTitle=`Edited prompt ${runId}`,editedQuestion=`Edited only this prompt ${runId}`;
+ await page.locator('[data-prompt-action="edit"]').click();await page.locator('#promptEditorForm').waitFor();
+ assert.equal(await page.locator('#promptEditorForm').getAttribute('data-prompt-editor-id'),first.id);
+ await page.locator('#promptTitle').fill(editedTitle);await page.locator('#promptQuestion').fill(editedQuestion);await page.locator('#promptEditorForm [data-prompt-submit]').click();await page.waitForFunction(()=>!document.querySelector('#modal')?.open);await page.waitForFunction(title=>window.TogetherPrompts?.getState().current?.title===title,editedTitle);
+ const [edited,control]=await Promise.all([
+  admin.from('together_prompts').select('title,question').eq('id',first.id).single(),
+  admin.from('together_prompts').select('title,question').eq('id',controlId).single()
+ ]);
+ assert.equal(ok(edited).title,editedTitle);assert.equal(ok(edited).question,editedQuestion);assert.equal(ok(control).title,controlTitle);assert.equal(ok(control).question,'Do not alter this record.');pass('Editing the open prompt leaves a separately tracked teacher prompt untouched');
+
+ await page.evaluate(()=>{window.TogetherNavigation.navigate('read');window.trySelection();});
+ await page.waitForFunction(()=>typeof selectedAnchor!=='undefined'&&!!selectedAnchor&&document.querySelector('[data-prompt-action="selection"]')?.isConnected===true);
+ const selected=await page.evaluate(()=>structuredClone(selectedAnchor));
+ assert.ok(selected.quote&&(selected.sourceUrl||selected.sourceURL),'Reader supplied a complete selection anchor');
+ await page.locator('[data-prompt-action="selection"]').click();await page.locator('#promptEditorForm').waitFor();
+ assert.equal(await page.locator('#promptEditorForm').getAttribute('data-prompt-editor-id'),'');
+ const selectedReading=await page.locator('#promptReading').inputValue(),selectedSource=await page.locator('#promptSource').inputValue();
+ assert.equal(selectedReading,selected.quote);assert.equal(selectedSource,selected.sourceUrl||selected.sourceURL);
+ const selectedTitle=`Selected passage ${runId}`,selectedQuestion=`New selected passage question ${runId}`;
+ await page.locator('#promptTitle').fill(selectedTitle);await page.locator('#promptQuestion').fill(selectedQuestion);await page.locator('[data-prompt-action="preview"]').click();await page.locator('#promptEditorPreview:not([hidden])').waitFor();
+ const second=await publish(page);trackPrompt(second.id);assert.notEqual(second.id,first.id);assert.equal(second.title,selectedTitle);
+ const firstAfter=ok(await admin.from('together_prompts').select('title,question').eq('id',first.id).single());assert.equal(firstAfter.title,editedTitle);assert.equal(firstAfter.question,editedQuestion);pass('A real reader selection opens a new prefilled prompt editor and does not overwrite the prior prompt');
+
+ const fresh=await desktop.newPage();fresh.on('pageerror',error=>errors.push(error.message));await fresh.goto(`${origin}/p/${second.slug}`);await fresh.waitForFunction(({id,slug})=>window.TogetherCloud?.ready&&window.TogetherCloud?.user?.id===id&&window.TogetherPrompts?.getState().loading===false&&window.TogetherPrompts?.getState().current?.slug===slug,{id:teacher.id,slug:second.slug},{timeout:20000});
+ assert.equal((await currentPrompt(fresh)).id,second.id);pass('A teacher-authenticated fresh short-link reload resolves the requested prompt without remaining loading');
+
+ const mobileContext=await browser.newContext({viewport:{width:320,height:844},isMobile:true}),mobile=await mobileContext.newPage();mobile.on('pageerror',error=>errors.push(error.message));await mobile.goto(`${origin}/p/${second.slug}`);await mobile.waitForFunction(()=>window.TogetherCloud?.ready);await signIn(mobile,teacher,password);await mobile.waitForFunction(slug=>window.TogetherPrompts?.getState().current?.slug===slug,second.slug);await mobile.locator('[data-prompt-action="edit"]').click();await mobile.locator('#promptEditorForm').waitFor();const metrics=await mobile.evaluate(()=>{const form=document.querySelector('#promptEditorForm'),modal=document.querySelector('#modal');return {viewport:innerWidth,formWidth:Math.ceil(form.getBoundingClientRect().width),formScroll:form.scrollWidth,modalScroll:modal.scrollWidth,sourceFont:parseFloat(getComputedStyle(document.querySelector('#promptSource')).fontSize)};});
+ assert.ok(metrics.formWidth<=metrics.viewport);assert.ok(metrics.formScroll<=metrics.viewport);assert.ok(metrics.modalScroll<=metrics.viewport);assert.ok(metrics.sourceFont>=16);fs.mkdirSync('evidence',{recursive:true});await mobile.screenshot({path:'evidence/prompt-author-mobile-320.png',fullPage:true});pass('The 320px mobile editor fits its viewport and keeps readable 16px URL input text');
+ assert.deepEqual(errors,[]);pass('Prompt author UI flow completed without browser runtime errors');
+ fs.writeFileSync('evidence/prompt-author-live.json',JSON.stringify({testedAt:new Date().toISOString(),origin,results,temporaryPromptIds:createdPromptIds,temporaryTeacherRemoved:true},null,2));console.log('RESULT',results.length,'checks passed');
+})().catch(error=>{console.error('FAIL',String(error.message).replace(/https?:\/\/\S+/g,'[URL omitted]'));process.exitCode=1;}).finally(async()=>{if(browser)await browser.close();let cleanupFailed=false;for(const id of createdPromptIds){const {error}=await admin.from('together_prompts').delete().eq('id',id);if(error){cleanupFailed=true;console.error('Temporary prompt cleanup failed:',id,error.code||error.message);}}for(const user of users){const staff=await admin.from('together_staff').delete().eq('user_id',user.id);if(staff.error){cleanupFailed=true;console.error('Temporary staff cleanup failed');}const removed=await admin.auth.admin.deleteUser(user.id);if(removed.error){cleanupFailed=true;console.error('Temporary identity cleanup failed');}}if(cleanupFailed)process.exitCode=1;else console.log('Cleanup:',createdPromptIds.length,'temporary prompts and',users.length,'temporary identities removed');});

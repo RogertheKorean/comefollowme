@@ -25,7 +25,10 @@ if(cloud.enabled){
  mineHTML=function(){return oldMine().replace(/<div class="demo-strip">[\s\S]*?<\/div>/,`<div class="demo-strip">${icon('lock','small')}${namedUser()?E('같은 계정으로 로그인한 기기에서 내 기록을 불러올 수 있습니다.','Your journal is available on devices signed into this account.'):E('로그인 없이 남긴 내 기록입니다. 이 브라우저에서 다시 열고 수정할 수 있습니다. 브라우저 데이터를 지우면 내 기록에 다시 접근할 수 없으니 필요한 기록은 내보내기로 보관하세요.','These are your contributions without sign-in. Reopen and edit them in this browser. Clearing browser data removes your access; export any records you want to keep.')}</div>`).replace(/<p class="notice-foot">[\s\S]*?<\/p>/,`<p class="notice-foot">${E('저장한 글과 댓글은 서버에 보관됩니다. 임시 글·형광펜·읽기 설정은 이 기기에 보관됩니다.','Saved reflections and replies are stored online. Drafts, highlights and reading preferences stay on this device.')}</p>`);};
  const baseReplies=repliesHTML;
  repliesHTML=function(n){return baseReplies(n).replace(E('이 브라우저의 데모','Local demo'),E('함께 나누는 대화','Shared conversation')).replaceAll(E('방금 기록','Recorded here'),E('반원 댓글','Member reply'));};
- showThread=function(id){cloud.threadId=id;oldShowThread(id);const input=$('.reply-input');if(input)input.insertAdjacentHTML('beforebegin',nameField());const tip=$('.thread-context-note');if(tip)tip.textContent=E('로그인 없이 바로 댓글을 남길 수 있습니다. 이름을 비워 두면 익명으로 표시됩니다.','Reply directly without signing in. Leave the optional name blank to post anonymously.');};
+ showThread=function(id){cloud.threadId=id;oldShowThread(id);const input=$('.reply-input');if(input)input.insertAdjacentHTML('beforebegin',nameField());const tip=$('.thread-context-note');if(tip)tip.textContent=E('로그인 없이 바로 댓글을 남길 수 있습니다. 이름을 비워 두면 익명으로 표시됩니다.','Reply directly without signing in. Leave the optional name blank to post anonymously.');const draft=window.TogetherDrafts?.read('note-comment',id);if(draft){$('#replyText').value=draft.body||'';if($('[data-participant-name]'))$('[data-participant-name]').value=draft.name||'';}input?.insertAdjacentHTML('afterend','<p id="replyDraftStatus" class="draft-save-status" role="status" aria-live="polite"></p>');renderReplyDraftStatus(draft?'saved':'idle');};
+ function renderReplyDraftStatus(status){const label=$('#replyDraftStatus');if(!label)return;label.dataset.status=status;label.textContent=status==='saving'?E('입력 중…','Typing…'):status==='saved'?E('이 기기에 임시 저장됨 · 등록 전에는 공개되지 않아요.','Draft saved on this device · private until you post.'):status==='error'?E('기기에 저장하지 못했어요. 화면을 닫기 전에 내용을 복사해 주세요.','Could not save on this device. Copy your text before closing.'):E('작성 중인 댓글은 이 기기에 자동으로 임시 저장됩니다.','Your unfinished reply is automatically saved on this device.');}
+ document.addEventListener('input',event=>{if(modalKind!=='thread'||!cloud.threadId||!(event.target.id==='replyText'||event.target.matches('[data-participant-name]')))return;window.TogetherDrafts?.save('note-comment',cloud.threadId,{body:$('#replyText')?.value||'',name:$('[data-participant-name]')?.value||''});});
+ document.addEventListener('together:draft-status',event=>{if(modalKind==='thread'&&event.detail.kind==='note-comment'&&event.detail.target===cloud.threadId)renderReplyDraftStatus(event.detail.status);});
  showAbout=function(){oldAbout();const panels=$$('.panel',$('#modal'));if(panels[0])panels[0].innerHTML=`<h2>${E('누구나 바로 참여','Everyone can participate')}</h2><p class="help">${E('로그인이나 회원가입 없이 공과를 읽고, 인사이트·댓글·공감을 남길 수 있습니다. 이름은 선택 사항입니다. 글은 온라인에 저장되며, 내가 쓴 글은 같은 브라우저에서 관리할 수 있습니다. 브라우저 데이터를 지우면 이 기록을 다시 관리할 수 없습니다.','Read lessons, post reflections, reply and react without signing in or creating an account. Your name is optional. Contributions are saved online and managed from this browser. Clearing browser data removes your ability to manage them.')}</p><h2>${E('운영자 도구','Operator tools')}</h2><p class="help">${E('콘텐츠 준비와 발표 관리 도구는 권한을 받은 운영자가 이메일로 로그인한 뒤 이용합니다. 가입만으로 운영 권한이 생기지는 않습니다. 비밀번호 재설정은 운영자 로그인 화면에서 할 수 있습니다.','Content preparation and presentation tools require email sign-in and an assigned operator role. Creating an account does not grant management access. Password reset is available on the operator sign-in screen.')}</p>`;const foot=$('.notice-foot',$('#modal'));if(foot)foot.textContent=E('공유 글은 사이트 방문자에게 공개됩니다. 나만 보기 기록은 서버에서 작성자만 읽을 수 있도록 제한합니다.','Shared posts are public to site visitors. Private notes are restricted to their author on the server.');};
  function updateStatus(){const el=$('.cloud-status');if(el){el.className='cloud-status '+cloud.status;el.innerHTML='<span class="status-dot"></span>'+connectionLabel();}}
  function readableError(error){
@@ -92,6 +95,7 @@ if(cloud.enabled){
  function inlineError(id,error){const el=$(id);if(el){el.textContent=readableError(error);el.hidden=false;}else toast(readableError(error),true);}
  function authMessage(message,error=false){const el=$('#authMessage');if(el){el.className='alert'+(error?' error':'');el.textContent=message;el.hidden=false;}}
  function showAuth(mode='signin'){
+  $('#sidebar')?.classList.remove('open');$('#menuBackdrop')?.classList.remove('active');
   if(composer)storeDraft();
   if(mode==='guest'){showProfile();return;}
   if(mode==='account'&&!namedUser())mode='signin';
@@ -167,7 +171,8 @@ if(cloud.enabled){
    if(error?.code==='23505'){({data,error}=await cloud.client.from('together_comments').select().eq('id',commentId).eq('owner_id',user.id).eq('note_id',id).single());if(!error&&data.body!==body)error={message:'Reply identity conflict'};}
    if(error)throw error;if(cloud.user?.id!==user.id)return;
    const current=state.notes.find(n=>n.id===id);if(current){current.comments=current.comments.filter(c=>c.id!==data.id);current.comments.push({id:data.id,owner:'me',author:data.author,body:data.body,created:data.created_at,demo:false});}
-   if(session===modalSession){input.value='';delete input.dataset.cloudId;$('#replyError').hidden=true;if(current)$('#threadReplies').innerHTML=repliesHTML(current);}cloud.lastJSON='';refreshPreservingScroll();toast(E('댓글을 저장했습니다.','Reply saved.'));cloud.status='connected';
+   const draft=window.TogetherDrafts?.read('note-comment',id);if(!draft||draft.body.trim()===body)window.TogetherDrafts?.clear('note-comment',id);
+   if(session===modalSession){if(input.value.trim()===body)input.value='';delete input.dataset.cloudId;$('#replyError').hidden=true;if(current)$('#threadReplies').innerHTML=repliesHTML(current);renderReplyDraftStatus(input.value?'saving':'idle');}cloud.lastJSON='';refreshPreservingScroll();toast(E('댓글을 저장했습니다.','Reply saved.'));cloud.status='connected';
   }catch(error){inlineError('#replyError',error);}finally{setBusy(false);}
  };
  const likeLocks=new Set();
@@ -182,10 +187,12 @@ if(cloud.enabled){
   const previous=cloud.user?.id||'guest',next=session?.user?.id||'guest',changed=previous!==next;
   const adoptingGuest=!cloud.user&&session?.user?.is_anonymous;
   if(changed){
+   document.dispatchEvent(new CustomEvent('together:before-identity',{detail:{previousUserId:previous==='guest'?null:previous,newUserId:next==='guest'?null:next,adoptingGuest}}));
    if(!adoptingGuest){if(composer)storeDraft();if(state.draft)savedDrafts[previous]=state.draft;state.draft=savedDrafts[next]||null;state.notes=state.notes.filter(n=>!n.remote);state.queue=[];if(['thread','composer'].includes(modalKind))closeModal(false);}
    cloud.revision++;cloud.lastJSON='';cloud.ready=false;
   }
   cloud.user=session?.user||null;
+  if(changed)document.dispatchEvent(new CustomEvent('together:identity',{detail:{previousUserId:previous==='guest'?null:previous,userId:cloud.user?.id||null,adoptingGuest}}));
   if(event==='INITIAL_SESSION')resolveInitial();
   if(event==='PASSWORD_RECOVERY')cloud.recovery=true;
   const revision=cloud.revision;

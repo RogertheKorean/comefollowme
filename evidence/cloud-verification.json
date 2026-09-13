@@ -1,5 +1,5 @@
 {
-  "testedAt": "2026-09-13T05:45:20.405Z",
+  "testedAt": "2026-09-13T08:16:33.082Z",
   "results": [
     "Two disposable verified email identities authenticate for ownership and operator checks",
     "Visitors can read shared posts while private posts stay isolated to their owner",
@@ -7,6 +7,7 @@
     "Anonymous callers, ordinary verified email users, metadata spoofing, and self-grants have no staff privilege; an admin temporary teacher grant works",
     "Read-only viewing and optional nickname save create no anonymous identity; public UI exposes profile and operator account controls only",
     "A failed first anonymous signup creates no identity and preserves the open reply and text for retry",
+    "Unsubmitted comments autosave privately on this device, survive reload, and do not create an identity or public comment",
     "First guest reply creates its identity lazily; a failed write preserves the open thread, text, and stable retry identity",
     "Refreshing retains the same guest identity and ownership of its earlier reply",
     "A separate browser sees the guest reply, persists its own reply, and retains it after reload",

@@ -32,7 +32,7 @@ const bundle=deployment;
 let html=read('src/shell.html');
 const replacements={
  '/*__CSS__*/':read('src/styles.css'),
- '/*__ENHANCED_CSS__*/':read('src/enhancements.css')+'\n'+read('src/references.css')+'\n'+read('src/cloud.css')+'\n'+read('src/mobile.css'),
+ '/*__ENHANCED_CSS__*/':read('src/enhancements.css')+'\n'+read('src/references.css')+'\n'+read('src/cloud.css')+'\n'+read('src/prompts.css')+'\n'+read('src/calendar.css')+'\n'+read('src/drafts.css')+'\n'+read('src/mobile.css'),
  '/*__CAPTURE__*/':read('src/capture.js'),
  '/*__APP__*/':read('src/app.js'),
  '/*__ENHANCEMENTS__*/':read('src/enhancements.js'),
@@ -43,6 +43,11 @@ const replacements={
  '/*__CLOUD__*/':read('src/cloud.js'),
  '/*__ACCESS__*/':read('src/access.js'),
  '/*__DASHBOARD__*/':read('src/dashboard.js'),
+ '/*__CALENDAR_MODEL__*/':read('src/calendar-model.js'),
+ '/*__DRAFTS__*/':read('src/drafts.js'),
+ '/*__PROMPTS__*/':read('src/prompts.js'),
+ '/*__CALENDAR__*/':read('src/calendar.js'),
+ '/*__COMMUNITY_NAVIGATION__*/':read('src/community-navigation.js'),
  '/*__MOBILE__*/':read('src/mobile.js'),
  '/*__CLOUD_CONFIG__*/':cloudConfig,
  '/*__DATA__*/':json('content/lesson.json'),

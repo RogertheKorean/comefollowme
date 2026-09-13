@@ -1,0 +1,23 @@
+{
+  "runId": "588ca073-b86",
+  "origin": "http://127.0.0.1:4174",
+  "completedAt": "2026-09-13T08:55:01.156Z",
+  "checks": [
+    "Disposable admin, two teachers, manager, and ordinary email identities were created without using existing users",
+    "A teacher can create a 12-hex-slug question and visitors can read its short-link record without authentication",
+    "Ordinary email cannot author, another teacher cannot edit, owner teacher and admin can edit, and prompt slug remains immutable",
+    "An anonymous identity can create one owned public reply; public visitors can read it and an ordinary user cannot forge its owner",
+    "A primary manager can create/manage only primary events; an all-audience event needs an explicit all grant; drafts remain non-public, while published and cancelled events stay public and slug is immutable",
+    "Cross-organization management, ordinary event writes, direct self-grants, and JWT metadata spoofing are denied",
+    "Mobile public question and calendar routes retain their direct short links through back/forward, keep a 390px layout free of horizontal overflow, and create an anonymous identity only on first reply submit with a stable retry UUID",
+    "A teacher creates, previews, publishes, and edits an owned question through the prompt editor; an intentionally blank reference remains null",
+    "An assigned primary manager creates a draft with a poster, keeps it private, edits and previews it, publishes it, then cancels, restores, and deletes it through the calendar UI"
+  ],
+  "cleanup": {
+    "users": 7,
+    "prompts": 2,
+    "replies": 2,
+    "events": 3,
+    "posters": 2
+  }
+}

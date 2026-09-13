@@ -4,6 +4,12 @@
  "buildCommand":"npm run build",
  "installCommand":"",
  "outputDirectory":"public",
+ "rewrites":[
+  {"source":"/questions","destination":"/index.html"},
+  {"source":"/p/:slug","destination":"/index.html"},
+  {"source":"/calendar","destination":"/index.html"},
+  {"source":"/e/:slug","destination":"/index.html"}
+ ],
  "headers":[{"source":"/(.*)","headers":[
   {"key":"X-Robots-Tag","value":"noindex, nofollow"},
   {"key":"X-Content-Type-Options","value":"nosniff"},
