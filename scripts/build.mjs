@@ -43,6 +43,7 @@ const replacements={
  '/*__CLOUD__*/':read('src/cloud.js'),
  '/*__ACCESS__*/':read('src/access.js'),
  '/*__IMPORT_MODEL__*/':read('src/import-model.js'),
+ '/*__CLIPBOARD_IMPORT__*/':read('src/clipboard-import.js'),
  '/*__PUBLISHING__*/':read('src/lesson-publishing.js'),
  '/*__IMPORTER__*/':read('src/importer.js'),
  '/*__DASHBOARD__*/':read('src/dashboard.js'),

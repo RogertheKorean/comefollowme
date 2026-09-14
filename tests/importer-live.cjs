@@ -6,7 +6,8 @@ const {chromium,webkit}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
 for(const line of fs.readFileSync('.env.local','utf8').split(/\r?\n/)){const m=line.match(/^(SUPABASE_URL|SUPABASE_PUBLISHABLE_KEY)=(.*)$/);if(m&&!process.env[m[1]])process.env[m[1]]=m[2];}
 const options={auth:{persistSession:false,autoRefreshToken:false}},service=createClient(process.env.SUPABASE_URL,process.env.SUPABASE_SECRET_KEY,options);
 const runId=randomUUID(),password=`Import-${randomUUID()}9!`,source=`https://www.churchofjesuschrist.org/study/manual/import-verification-${runId}/1?lang=kor`,title=`공과 게시 검증 ${runId.slice(0,8)}`;
-const raw=`**2026년 9월 14일~20일: “${title}”**\n\n공과 원문 URL: ${source}\n\n## 함께 읽기\n\n서로의 생각을 경청해 보세요. ${runId}\n\n## 함께 읽기\n\n반복되는 소제목도 별개의 문단으로 연결됩니다.`;
+const scripture='https://www.churchofjesuschrist.org/study/scriptures/ot/isa/1?lang=kor&id=p18#p18';
+const raw=`**2026년 9월 14일~20일: “${title}”**\n\n공과 원문 URL: ${source}\n\n## 함께 읽기\n\n[이사야 1:18](${scripture})을 읽고 서로의 생각을 경청해 보세요. ${runId}\n\n## 함께 읽기\n\n반복되는 소제목도 별개의 문단으로 연결됩니다.`;
 const results=[],lessonIds=new Set();let editor,browser,webBrowser;
 const ok=r=>{if(r.error)throw Error(`${r.error.code}: ${r.error.message}`);return r.data;};
 const pass=x=>{results.push(x);console.log('PASS',x);};
@@ -14,6 +15,19 @@ async function openImport(page){await page.evaluate(()=>TogetherNavigation.navig
 async function login(page){const menu=page.locator('[data-action=menu-open]');if(await menu.isVisible())await menu.click();await page.locator('#sidebar [data-cloud=account]').click();await page.locator('#authEmail').fill(editor.email);await page.locator('#authPassword').fill(password);await page.locator('[data-cloud-submit]').click();await page.waitForFunction(()=>TogetherAccess.can('content'));}
 async function review(page){await page.locator('[data-import=review]').click();await page.locator('.import-reading-preview').waitFor();}
 async function confirmReview(page){await page.locator('#importAlignment').check();await page.locator('#importRights').check();}
+async function checkRichPaste(page){
+ await page.locator('#importKO').fill('앞\n\n선택\n\n뒤');
+ const pasted=await page.locator('#importKO').evaluate((area,{source,title,scripture})=>{
+  area.setSelectionRange(3,5);const clip=new DataTransfer();clip.setData('text/plain','Plain clipboard fallback');
+  clip.setData('text/html',`<article><header><p><b>2026년 9월 14일~20일: “${title}”</b></p></header><p>공과 원문 URL: <a href="${source}">공과 원문</a></p><p><a href="${scripture}">이사야 1:18</a>을 읽어 보세요.</p><script>window.pasteExecuted=true</script><img src="https://clipboard-probe.invalid/pixel"></article>`);
+  const event=new ClipboardEvent('paste',{clipboardData:clip,bubbles:true,cancelable:true});area.dispatchEvent(event);
+  return {prevented:event.defaultPrevented,value:area.value,executed:window.pasteExecuted===true,draft:TogetherImporter.getDraft().ko};
+ },{source,title,scripture});
+ assert.equal(pasted.prevented,true);assert.equal(pasted.executed,false);assert.equal(pasted.draft,pasted.value);assert.ok(pasted.value.startsWith('앞\n\n**2026'));assert.ok(pasted.value.endsWith('\n\n뒤'));assert.ok(pasted.value.includes(`[이사야 1:18](${scripture})`));
+ await page.locator('[data-import=analyze]').click();assert.equal(await page.locator('#importTitleKO').inputValue(),title);assert.equal(await page.locator('#importURL').inputValue(),source);assert.match(await page.locator('#importNotice').textContent(),/한국어 2/);
+ const fallback=await page.locator('#importKO').evaluate(area=>{const before=area.value,clip=new DataTransfer();clip.setData('text/plain','[Already Markdown](https://example.test)');const event=new ClipboardEvent('paste',{clipboardData:clip,bubbles:true,cancelable:true});area.dispatchEvent(event);return {prevented:event.defaultPrevented,unchanged:area.value===before};});
+ assert.deepEqual(fallback,{prevented:false,unchanged:true});
+}
 (async()=>{try{
  editor=ok(await service.auth.admin.createUser({email:`import-ui-${runId}@example.invalid`,password,email_confirm:true})).user;
  ok(await service.from('together_staff').insert({user_id:editor.id,role:'editor'}));
@@ -23,6 +37,8 @@ async function confirmReview(page){await page.locator('#importAlignment').check(
  await login(page);await openImport(page);
  assert.deepEqual(await page.locator('.import-workspace section.panel > h2').allTextContents(),['1. 원문 넣고 분석하기','2. 공과 기본 정보 확인','3. 미리 보고 게시']);
  assert.equal(await page.locator('#importKO').inputValue(),'');assert.equal(await page.locator('#importTitleKO').inputValue(),'');
+ const clipboardRequests=[];page.on('request',r=>{if(r.url().includes('clipboard-probe.invalid'))clipboardRequests.push(r.url());});
+ await checkRichPaste(page);assert.deepEqual(clipboardRequests,[]);pass('Webpage paste preserves headings and links at the selected position, updates the draft, and keeps plain-text paste native');
  await page.locator('#importKO').fill(raw);await page.locator('[data-import=analyze]').click();
  assert.equal(await page.locator('#importTitleKO').inputValue(),title);assert.equal(await page.locator('#importDate').inputValue(),'2026-09-14/2026-09-20');assert.equal(await page.locator('#importURL').inputValue(),source);
  await page.locator('#importTitleKO').fill(title+' 수정');await page.locator('[data-import=analyze]').click();assert.equal(await page.locator('#importTitleKO').inputValue(),title+' 수정');
@@ -40,6 +56,7 @@ async function confirmReview(page){await page.locator('#importAlignment').check(
  const visitorContext=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true}),visitor=await visitorContext.newPage();visitor.on('pageerror',e=>errors.push(e.message));await visitor.goto(origin);await visitor.waitForFunction(id=>!!TogetherPublishing?.getLatest(id),first.id);
  assert.equal(await visitor.evaluate(()=>TogetherCloud.user),null);assert.equal(await visitor.locator(`[data-week="${first.id}@${first.version}"]`).count(),1);
  await visitor.locator(`[data-week="${first.id}@${first.version}"]`).click();assert.match(await visitor.locator('#readerCard').textContent(),new RegExp(runId));
+ assert.ok(await visitor.locator('#readerCard a[data-ref-url*="/isa/1"]').count()>0);
  pass('Reviewed exact payload retries safely, publishes to server, clears its draft, and reaches an unsigned visitor');
  await openImport(page);await page.locator('#importLessonPicker').selectOption(first.id+'@'+first.version);await page.locator('[data-import=load]').click();assert.equal(await page.locator('#importKO').inputValue(),raw);
  await page.locator('#importTitleKO').fill(title+' 두 번째');await review(page);await confirmReview(page);await page.locator('[data-import=publish]').click();await page.locator('.dashboard').waitFor();
@@ -57,7 +74,7 @@ async function confirmReview(page){await page.locator('#importAlignment').check(
  pass('An unfinished import survives reload and background render, with review required again');
  webBrowser=await webkit.launch({headless:true});
  for(const [engineBrowser,name]of [[browser,'chromium'],[webBrowser,'webkit']]){
-  const context=await engineBrowser.newContext({viewport:{width:320,height:844},isMobile:true,hasTouch:true}),mobile=await context.newPage();mobile.on('pageerror',e=>errors.push(e.message));await mobile.goto(origin);await mobile.waitForFunction(()=>TogetherCloud.ready&&TogetherPublishing);await login(mobile);await openImport(mobile);await mobile.locator('#importKO').fill(raw);await mobile.locator('[data-import=analyze]').click();await review(mobile);
+  const context=await engineBrowser.newContext({viewport:{width:320,height:844},isMobile:true,hasTouch:true}),mobile=await context.newPage();mobile.on('pageerror',e=>errors.push(e.message));await mobile.goto(origin);await mobile.waitForFunction(()=>TogetherCloud.ready&&TogetherPublishing);await login(mobile);await openImport(mobile);await checkRichPaste(mobile);await mobile.locator('#importKO').fill(raw);await mobile.locator('[data-import=analyze]').click();await review(mobile);
   const metrics=await mobile.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth+1,font:parseFloat(getComputedStyle(document.querySelector('#importURL')).fontSize)}));assert.equal(metrics.overflow,false);assert.ok(metrics.font>=16);
   fs.mkdirSync('evidence',{recursive:true});await mobile.screenshot({path:`evidence/import-${name}-320.png`,fullPage:true});await context.close();
  }

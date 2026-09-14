@@ -29,7 +29,7 @@
   return `<main class="workspace import-workspace"><div class="stream-wrap">${pageIntro(E('본문을 넣고, 공과를 게시하세요.','Add the text. Publish a lesson.'),E('본문 분석 → 기본 정보 확인 → 미리보기와 게시','Analyze text → review details → preview and publish'))}
   <fieldset class="import-form" ${busy?'disabled':''}>
   <div class="panel import-existing"><label class="field"><span>${E('기존 공과 수정','Edit an existing lesson')}</span><select id="importLessonPicker"><option value="">${E('수정할 공과 선택','Choose a lesson to edit')}</option>${available.map(l=>`<option value="${esc(lessonKey(l))}">${esc(l.title[lang()]||l.title.ko)} · ${esc(l.date[lang()]||l.date.ko)}</option>`).join('')}</select></label><button class="btn" data-import="load">${E('선택한 공과 불러오기','Load selected lesson')}</button><button class="text-btn" data-import="new">${E('새 공과 작성','Start a new lesson')}</button></div>
-  <section class="panel" id="importSourceSection"><h2>${E('1. 원문 넣고 분석하기','1. Add and analyze the text')}</h2><p class="help">${E('Markdown을 붙여 넣거나 파일을 선택하세요. 제목·기간·원문 주소를 찾아 기본 정보를 채웁니다.','Paste Markdown or choose a file. We look for its title, dates and source URL to fill the lesson details.')}</p>
+  <section class="panel" id="importSourceSection"><h2>${E('1. 원문 넣고 분석하기','1. Add and analyze the text')}</h2><p class="help">${E('웹페이지에서 본문을 복사해 붙여 넣으면 제목·문단·링크를 유지합니다. Markdown이나 텍스트 파일도 사용할 수 있습니다. 본문을 분석하면 공과 기본 정보를 채웁니다.','Copy and paste the text from a webpage to keep its headings, paragraphs and links. Markdown and text files also work. Analyze the text to fill the lesson details.')}</p><p class="help" id="importPasteStatus" role="status"></p>
   <div class="fields-two"><div><label class="field"><span>한국어 · Markdown</span><textarea id="importKO" class="code-area" maxlength="400000" aria-label="한국어 Markdown" placeholder="${E('한국어 공과 본문을 붙여 넣으세요.','Paste the Korean lesson text.')}">${esc(d.ko)}</textarea></label><label class="field"><span>${E('한국어 파일 선택','Korean Markdown file')}</span><input type="file" id="fileKO" accept=".md,.txt,text/plain,text/markdown"></label></div><div><label class="field"><span>${E('English · Markdown (선택)','English · Markdown (optional)')}</span><textarea id="importEN" class="code-area" maxlength="400000" aria-label="English Markdown" placeholder="${E('영어 원문이 없으면 비워 두세요.','Leave blank if English is unavailable.')}">${esc(d.en)}</textarea></label><label class="field"><span>${E('영어 파일 선택','English Markdown file')}</span><input type="file" id="fileEN" accept=".md,.txt,text/plain,text/markdown"></label></div></div>
   <button class="btn primary" data-import="analyze">${icon('spark')}${E('본문 분석 · 기본 정보 채우기','Analyze text and fill details')}</button></section>
   <section class="panel" id="importDetailsSection"><h2>${E('2. 공과 기본 정보 확인','2. Review lesson details')}</h2><p class="help">${E('찾지 못한 항목은 비워 둡니다. 자동 입력된 값도 자유롭게 수정할 수 있습니다.','Missing details stay blank. You can edit every extracted value.')}</p><p id="importNotice" class="import-status" role="status">${esc(notice||E('1번에서 본문을 분석해 주세요.','Analyze the text in step 1.'))}</p>
@@ -48,6 +48,9 @@
   const missing=[[d.titleKO,E('한국어 제목','Korean title')],[d.date,E('기간','dates')],[d.url,E('원문 URL','source URL')]].filter(([v])=>!v).map(([,label])=>label);
   notice=missing.length?E(`본문을 분석했습니다. ${missing.join(' · ')}은 직접 입력해 주세요.`,`Text analyzed. Please enter: ${missing.join(', ')}.`):E('기본 정보를 채웠습니다. 게시 전에 내용을 확인해 주세요.','Details are filled in. Review them before publishing.');
   if(warnings.some(w=>['invalid-date','ambiguous-date'].includes(w)))notice+=' '+E('날짜가 올바른지 확인해 주세요.','Please verify the dates.');
+  const linkCounts=['ko','en'].filter(l=>d[l].trim()).map(l=>({label:l==='ko'?'한국어':'English',count:ReferenceEngine.extractLinks(d[l]).length}));
+  notice+=' '+E('본문 링크: ','Links in the text: ')+linkCounts.map(l=>`${l.label} ${l.count}`).join(' · ')+'.';
+  if(linkCounts.some(l=>!l.count))notice+=' '+E('링크가 0개인 본문은 웹 원문에서 다시 복사하거나 Markdown 링크를 넣어 주세요. 주소가 없는 일반 텍스트에서는 링크를 복원할 수 없습니다.','For text with no links, copy it again from the webpage or add Markdown links. Plain text without addresses cannot restore the original links.');
   invalidate();persist();paint();$('#importDetailsSection')?.scrollIntoView({block:'start',behavior:'smooth'});
  }catch(e){fail(e.message);}}
  function canonical(value){try{const u=new URL(value);if(u.protocol!=='https:'||u.username||u.password)return '';return u.origin+u.pathname.replace(/\/$/,'');}catch{return '';}}
@@ -81,6 +84,19 @@
  function bind(){
   for(const [id,key]of [['fileKO','ko'],['fileEN','en']])$('#'+id)?.addEventListener('change',async e=>{const f=e.target.files[0],d=session(),who=actor,token=++fileRead;if(!f)return;if(f.size>400000){fail(E('400 KB 이하의 Markdown 또는 텍스트 파일을 선택해 주세요.','Choose a Markdown or text file under 400 KB.'));return;}try{const text=await f.text();if(d!==draft||who!==userId()||token!==fileRead)return;d[key]=text;if(!d.editing){d.id=null;d.expectedVersion=null;}invalidate();persist();paint();}catch{fail(E('파일을 읽지 못했습니다.','Could not read the file.'));}});
  }
+ document.addEventListener('paste',event=>{
+  const target=event.target;if(!['importKO','importEN'].includes(target.id)||state.view!=='import'||busy||!allowed()||!event.clipboardData)return;
+  try{
+   const html=event.clipboardData.getData('text/html'),text=event.clipboardData.getData('text/plain');if(!html)return;
+   const sourceURL=html.match(/^SourceURL:([^\r\n]+)/m)?.[1]||'';
+   const result=window.TogetherClipboardImport.transformPaste({html,text,sourceURL});if(!result.converted)return;
+   const start=target.selectionStart,end=target.selectionEnd;
+   if(target.value.length-(end-start)+result.markdown.length>target.maxLength){event.preventDefault();toast(E('본문이 입력 한도를 넘습니다. 더 작은 부분을 복사해 주세요. 기존 내용은 유지했습니다.','The text exceeds the input limit. Copy a smaller section. Your existing text is unchanged.'),true);return;}
+   target.setRangeText(result.markdown,start,end,'end');event.preventDefault();target.dispatchEvent(new Event('input',{bubbles:true}));
+   const message=result.linkCount?E(`서식과 링크 ${result.linkCount}개를 유지해 붙여 넣었습니다. 본문 분석을 눌러 주세요.`,`Pasted with formatting and ${result.linkCount} links. Analyze the text next.`):E('서식을 유지해 붙여 넣었습니다. 복사된 내용에 링크는 없었습니다.','Pasted with formatting. The copied content contained no links.');
+   const status=$('#importPasteStatus');if(status)status.textContent=message;
+  }catch{/* Keep the browser's plain-text paste when rich conversion is unavailable. */}
+ });
  document.addEventListener('input',event=>{const key=fields[event.target.id];if(!key||state.view!=='import'||busy)return;const d=session();d[key]=event.target.value;if(!d.editing&&['ko','en','url'].includes(key)){d.id=null;d.expectedVersion=null;}if(key==='ko'||key==='en')fileRead++;invalidate();persist();});
  document.addEventListener('change',event=>{if(event.target.id==='importAlignment'||event.target.id==='importRights'){session()[event.target.id==='importAlignment'?'alignment':'rights']=event.target.checked;}});
  document.addEventListener('click',event=>{const action=event.target.closest('[data-import]')?.dataset.import;if(!action)return;if(action==='analyze')analyze();if(action==='review')void review();if(action==='publish')void publish();if(action==='load')loadSelected();if(action==='new'&&!busy&&allowed()){window.TogetherDrafts?.clear('lesson-import','editor');draft=fresh();parsed=null;reviewed=null;notice='';error='';paint();}});

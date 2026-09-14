@@ -1,8 +1,10 @@
 {
-  "testedAt": "2026-09-13T09:01:36.304Z",
+  "testedAt": "2026-09-14T00:29:36.872Z",
   "origin": "http://127.0.0.1:4174",
   "results": [
-    "Teacher UI preview and publish create a publicly readable prompt with blank reference stored as null",
+    "Teacher UI preview and publish create a publicly readable prompt and optional poster with blank reference stored as null",
+    "Unsigned short links show the poster and material, restore a device-only reply draft, submit once as a guest, and expose the reply to another unsigned visitor",
+    "WebKit 320px and 390px public poster, detail, reply input, and editor fit the viewport with 16px inputs",
     "Editing the open prompt leaves a separately tracked teacher prompt untouched",
     "A real reader selection opens a new prefilled prompt editor and does not overwrite the prior prompt",
     "A teacher-authenticated fresh short-link reload resolves the requested prompt without remaining loading",
@@ -10,9 +12,9 @@
     "Prompt author UI flow completed without browser runtime errors"
   ],
   "temporaryPromptIds": [
-    "ffd6f929-28ff-41ef-be1b-19be9a382e07",
-    "440e1b02-c786-4443-921e-abba7f20b43b",
-    "dccd5188-1375-4a15-bb5b-375f307e0817"
+    "2b42209f-5a3d-4c37-b3d4-f37082e9b1b0",
+    "48e7ec97-f617-4e47-bd45-99571bb1c051",
+    "bb8d7435-0a0f-42fa-a609-8da2ac0657ca"
   ],
   "temporaryTeacherRemoved": true
 }

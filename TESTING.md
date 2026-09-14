@@ -2,6 +2,37 @@
 
 ## Current release checks
 
+Version 4.4.0 was checked on 2026-09-14 against the configured Supabase project:
+
+- 82 unit/build checks, including inert clipboard conversion, source extraction,
+  permission boundaries, private posters, and retry/cleanup wiring.
+- 7 live import UI checkpoints, including rich webpage paste at the
+  selected text position, preserved scripture links in a published lesson,
+  native plain-text fallback, no pasted script execution or image requests,
+  and Chromium/WebKit editors at 320 px.
+- 4 live poster backend checkpoints: optional images, pending-file privacy,
+  attached public reads, teacher ownership, admin replacement, and actual object
+  deletion verified with privileged list and download. All temporary rows,
+  objects and four identities were removed after the successful run.
+- 8 live question UI checkpoints covering automatic weekly source links,
+  preserved overrides, image preview/upload, retry after a lost upload response,
+  unsigned short-link access, 800 ms reply drafts restored after reload, actual
+  guest submission, and visibility to another unsigned visitor. The editor,
+  selected-passage flow, and mobile layouts were also checked.
+
+Evidence: `evidence/importer-live.json`, `evidence/prompt-author-live.json`,
+and their associated mobile screenshots. These are browser checks, not physical
+Android/iPhone device certification. Test prompts and posters are disposable
+fixtures; no user question or poster was seeded by this release.
+
+Migration 008 was applied before UI deployment. The pre-existing second weekly
+lesson was repaired separately as an immutable revision: 76 Korean and 79 English
+links were matched to official source text, retaining all 46 paragraph IDs and
+the exact text after link markup is removed. Both public API bytes and actual
+production reader links were verified; its earlier revision remains available.
+
+## Earlier release checks
+
 Version 4.3.0 was checked on 2026-09-13 against the configured Supabase project:
 
 - 74 unit/build checks, including bilingual metadata extraction, missing-field

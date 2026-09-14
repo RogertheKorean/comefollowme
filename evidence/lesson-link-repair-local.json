@@ -1,0 +1,32 @@
+{
+  "lessonId": "import-e7506efb14edb0b4bc60f022",
+  "version": "0d5741bd14164062d5582a06d09ccf44d46091338ee56622ca2947215dfc6dc3",
+  "checks": {
+    "ko": {
+      "rawLinkCount": 76,
+      "blocks": 46,
+      "rawMatchesAfterStripping": true,
+      "allBlocksMatchAfterStripping": true
+    },
+    "en": {
+      "rawLinkCount": 79,
+      "blocks": 46,
+      "rawMatchesAfterStripping": true,
+      "allBlocksMatchAfterStripping": true
+    }
+  },
+  "reader": {
+    "ko": {
+      "renderedLinks": 76,
+      "isaiahHref": "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/1?lang=kor",
+      "fallbackHref": "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/1?lang=kor",
+      "fallbackVisible": true
+    },
+    "en": {
+      "renderedLinks": 79,
+      "isaiahHref": "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/1?lang=eng",
+      "fallbackHref": "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/1?lang=eng",
+      "fallbackVisible": true
+    }
+  }
+}

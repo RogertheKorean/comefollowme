@@ -1,7 +1,8 @@
 {
-  "testedAt": "2026-09-13T09:55:54.488Z",
+  "testedAt": "2026-09-14T00:03:45.374Z",
   "origin": "http://127.0.0.1:4174",
   "results": [
+    "Webpage paste preserves headings and links at the selected position, updates the draft, and keeps plain-text paste native",
     "Input-first order, extracted title/date/source, manual corrections and clearing missing metadata",
     "Reviewed exact payload retries safely, publishes to server, clears its draft, and reaches an unsigned visitor",
     "Publishing an edit shows one latest card while retaining the previous readable revision",
