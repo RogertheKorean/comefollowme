@@ -16,7 +16,9 @@ if(cloud.enabled){
  let localName='';try{localName=localStorage.getItem('together-participant-name')||'';}catch{}
  const namedUser=()=>cloud.user&&!cloud.user.is_anonymous;
  function displayName(){return (cloud.user?.user_metadata?.display_name||localName||E('익명','Anonymous')).slice(0,50);}
- function rememberName(value){localName=String(value||'').trim().slice(0,50);try{localStorage.setItem('together-participant-name',localName);}catch{}return localName;}
+ function participantName(){const saved=String(cloud.user?.user_metadata?.display_name||'').trim().slice(0,50);return namedUser()?saved:localName||(['익명','Anonymous'].includes(saved)?'':saved);}
+ cloud.participantName=participantName;
+ function rememberName(value){localName=String(value||'').trim().slice(0,50);try{localStorage.setItem('together-participant-name',localName);}catch{}document.dispatchEvent(new CustomEvent('together:participant-name'));return localName;}
  function nameField(){return namedUser()?'':`<label class="participant-name">${E('이름 또는 별명 (선택)','Name or nickname (optional)')}<input data-participant-name autocomplete="nickname" maxlength="50" value="${esc(localName||cloud.user?.user_metadata?.display_name||'')}" placeholder="${E('비워 두면 익명으로 표시됩니다','Leave blank to post anonymously')}"></label>`;}
  function connectionLabel(){return cloud.status==='error'?E('연결 확인 필요','Connection interrupted'):cloud.busy?E('저장 중…','Saving…'):cloud.status==='connecting'?E('연결 중…','Connecting…'):E('온라인 학습 공간','Connected');}
  topbarHTML=function(){return oldTopbar().replace(/<div class="demo-badge">[\s\S]*?<\/div>/,`<div class="cloud-status ${cloud.status}" role="status"><span class="status-dot"></span>${connectionLabel()}</div>`).replace(/<button class="avatar" data-action="about"[\s\S]*?<\/button>/,`<button class="btn sm account-button" data-cloud="${namedUser()?'account':'profile'}">${icon('people','small')}<span>${namedUser()||localName||cloud.user?.user_metadata?.display_name?esc(displayName()):E('이름 설정','Your name')}</span></button>`);};
@@ -67,7 +69,7 @@ if(cloud.enabled){
   if(participantPromise)return participantPromise;
   participantPromise=(async()=>{
    let user=cloud.user;
-   const chosen=typeof name==='string'?rememberName(name):(localName||user?.user_metadata?.display_name||'');
+   const chosen=typeof name==='string'?(user&&!user.is_anonymous?String(name).trim().slice(0,50):rememberName(name)):participantName();
    const author=chosen||E('익명','Anonymous');
    if(!user){
     const {data,error}=await cloud.client.auth.signInAnonymously({options:{data:{display_name:author}}});
@@ -192,6 +194,7 @@ if(cloud.enabled){
    cloud.revision++;cloud.lastJSON='';cloud.ready=false;
   }
   cloud.user=session?.user||null;
+  if(!changed)document.dispatchEvent(new CustomEvent('together:participant-name'));
   if(changed)document.dispatchEvent(new CustomEvent('together:identity',{detail:{previousUserId:previous==='guest'?null:previous,userId:cloud.user?.id||null,adoptingGuest}}));
   if(event==='INITIAL_SESSION')resolveInitial();
   if(event==='PASSWORD_RECOVERY')cloud.recovery=true;

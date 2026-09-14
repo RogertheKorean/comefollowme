@@ -2,6 +2,22 @@
 
 ## Current release checks
 
+Version 4.4.1 was checked on 2026-09-14:
+
+- 83 unit/build checks, including preservation of an explicitly empty name in
+  a reloaded or adopted anonymous draft.
+- 6 live browser checkpoints for visitor and account name prefill, legacy draft
+  restoration, manual nickname/empty-name overrides, profile changes, actual
+  reply authors, and isolation after switching accounts.
+- Chromium and a 320 px WebKit view were exercised. The one exact fixture prompt
+  and three tracked identities were removed after verification.
+
+Evidence: evidence/prompt-name-prefill-live.json. The unchanged question poster,
+lesson import and permission flows retain the 4.4.0 verification below.
+No schema change or automatic scripture-range linking is included in this patch.
+
+## Version 4.4.0 checks
+
 Version 4.4.0 was checked on 2026-09-14 against the configured Supabase project:
 
 - 82 unit/build checks, including inert clipboard conversion, source extraction,

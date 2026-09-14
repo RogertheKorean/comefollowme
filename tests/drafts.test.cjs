@@ -1,6 +1,19 @@
 const test=require('node:test'),assert=require('node:assert/strict');
 const createDrafts=require('../src/drafts.js');
 
+test('retains an explicitly cleared reply name across reload and guest adoption',()=>{
+ const h=harness();
+ h.api.save('prompt-reply','name-choice',{body:'My reply',name:'',nameEdited:false});h.api.flush();
+ assert.equal(h.api.save('prompt-reply','name-choice',{body:'My reply',name:'',nameEdited:true}),true);
+ h.api.flush();
+ const reloaded=harness(h.store);
+ assert.equal(reloaded.api.read('prompt-reply','name-choice').nameEdited,true);
+ reloaded.fireDocument('together:before-identity',{previousUserId:null,newUserId:'guest-name-choice',adoptingGuest:true});
+ reloaded.cloud.user={id:'guest-name-choice',is_anonymous:true};
+ assert.equal(reloaded.api.read('prompt-reply','name-choice').nameEdited,true);
+ assert.equal(reloaded.api.read('prompt-reply','name-choice').name,'');
+});
+
 function memoryStorage(){
  const values=new Map();let writes=0,fail=false;
  return {get length(){return values.size;},key:index=>[...values.keys()][index]??null,getItem:key=>values.has(key)?values.get(key):null,setItem(key,value){if(fail)throw Error('QuotaExceededError');writes++;values.set(key,String(value));},removeItem(key){if(fail)throw Error('QuotaExceededError');values.delete(key);},values,set fail(value){fail=value;},get writes(){return writes;}};

@@ -1,0 +1,14 @@
+{
+  "testedAt": "2026-09-14T01:00:32.268Z",
+  "origin": "http://127.0.0.1:4174",
+  "results": [
+    "A saved visitor name prefills immediately and after reload without creating an identity",
+    "An edited alias and body survive profile changes, background render, and draft reload",
+    "An intentionally cleared name remains blank across reload and submits as Anonymous",
+    "A signed-in profile fills new and legacy blank-name drafts, submits correctly, and stays filled after success",
+    "Account changes isolate drafts and an unnamed account does not borrow the previous account or device nickname",
+    "WebKit at 320px preserves the saved visitor name without overflow or sign-in"
+  ],
+  "temporaryPromptId": "1144b662-f24d-4ed4-93ee-25c2b253640e",
+  "cleanup": "Exact fixture prompt and tracked identities removed in finally"
+}

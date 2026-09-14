@@ -8,7 +8,7 @@
  const VERSION=1,DELAY=800;
  const encode=value=>encodeURIComponent(String(value));
  const validPart=value=>typeof value==='string'&&value.length>0&&value.length<=500;
- const same=(left,right)=>left?.body===right?.body&&left?.name===right?.name;
+ const same=(left,right)=>left?.body===right?.body&&left?.name===right?.name&&left?.nameEdited===right?.nameEdited;
 
  return function createDrafts(env={}){
   const doc=env.document;
@@ -31,9 +31,9 @@
   function identityScope(){const id=env.TogetherCloud?.user?.id;return id?`user/${id}`:`visitor/${visitor()}`;}
   function storageKey(kind,target,scope=identityScope()){return `${prefix}${encode(scope)}:${encode(kind)}:${encode(target)}`;}
   function parse(value){
-   try{const item=JSON.parse(value);if(item?.version!==VERSION||typeof item.body!=='string'||typeof item.updatedAt!=='string')return null;const result={body:item.body,updatedAt:item.updatedAt};if(typeof item.name==='string')result.name=item.name;return result;}catch{return null;}
+   try{const item=JSON.parse(value);if(item?.version!==VERSION||typeof item.body!=='string'||typeof item.updatedAt!=='string')return null;const result={body:item.body,updatedAt:item.updatedAt};if(typeof item.name==='string')result.name=item.name;if(typeof item.nameEdited==='boolean')result.nameEdited=item.nameEdited;return result;}catch{return null;}
   }
-  function normalize(data){if(!data||typeof data.body!=='string')return null;const result={body:data.body};if(typeof data.name==='string')result.name=data.name;return result;}
+  function normalize(data){if(!data||typeof data.body!=='string')return null;const result={body:data.body};if(typeof data.name==='string')result.name=data.name;if(typeof data.nameEdited==='boolean')result.nameEdited=data.nameEdited;return result;}
   function nextTimestamp(previous){const now=new Date(),prior=Date.parse(previous?.updatedAt||'');if(Number.isFinite(prior)&&prior>=now.getTime())now.setTime(prior+1);return now.toISOString();}
   function detail(kind,target,statusValue,updatedAt=null){return {kind,target,status:statusValue,updatedAt};}
   function emit(kind,target,statusValue,updatedAt=null){
