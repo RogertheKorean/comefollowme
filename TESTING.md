@@ -2,6 +2,28 @@
 
 ## Current release checks
 
+Version 4.5.0 was checked on 2026-09-14:
+
+- 87 unit/build checks, including the new discussion table permission boundaries.
+- 5 live backend checkpoints: public reads, owned anonymous writes, duplicate
+  hearts, spoof rejection, limits, immutable timestamps, own deletion and parent
+  cascade; existing insight rows remained unchanged.
+- 10 live browser checkpoints: separate per-response drafts, lazy participation,
+  remembered names, deliberate anonymity, two-browser visibility, owned deletion,
+  retry after a lost POST, edits during save, close/reopen during save and account
+  isolation. Chromium at 390/1440 px and WebKit at 320 px were exercised.
+- 15 existing cloud workflow checkpoints passed after sharing the insight controls,
+  comment renderer and reaction writer with question responses.
+- All exact fixture prompts, notes and tracked test identities were cleaned up.
+
+Backend results were recorded in the live test output (5 passing checkpoints).
+Browser evidence: `evidence/prompt-discussions-ui-live.json`,
+`evidence/prompt-discussions-webkit-320.png`, `evidence/cloud-verification.json`.
+Browser emulation does not substitute for physical Android/iOS testing.
+The earlier automatic scripture-range linking suggestion remains unimplemented.
+
+## Version 4.4.1 checks
+
 Version 4.4.1 was checked on 2026-09-14:
 
 - 83 unit/build checks, including preservation of an explicitly empty name in

@@ -1,0 +1,17 @@
+{
+  "testedAt": "2026-09-14T01:25:40.682Z",
+  "origin": "http://127.0.0.1:4174",
+  "results": [
+    "Visitor reading is identity-free; 800ms drafts survive close/reload and stay separate for each response",
+    "A visitor can heart and undo a heart with one server reaction per identity",
+    "Anonymous participation adopts the visitor draft, posts the remembered name, and updates the shared comment count",
+    "Another unsigned visitor reads the comment but has no author delete control",
+    "A lost successful POST can be retried without duplicate comments or overriding an intentionally blank name",
+    "Typing during a pending comment save preserves the newer unpublished draft",
+    "Closing and reopening during a save keeps the target locked, restores the draft, and retries without duplicating the saved comment",
+    "The author can delete their own nested comment and its count updates",
+    "Account names prefill automatically and sign-out closes the thread and isolates the account draft",
+    "WebKit at 320px fits the thread, comments and draft composer with readable touch inputs"
+  ],
+  "cleanup": "Exact fixture prompt and tracked test users removed in finally"
+}

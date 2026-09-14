@@ -1,6 +1,6 @@
 {
   "name": "together-insights",
-  "version": "4.4.1",
+  "version": "4.5.0",
   "private": true,
   "description": "Bilingual weekly study with immediate anonymous participation and assigned operator access.",
   "scripts": {
