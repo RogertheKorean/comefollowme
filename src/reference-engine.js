@@ -92,6 +92,7 @@
   const parsed=parse(doc.url,doc.title);if(!parsed)throw Error('A valid http(s) source URL is required.');
   if(typeof doc.title!=='string'||!doc.title.trim()||doc.title.length>500)throw Error('A title of 1–500 characters is required.');
   if(!['ko','en'].includes(doc.language))throw Error('Language must be ko or en.');
+  if(doc.sourceLanguage!==undefined&&!['ko','en'].includes(doc.sourceLanguage))throw Error('Source language must be ko or en.');
   if(!['full','excerpt','summary'].includes(doc.coverage))throw Error('Coverage must be full, excerpt or summary.');
   if(!Array.isArray(doc.blocks)||!doc.blocks.length||doc.blocks.length>2000)throw Error('Include 1–2,000 text blocks.');
   const seen=new Set();let count=0;
@@ -103,6 +104,7 @@
   });
   if(count>500000)throw Error('A reference language version is limited to 500,000 characters.');
   const v={key:parsed.key,kind:parsed.kind,url:parsed.canonicalURL,title:doc.title.trim(),author:String(doc.author||'').slice(0,300),date:String(doc.date||'').slice(0,80),language:doc.language,coverage:doc.coverage,edition:String(doc.edition||'사용자 등록 자료 / User supplied').slice(0,200),provenance:String(doc.provenance||'User supplied; independently verify text and permissions.').slice(0,1500),blocks};
+  if(doc.sourceLanguage!==undefined)v.sourceLanguage=doc.sourceLanguage;
   v.revision=fingerprint(JSON.stringify(v));return v;
  }
  function validateLesson(l) {

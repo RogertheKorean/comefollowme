@@ -1,1 +1,748 @@
-{"schema":"together-content-pack-v3","documents":[],"lessons":[]}
+{
+  "schema": "together-content-pack-v3",
+  "documents": [
+    {
+      "key": "/study/scriptures/gs",
+      "kind": "article",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/gs",
+      "title": "경전 안내서 · 이번 주 자료",
+      "author": "",
+      "date": "",
+      "language": "ko",
+      "coverage": "summary",
+      "edition": "학습 요약·자료 안내 · 공식 전문은 원문에서",
+      "provenance": "공식 자료를 확인해 작성한 학습 요약 또는 목록 안내입니다. 공식 전문·공식 번역이 아니며, 원문 문단 위치를 대신하지 않습니다.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "경전 안내서는 인물·장소·교리 주제를 찾아보는 자료입니다. 이번 공과에서는 이사야의 생애와 예언의 배경을 살펴보세요.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "[이사야 항목 안내](https://www.churchofjesuschrist.org/study/scriptures/gs/isaiah?lang=kor)에서 시작할 수 있습니다. 전체 항목은 상단의 공식 원문 링크에서 확인하세요.",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ],
+      "revision": "974cbee928b81b6f"
+    },
+    {
+      "key": "/study/scriptures/gs",
+      "kind": "article",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/gs",
+      "title": "Guide to the Scriptures · This week",
+      "author": "",
+      "date": "",
+      "language": "en",
+      "coverage": "summary",
+      "edition": "Study summary / source guide · complete text at source",
+      "provenance": "A brief study summary or collection guide based on the official source; not the full source text or an official translation. Local paragraphs do not replace original source positions.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "Use the Guide to look up people, places and gospel subjects. For this lesson, begin with Isaiah and the setting of his prophecies.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "[Open the Isaiah reading guide](https://www.churchofjesuschrist.org/study/scriptures/gs/isaiah?lang=eng). The official source opens the complete subject index.",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ],
+      "revision": "209272b5044a5ba9"
+    },
+    {
+      "key": "/study/scriptures/gs/isaiah",
+      "kind": "article",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/gs/isaiah",
+      "title": "경전 안내서 — 이사야",
+      "author": "",
+      "date": "",
+      "language": "ko",
+      "coverage": "summary",
+      "edition": "학습 요약·자료 안내 · 공식 전문은 원문에서",
+      "provenance": "공식 자료를 확인해 작성한 학습 요약 또는 목록 안내입니다. 공식 전문·공식 번역이 아니며, 원문 문단 위치를 대신하지 않습니다.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "이사야는 유다에서 활동하며 히스기야 시대에 영향을 미친 선지자입니다. 그의 기록은 예수 그리스도의 오심, 이스라엘의 집합과 회복을 이해하는 데 도움을 줍니다.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "이번 주에는 이사야 1장의 회개 권유, 2장의 성전, 7장과 9장의 구주에 관한 예언을 함께 읽어 보세요. 이 글은 항목의 짧은 학습 안내이며 공식 전문은 원문 링크에 있습니다.",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ],
+      "revision": "9eb9511720213490"
+    },
+    {
+      "key": "/study/scriptures/gs/isaiah",
+      "kind": "article",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/gs/isaiah",
+      "title": "Guide to the Scriptures — Isaiah",
+      "author": "",
+      "date": "",
+      "language": "en",
+      "coverage": "summary",
+      "edition": "Study summary / source guide · complete text at source",
+      "provenance": "A brief study summary or collection guide based on the official source; not the full source text or an official translation. Local paragraphs do not replace original source positions.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "Isaiah ministered in Judah and influenced Hezekiah’s reign. His prophecies help readers study the coming of Jesus Christ and the gathering and restoration of Israel.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "For this week, connect the invitation to repent in chapter 1 with the temple in chapter 2 and the promises about the Savior in chapters 7 and 9. This is a brief reading guide; use the official source for the complete entry.",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ],
+      "revision": "0c4cc7ded3135d82"
+    },
+    {
+      "key": "/study/scriptures/bd/isaiah",
+      "kind": "article",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bd/isaiah",
+      "title": "Bible Dictionary — Isaiah · 한국어 안내",
+      "author": "",
+      "date": "",
+      "language": "ko",
+      "coverage": "summary",
+      "edition": "학습 요약·자료 안내 · 공식 전문은 원문에서",
+      "provenance": "공식 자료를 확인해 작성한 학습 요약 또는 목록 안내입니다. 공식 전문·공식 번역이 아니며, 원문 문단 위치를 대신하지 않습니다.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "영문 성경 사전은 이사야의 역사적 배경과 상징적인 예언을 소개합니다. 일부 예언은 이사야 시대의 상황과 훗날의 성취를 함께 가리킬 수 있습니다.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "영어 원문을 바탕으로 작성한 한국어 학습 안내입니다. 공식 한국어 번역으로 표시하지 않습니다.",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ],
+      "sourceLanguage": "en",
+      "revision": "6f4a41b3b896b85d"
+    },
+    {
+      "key": "/study/scriptures/bd/isaiah",
+      "kind": "article",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bd/isaiah",
+      "title": "Bible Dictionary — Isaiah",
+      "author": "",
+      "date": "",
+      "language": "en",
+      "coverage": "summary",
+      "edition": "Study summary / source guide · complete text at source",
+      "provenance": "A brief study summary or collection guide based on the official source; not the full source text or an official translation. Local paragraphs do not replace original source positions.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "The Bible Dictionary places Isaiah in his historical setting and explains the symbolic character of his prophecies. Some passages can concern events in Isaiah’s day as well as later fulfillments.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "Read the prophecies in their setting and consider their witness of the Savior, righteousness, and Israel’s eventual restoration. This is a reading guide, not the full dictionary entry.",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ],
+      "sourceLanguage": "en",
+      "revision": "5a41fe5a2c92830a"
+    },
+    {
+      "key": "/study/ensign/1995/01/scripture-reading-and-revelation",
+      "kind": "article",
+      "url": "https://www.churchofjesuschrist.org/study/ensign/1995/01/scripture-reading-and-revelation",
+      "title": "경전 읽기와 계시 · Scripture Reading and Revelation",
+      "author": "Dallin H. Oaks",
+      "date": "1995-01",
+      "language": "ko",
+      "coverage": "summary",
+      "edition": "학습 요약·자료 안내 · 공식 전문은 원문에서",
+      "provenance": "공식 자료를 확인해 작성한 학습 요약 또는 목록 안내입니다. 공식 전문·공식 번역이 아니며, 원문 문단 위치를 대신하지 않습니다.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "댈린 에이치 오크스 장로는 경전 공부와 개인적인 계시가 서로를 돕는다고 설명합니다. 기도하며 반복해서 읽을 때 이전에 알아보지 못했던 의미를 발견할 수 있습니다.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "이사야의 예언은 당시 사건뿐 아니라 구주의 성역과 재림에 관련된 성취를 함께 다룰 수 있습니다. 한 가지 해석에만 머무르지 않고 성신의 도움을 구하며 읽는 것이 핵심입니다.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-3",
+          "markdown": "출처: Ensign, 1995년 1월호. 영어 원문을 바탕으로 만든 한국어 학습 요약이며 공식 번역이나 전문이 아닙니다.",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ],
+      "sourceLanguage": "en",
+      "revision": "d4b63c8937e449b0"
+    },
+    {
+      "key": "/study/ensign/1995/01/scripture-reading-and-revelation",
+      "kind": "article",
+      "url": "https://www.churchofjesuschrist.org/study/ensign/1995/01/scripture-reading-and-revelation",
+      "title": "Scripture Reading and Revelation",
+      "author": "Dallin H. Oaks",
+      "date": "1995-01",
+      "language": "en",
+      "coverage": "summary",
+      "edition": "Study summary / source guide · complete text at source",
+      "provenance": "A brief study summary or collection guide based on the official source; not the full source text or an official translation. Local paragraphs do not replace original source positions.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "Dallin H. Oaks explains that scripture study and personal revelation support each other. Prayerful, repeated reading can reveal insights a reader did not recognize before.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "Isaiah’s prophecies may address his own time, the Savior’s ministry, and the Second Coming. Readers should seek the Holy Ghost’s help instead of assuming that one interpretation exhausts a passage’s meaning.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-3",
+          "markdown": "Ensign, January 1995. This is a short study summary; the official source provides the complete article.",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ],
+      "sourceLanguage": "en",
+      "revision": "1b28bce7e66a28dc"
+    },
+    {
+      "key": "/study/manual/scripture-helps-old-testament/36-isaiah-1-12",
+      "kind": "manual",
+      "url": "https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/36-isaiah-1-12",
+      "title": "경전 학습 도움말 — 이사야 1~12장",
+      "author": "",
+      "date": "",
+      "language": "ko",
+      "coverage": "summary",
+      "edition": "학습 요약·자료 안내 · 공식 전문은 원문에서",
+      "provenance": "공식 자료를 확인해 작성한 학습 요약 또는 목록 안내입니다. 공식 전문·공식 번역이 아니며, 원문 문단 위치를 대신하지 않습니다.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "주홍·진홍과 흰 눈·양털: 지워지기 어려운 얼룩의 이미지는 회개하는 사람을 깨끗하게 하시는 구주의 은혜를 생각하게 합니다.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "시온의 딸들: 문맥에 따라 예루살렘·유다 백성이나 예루살렘의 여성들을 가리키는 것으로 해석됩니다. 교만에 대한 경고와 정결하게 하시겠다는 약속을 함께 읽으세요.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-3",
+          "markdown": "이새의 줄기와 가지: 이사야 11장의 메시아에 관한 상징을 공부하는 항목입니다. 원문에서 관련 설명과 경전 인용을 확인하세요. 이 요약의 문단은 공식 원문의 문단과 다릅니다.",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ],
+      "revision": "b8360bfd8b0c3771"
+    },
+    {
+      "key": "/study/manual/scripture-helps-old-testament/36-isaiah-1-12",
+      "kind": "manual",
+      "url": "https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/36-isaiah-1-12",
+      "title": "Scripture Helps — Isaiah 1–12",
+      "author": "",
+      "date": "",
+      "language": "en",
+      "coverage": "summary",
+      "edition": "Study summary / source guide · complete text at source",
+      "provenance": "A brief study summary or collection guide based on the official source; not the full source text or an official translation. Local paragraphs do not replace original source positions.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "Scarlet, crimson, snow and wool: the contrast between a lasting stain and clean wool invites reflection on the Savior’s grace toward those who repent.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "Daughters of Zion: interpretations include Jerusalem or Judah’s people and, in some contexts, Jerusalem’s women. Read the warning about pride together with the promise of cleansing.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-3",
+          "markdown": "Stem and branch of Jesse: this section discusses messianic imagery in Isaiah 11. Consult the official source for its explanations and references. These summary paragraphs are not the original paragraph locations.",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ],
+      "revision": "bbffdb6f4f442b83"
+    },
+    {
+      "key": "/study/manual/old-testament-stories-2022/isaiah-the-prophet",
+      "kind": "manual",
+      "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2022/isaiah-the-prophet",
+      "title": "구약전서 이야기 — 선지자 이사야",
+      "author": "",
+      "date": "",
+      "language": "ko",
+      "coverage": "summary",
+      "edition": "학습 요약·자료 안내 · 공식 전문은 원문에서",
+      "provenance": "공식 자료를 확인해 작성한 학습 요약 또는 목록 안내입니다. 공식 전문·공식 번역이 아니며, 원문 문단 위치를 대신하지 않습니다.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "이사야가 구주에 관해 가르치도록 부름받고, 예수 그리스도의 오심과 평화로운 다스림을 예언한 이야기를 어린이 눈높이로 소개합니다.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "이사야 6~7장과 9장을 연결해 읽어 보세요. 이야기의 공식 본문·그림·영상은 상단 원문 링크에서 볼 수 있습니다.",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ],
+      "revision": "800f0e73f22e8b6d"
+    },
+    {
+      "key": "/study/manual/old-testament-stories-2022/isaiah-the-prophet",
+      "kind": "manual",
+      "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2022/isaiah-the-prophet",
+      "title": "Old Testament Stories — Isaiah the Prophet",
+      "author": "",
+      "date": "",
+      "language": "en",
+      "coverage": "summary",
+      "edition": "Study summary / source guide · complete text at source",
+      "provenance": "A brief study summary or collection guide based on the official source; not the full source text or an official translation. Local paragraphs do not replace original source positions.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "This children’s story introduces Isaiah’s call to teach about the Savior and his prophecies of Jesus Christ’s coming and peaceful reign.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "Connect the story with Isaiah 6–7 and 9. The official source provides the complete story, illustrations and video.",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ],
+      "revision": "cf3def57f6984d23"
+    },
+    {
+      "key": "/study/manual/childrens-songbook/i-love-to-see-the-temple",
+      "kind": "manual",
+      "url": "https://www.churchofjesuschrist.org/study/manual/childrens-songbook/i-love-to-see-the-temple",
+      "title": "어린이 노래 — 나 성전 보고 싶어",
+      "author": "",
+      "date": "",
+      "language": "ko",
+      "coverage": "summary",
+      "edition": "학습 요약·자료 안내 · 공식 전문은 원문에서",
+      "provenance": "공식 자료를 확인해 작성한 학습 요약 또는 목록 안내입니다. 공식 전문·공식 번역이 아니며, 원문 문단 위치를 대신하지 않습니다.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "성전에 대한 소망과 준비를 생각하며 부르는 어린이 노래입니다. 이사야 2장에 나오는 주님의 집에 관한 가르침과 연결해 보세요.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "이곳에는 가사를 복제하지 않았습니다. 상단 원문 링크에서 공식 가사와 악보를 확인할 수 있습니다.",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ],
+      "revision": "a5b0845764bc4872"
+    },
+    {
+      "key": "/study/manual/childrens-songbook/i-love-to-see-the-temple",
+      "kind": "manual",
+      "url": "https://www.churchofjesuschrist.org/study/manual/childrens-songbook/i-love-to-see-the-temple",
+      "title": "Children’s Songbook — I Love to See the Temple",
+      "author": "",
+      "date": "",
+      "language": "en",
+      "coverage": "summary",
+      "edition": "Study summary / source guide · complete text at source",
+      "provenance": "A brief study summary or collection guide based on the official source; not the full source text or an official translation. Local paragraphs do not replace original source positions.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "A children’s song about looking forward to the temple and preparing to go there. Connect it with the house of the Lord in Isaiah 2.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "Lyrics are not reproduced here. Open the official source for the words and sheet music.",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ],
+      "revision": "ba0bb41e4fdb5a4d"
+    },
+    {
+      "key": "/study/manual/hymns/high-on-the-mountain-top",
+      "kind": "manual",
+      "url": "https://www.churchofjesuschrist.org/study/manual/hymns/high-on-the-mountain-top",
+      "title": "찬송가 — 높은 산 언덕 위",
+      "author": "Joel H. Johnson (1802–1882)",
+      "date": "",
+      "language": "ko",
+      "coverage": "summary",
+      "edition": "학습 요약·자료 안내 · 공식 전문은 원문에서",
+      "provenance": "공식 자료를 확인해 작성한 학습 요약 또는 목록 안내입니다. 공식 전문·공식 번역이 아니며, 원문 문단 위치를 대신하지 않습니다.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "이사야 2:2~3과 5:26에 연결된 찬송가입니다. 주님의 집과 여러 민족을 부르는 깃발의 이미지를 생각하며 읽고 노래해 보세요.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "한국어 공식 가사와 악보는 상단 원문 링크에서 확인하세요. 영어 가사는 공개 영역에 속하는 원문을 수록했습니다.",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ],
+      "revision": "bc0416353d47d82f"
+    },
+    {
+      "key": "/study/manual/hymns/high-on-the-mountain-top",
+      "kind": "manual",
+      "url": "https://www.churchofjesuschrist.org/study/manual/hymns/high-on-the-mountain-top",
+      "title": "High on the Mountain Top",
+      "author": "Joel H. Johnson (1802–1882)",
+      "date": "",
+      "language": "en",
+      "coverage": "full",
+      "edition": "Public-domain English hymn text",
+      "provenance": "English words by Joel H. Johnson. Listed in the Church public-domain hymn list; official hymn text checked 2026-09-14. Korean translation and musical score not reproduced.",
+      "blocks": [
+        {
+          "id": "stanza-1",
+          "markdown": "High on the mountain top\nA banner is unfurled.\nYe nations, now look up;\nIt waves to all the world.\nIn Deseret’s sweet, peaceful land,\nOn Zion’s mount behold it stand!",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "stanza-2",
+          "markdown": "For God remembers still\nHis promise made of old\nThat he on Zion’s hill\nTruth’s standard would unfold!\nHer light should there attract the gaze\nOf all the world in latter days.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "stanza-3",
+          "markdown": "His house shall there be reared,\nHis glory to display,\nAnd people shall be heard\nIn distant lands to say:\nWe’ll now go up and serve the Lord,\nObey his truth and learn his word.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "stanza-4",
+          "markdown": "For there we shall be taught\nThe law that will go forth,\nWith truth and wisdom fraught,\nTo govern all the earth.\nForever there his ways we’ll tread,\nAnd save ourselves with all our dead.",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ],
+      "revision": "f0879f87169cadad"
+    },
+    {
+      "key": "/study/magazines/liahona",
+      "kind": "collection",
+      "url": "https://www.churchofjesuschrist.org/study/magazines/liahona",
+      "title": "리아호나 · 자료 목록",
+      "author": "",
+      "date": "",
+      "language": "ko",
+      "coverage": "summary",
+      "edition": "학습 요약·자료 안내 · 공식 전문은 원문에서",
+      "provenance": "공식 자료를 확인해 작성한 학습 요약 또는 목록 안내입니다. 공식 전문·공식 번역이 아니며, 원문 문단 위치를 대신하지 않습니다.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "공과의 이 링크는 리아호나 전체 자료 목록입니다. 본문에 인용된 「Scripture Reading and Revelation」은 1995년 1월 Ensign에 실린 별도의 글입니다.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "[인용된 오크스 장로 글의 학습 요약](https://www.churchofjesuschrist.org/study/ensign/1995/01/scripture-reading-and-revelation?lang=eng)을 읽을 수 있습니다. 전체 잡지는 상단 원문 링크에서 찾아보세요.",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ],
+      "revision": "bbaaf0c6fe5173e6"
+    },
+    {
+      "key": "/study/magazines/liahona",
+      "kind": "collection",
+      "url": "https://www.churchofjesuschrist.org/study/magazines/liahona",
+      "title": "Liahona · Collection",
+      "author": "",
+      "date": "",
+      "language": "en",
+      "coverage": "summary",
+      "edition": "Study summary / source guide · complete text at source",
+      "provenance": "A brief study summary or collection guide based on the official source; not the full source text or an official translation. Local paragraphs do not replace original source positions.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "This lesson link opens the Liahona collection. The cited article, Scripture Reading and Revelation, is a separate January 1995 Ensign article.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "[Read a study summary of the cited Oaks article](https://www.churchofjesuschrist.org/study/ensign/1995/01/scripture-reading-and-revelation?lang=eng). Open the official source to browse the magazine collection.",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ],
+      "revision": "17732bc16d42cabf"
+    },
+    {
+      "key": "/study/magazines/for-the-strength-of-youth",
+      "kind": "collection",
+      "url": "https://www.churchofjesuschrist.org/study/magazines/for-the-strength-of-youth",
+      "title": "청소년의 힘을 위하여 · 자료 목록",
+      "author": "",
+      "date": "",
+      "language": "ko",
+      "coverage": "summary",
+      "edition": "학습 요약·자료 안내 · 공식 전문은 원문에서",
+      "provenance": "공식 자료를 확인해 작성한 학습 요약 또는 목록 안내입니다. 공식 전문·공식 번역이 아니며, 원문 문단 위치를 대신하지 않습니다.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "공과의 이 링크는 『청소년의 힘을 위하여』의 자료 목록입니다. 특정 기사 전문을 가리키는 링크는 아닙니다.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "이번 주 공부에 사용할 기사와 활동은 상단 공식 원문 링크에서 찾아보세요.",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ],
+      "revision": "ab0c79cbd20ca6d6"
+    },
+    {
+      "key": "/study/magazines/for-the-strength-of-youth",
+      "kind": "collection",
+      "url": "https://www.churchofjesuschrist.org/study/magazines/for-the-strength-of-youth",
+      "title": "For the Strength of Youth · Collection",
+      "author": "",
+      "date": "",
+      "language": "en",
+      "coverage": "summary",
+      "edition": "Study summary / source guide · complete text at source",
+      "provenance": "A brief study summary or collection guide based on the official source; not the full source text or an official translation. Local paragraphs do not replace original source positions.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "This link opens the For the Strength of Youth collection rather than one specific article.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "Use the official source to find articles and activities for this week.",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ],
+      "revision": "f599209c33b7b594"
+    },
+    {
+      "key": "/study/magazines/friend",
+      "kind": "collection",
+      "url": "https://www.churchofjesuschrist.org/study/magazines/friend",
+      "title": "친구들 · 자료 목록",
+      "author": "",
+      "date": "",
+      "language": "ko",
+      "coverage": "summary",
+      "edition": "학습 요약·자료 안내 · 공식 전문은 원문에서",
+      "provenance": "공식 자료를 확인해 작성한 학습 요약 또는 목록 안내입니다. 공식 전문·공식 번역이 아니며, 원문 문단 위치를 대신하지 않습니다.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "공과의 이 링크는 『친구들』의 자료 목록입니다. 특정 기사 전문을 가리키는 링크는 아닙니다.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "이번 주 공부에 사용할 기사와 활동은 상단 공식 원문 링크에서 찾아보세요.",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ],
+      "revision": "a4bbcc4f04d265ee"
+    },
+    {
+      "key": "/study/magazines/friend",
+      "kind": "collection",
+      "url": "https://www.churchofjesuschrist.org/study/magazines/friend",
+      "title": "Friend · Collection",
+      "author": "",
+      "date": "",
+      "language": "en",
+      "coverage": "summary",
+      "edition": "Study summary / source guide · complete text at source",
+      "provenance": "A brief study summary or collection guide based on the official source; not the full source text or an official translation. Local paragraphs do not replace original source positions.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "This link opens the Friend collection rather than one specific article.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "Use the official source to find articles and activities for this week.",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ],
+      "revision": "37f1295f939de108"
+    },
+    {
+      "key": "bofm/3-ne/23",
+      "kind": "scripture",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/23",
+      "title": "제3니파이 23:1~3 · 읽기 안내",
+      "author": "",
+      "date": "",
+      "language": "ko",
+      "coverage": "summary",
+      "edition": "학습 요약·자료 안내 · 공식 전문은 원문에서",
+      "provenance": "공식 자료를 확인해 작성한 학습 요약 또는 목록 안내입니다. 공식 전문·공식 번역이 아니며, 원문 문단 위치를 대신하지 않습니다.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "예수 그리스도께서는 이사야의 기록을 부지런히 공부하라고 가르치십니다. 이사야의 예언은 이스라엘과 이방인에 관한 하나님의 뜻을 담고 있으며 이루어질 것이라고 말씀하십니다.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "이 안내는 1~3절의 짧은 요약입니다. 정확한 경전 본문과 절 번호는 상단 공식 원문 링크에서 읽어 주세요.",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ],
+      "revision": "f9f0fd01fd815e05"
+    },
+    {
+      "key": "bofm/3-ne/23",
+      "kind": "scripture",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/23",
+      "title": "3 Nephi 23:1–3 · Reading guide",
+      "author": "",
+      "date": "",
+      "language": "en",
+      "coverage": "summary",
+      "edition": "Study summary / source guide · complete text at source",
+      "provenance": "A brief study summary or collection guide based on the official source; not the full source text or an official translation. Local paragraphs do not replace original source positions.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "Jesus Christ directs His listeners to study Isaiah diligently. Isaiah’s prophecies concern Israel and the Gentiles and will be fulfilled.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "This is a short guide to verses 1–3. Read the exact scripture wording at the official source.",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ],
+      "revision": "1a8ab928b5a2b62c"
+    },
+    {
+      "key": "bofm/1-ne/19",
+      "kind": "scripture",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/19",
+      "title": "니파이전서 19:23 · 읽기 안내",
+      "author": "",
+      "date": "",
+      "language": "ko",
+      "coverage": "summary",
+      "edition": "학습 요약·자료 안내 · 공식 전문은 원문에서",
+      "provenance": "공식 자료를 확인해 작성한 학습 요약 또는 목록 안내입니다. 공식 전문·공식 번역이 아니며, 원문 문단 위치를 대신하지 않습니다.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "니파이는 가족이 구속주를 믿도록 이사야의 기록을 읽어 주고 경전을 자신들의 삶에 적용했습니다. 읽는 사람도 말씀에서 자신의 상황에 필요한 배움을 찾아볼 수 있습니다.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "23절을 설명하는 짧은 요약입니다. 경전의 정확한 본문은 상단 공식 원문 링크에서 읽어 주세요.",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ],
+      "revision": "799f1ba3a9d39ae9"
+    },
+    {
+      "key": "bofm/1-ne/19",
+      "kind": "scripture",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/19",
+      "title": "1 Nephi 19:23 · Reading guide",
+      "author": "",
+      "date": "",
+      "language": "en",
+      "coverage": "summary",
+      "edition": "Study summary / source guide · complete text at source",
+      "provenance": "A brief study summary or collection guide based on the official source; not the full source text or an official translation. Local paragraphs do not replace original source positions.",
+      "blocks": [
+        {
+          "id": "summary-1",
+          "markdown": "Nephi reads Isaiah to help his family believe in the Redeemer and applies the scriptures to their own lives. Readers can likewise consider what a passage teaches them in their circumstances.",
+          "type": "paragraph",
+          "sourceId": false
+        },
+        {
+          "id": "summary-2",
+          "markdown": "This is a brief guide to verse 23. Use the official source for its exact wording.",
+          "type": "paragraph",
+          "sourceId": false
+        }
+      ],
+      "revision": "d299252a1ec6cab8"
+    }
+  ],
+  "lessons": []
+}

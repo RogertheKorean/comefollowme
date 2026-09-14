@@ -1,0 +1,690 @@
+{
+  "week": "2026-09-14",
+  "lesson_id": "import-e7506efb14edb0b4bc60f022",
+  "lesson_version": "0d5741bd14164062d5582a06d09ccf44d46091338ee56622ca2947215dfc6dc3",
+  "link_counts": {
+    "ko": 76,
+    "en": 79
+  },
+  "scope": "Direct links in the published weekly lesson; chapter ranges expanded. This is not the complete magazine or scripture-guide archive.",
+  "scripture_chapters": [
+    "nt/luke/1",
+    "nt/matt/1",
+    "nt/matt/21",
+    "nt/matt/4",
+    "ot/2-chr/26",
+    "ot/2-chr/27",
+    "ot/2-chr/28",
+    "ot/2-chr/29",
+    "ot/2-chr/30",
+    "ot/2-chr/31",
+    "ot/2-chr/32",
+    "ot/2-kgs/15",
+    "ot/2-kgs/16",
+    "ot/2-kgs/17",
+    "ot/2-kgs/18",
+    "ot/2-kgs/19",
+    "ot/2-kgs/20",
+    "ot/isa/1",
+    "ot/isa/10",
+    "ot/isa/11",
+    "ot/isa/12",
+    "ot/isa/2",
+    "ot/isa/3",
+    "ot/isa/4",
+    "ot/isa/5",
+    "ot/isa/6",
+    "ot/isa/7",
+    "ot/isa/8",
+    "ot/isa/9"
+  ],
+  "verses_per_language": 798,
+  "reference_documents": [
+    {
+      "key": "/study/scriptures/gs",
+      "language": "ko",
+      "coverage": "summary",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/gs?lang=kor"
+    },
+    {
+      "key": "/study/scriptures/gs",
+      "language": "en",
+      "coverage": "summary",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/gs?lang=eng"
+    },
+    {
+      "key": "/study/scriptures/gs/isaiah",
+      "language": "ko",
+      "coverage": "summary",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/gs/isaiah?lang=kor"
+    },
+    {
+      "key": "/study/scriptures/gs/isaiah",
+      "language": "en",
+      "coverage": "summary",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/gs/isaiah?lang=eng"
+    },
+    {
+      "key": "/study/scriptures/bd/isaiah",
+      "language": "ko",
+      "coverage": "summary",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bd/isaiah?lang=eng"
+    },
+    {
+      "key": "/study/scriptures/bd/isaiah",
+      "language": "en",
+      "coverage": "summary",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bd/isaiah?lang=eng"
+    },
+    {
+      "key": "/study/ensign/1995/01/scripture-reading-and-revelation",
+      "language": "ko",
+      "coverage": "summary",
+      "url": "https://www.churchofjesuschrist.org/study/ensign/1995/01/scripture-reading-and-revelation?lang=eng"
+    },
+    {
+      "key": "/study/ensign/1995/01/scripture-reading-and-revelation",
+      "language": "en",
+      "coverage": "summary",
+      "url": "https://www.churchofjesuschrist.org/study/ensign/1995/01/scripture-reading-and-revelation?lang=eng"
+    },
+    {
+      "key": "/study/manual/scripture-helps-old-testament/36-isaiah-1-12",
+      "language": "ko",
+      "coverage": "summary",
+      "url": "https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/36-isaiah-1-12?lang=kor"
+    },
+    {
+      "key": "/study/manual/scripture-helps-old-testament/36-isaiah-1-12",
+      "language": "en",
+      "coverage": "summary",
+      "url": "https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/36-isaiah-1-12?lang=eng"
+    },
+    {
+      "key": "/study/manual/old-testament-stories-2022/isaiah-the-prophet",
+      "language": "ko",
+      "coverage": "summary",
+      "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2022/isaiah-the-prophet?lang=kor"
+    },
+    {
+      "key": "/study/manual/old-testament-stories-2022/isaiah-the-prophet",
+      "language": "en",
+      "coverage": "summary",
+      "url": "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2022/isaiah-the-prophet?lang=eng"
+    },
+    {
+      "key": "/study/manual/childrens-songbook/i-love-to-see-the-temple",
+      "language": "ko",
+      "coverage": "summary",
+      "url": "https://www.churchofjesuschrist.org/study/manual/childrens-songbook/i-love-to-see-the-temple?lang=kor"
+    },
+    {
+      "key": "/study/manual/childrens-songbook/i-love-to-see-the-temple",
+      "language": "en",
+      "coverage": "summary",
+      "url": "https://www.churchofjesuschrist.org/study/manual/childrens-songbook/i-love-to-see-the-temple?lang=eng"
+    },
+    {
+      "key": "/study/manual/hymns/high-on-the-mountain-top",
+      "language": "ko",
+      "coverage": "summary",
+      "url": "https://www.churchofjesuschrist.org/study/manual/hymns/high-on-the-mountain-top?lang=kor"
+    },
+    {
+      "key": "/study/manual/hymns/high-on-the-mountain-top",
+      "language": "en",
+      "coverage": "full",
+      "url": "https://www.churchofjesuschrist.org/study/manual/hymns/high-on-the-mountain-top?lang=eng"
+    },
+    {
+      "key": "/study/magazines/liahona",
+      "language": "ko",
+      "coverage": "summary",
+      "url": "https://www.churchofjesuschrist.org/study/magazines/liahona?lang=kor"
+    },
+    {
+      "key": "/study/magazines/liahona",
+      "language": "en",
+      "coverage": "summary",
+      "url": "https://www.churchofjesuschrist.org/study/magazines/liahona?lang=eng"
+    },
+    {
+      "key": "/study/magazines/for-the-strength-of-youth",
+      "language": "ko",
+      "coverage": "summary",
+      "url": "https://www.churchofjesuschrist.org/study/magazines/for-the-strength-of-youth?lang=kor"
+    },
+    {
+      "key": "/study/magazines/for-the-strength-of-youth",
+      "language": "en",
+      "coverage": "summary",
+      "url": "https://www.churchofjesuschrist.org/study/magazines/for-the-strength-of-youth?lang=eng"
+    },
+    {
+      "key": "/study/magazines/friend",
+      "language": "ko",
+      "coverage": "summary",
+      "url": "https://www.churchofjesuschrist.org/study/magazines/friend?lang=kor"
+    },
+    {
+      "key": "/study/magazines/friend",
+      "language": "en",
+      "coverage": "summary",
+      "url": "https://www.churchofjesuschrist.org/study/magazines/friend?lang=eng"
+    },
+    {
+      "key": "bofm/3-ne/23",
+      "language": "ko",
+      "coverage": "summary",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/23?lang=kor"
+    },
+    {
+      "key": "bofm/3-ne/23",
+      "language": "en",
+      "coverage": "summary",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/23?lang=eng"
+    },
+    {
+      "key": "bofm/1-ne/19",
+      "language": "ko",
+      "coverage": "summary",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/19?lang=kor"
+    },
+    {
+      "key": "bofm/1-ne/19",
+      "language": "en",
+      "coverage": "summary",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/19?lang=eng"
+    }
+  ],
+  "links": [
+    {
+      "key": "ot/isa/1",
+      "kind": "scripture",
+      "chapters": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "verses": [
+        2,
+        3,
+        4,
+        21,
+        22,
+        23,
+        7,
+        16,
+        17,
+        18,
+        19,
+        25,
+        26,
+        27
+      ],
+      "urls": [
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/1?lang=kor",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/1?lang=kor&id=p2-p4,p21-p23#p2",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/1?lang=kor&id=p7#p7",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/1?lang=kor&id=p16-p19,p25-p27#p16",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/1?lang=kor&id=p2-p4,p16-p19#p2",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/1?lang=kor&id=p2-p4#p2",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/1?lang=kor&id=p3#p3",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/1?lang=kor&id=p16-p18#p16",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/1?lang=eng",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/1?lang=eng&id=p2-p4,p21-p23#p2",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/1?lang=eng&id=p7#p7",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/1?lang=eng&id=p16-p19,p25-p27#p16",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/1?lang=eng&id=p2-p4,p16-p19#p2",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/1?lang=eng&id=p2-p4#p2",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/1?lang=eng&id=p3#p3",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/1?lang=eng&id=p16-p18#p16"
+      ]
+    },
+    {
+      "key": "ot/2-kgs/15",
+      "kind": "scripture",
+      "chapters": [
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "verses": [],
+      "urls": [
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/2-kgs/15?lang=kor",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/2-kgs/15?lang=eng"
+      ]
+    },
+    {
+      "key": "ot/2-chr/26",
+      "kind": "scripture",
+      "chapters": [
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ],
+      "verses": [],
+      "urls": [
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/2-chr/26?lang=kor",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/2-chr/26?lang=eng"
+      ]
+    },
+    {
+      "key": "bofm/3-ne/23",
+      "kind": "scripture",
+      "chapters": [
+        23
+      ],
+      "verses": [
+        3,
+        1,
+        2
+      ],
+      "urls": [
+        "https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/23?lang=kor&id=p3#p3",
+        "https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/23?lang=kor&id=p1#p1",
+        "https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/23?lang=kor&id=p2-p3#p2",
+        "https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/23?lang=eng&id=p3#p3",
+        "https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/23?lang=eng&id=p1#p1",
+        "https://www.churchofjesuschrist.org/study/scriptures/bofm/3-ne/23?lang=eng&id=p2-p3#p2"
+      ]
+    },
+    {
+      "key": "bofm/1-ne/19",
+      "kind": "scripture",
+      "chapters": [
+        19
+      ],
+      "verses": [
+        23
+      ],
+      "urls": [
+        "https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/19?lang=kor&id=p23#p23",
+        "https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/19?lang=eng&id=p23#p23"
+      ]
+    },
+    {
+      "key": "/study/scriptures/gs",
+      "kind": "article",
+      "chapters": [],
+      "verses": [],
+      "urls": [
+        "https://www.churchofjesuschrist.org/study/scriptures/gs?lang=kor",
+        "https://www.churchofjesuschrist.org/study/scriptures/gs?lang=eng"
+      ]
+    },
+    {
+      "key": "ot/isa/3",
+      "kind": "scripture",
+      "chapters": [
+        3,
+        4,
+        5
+      ],
+      "verses": [
+        9,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        10
+      ],
+      "urls": [
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/3?lang=kor",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/3?lang=kor&id=p9,p16-p17#p9",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/3?lang=kor&id=p17-p26#p17",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/3?lang=kor&id=p10#p10",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/3?lang=eng",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/3?lang=eng&id=p9,p16-p17#p9",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/3?lang=eng&id=p17-p26#p17",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/3?lang=eng&id=p10#p10"
+      ]
+    },
+    {
+      "key": "ot/isa/5",
+      "kind": "scripture",
+      "chapters": [
+        5
+      ],
+      "verses": [
+        11,
+        12,
+        20,
+        21,
+        22,
+        23,
+        5,
+        6,
+        7,
+        13,
+        14,
+        15,
+        26
+      ],
+      "urls": [
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/5?lang=kor",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/5?lang=kor&id=p11-p12,p20-p23#p11",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/5?lang=kor&id=p5-p7,p13-p15#p5",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/5?lang=kor&id=p26#p26",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/5?lang=eng",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/5?lang=eng&id=p11-p12,p20-p23#p11",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/5?lang=eng&id=p5-p7,p13-p15#p5",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/5?lang=eng&id=p26#p26"
+      ]
+    },
+    {
+      "key": "ot/isa/4",
+      "kind": "scripture",
+      "chapters": [
+        4
+      ],
+      "verses": [
+        6
+      ],
+      "urls": [
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/4?lang=kor",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/4?lang=kor&id=p6#p6",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/4?lang=eng",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/4?lang=eng&id=p6#p6"
+      ]
+    },
+    {
+      "key": "ot/isa/2",
+      "kind": "scripture",
+      "chapters": [
+        2
+      ],
+      "verses": [
+        2,
+        3,
+        4
+      ],
+      "urls": [
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/2?lang=kor",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/2?lang=kor&id=p2-p3#p2",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/2?lang=kor&id=p3#p3",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/2?lang=kor&id=p2-p4#p2",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/2?lang=kor&id=p2#p2",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/2?lang=kor&id=p4#p4",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/2?lang=eng",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/2?lang=eng&id=p2-p3#p2",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/2?lang=eng&id=p3#p3",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/2?lang=eng&id=p2-p4#p2",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/2?lang=eng&id=p2#p2",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/2?lang=eng&id=p4#p4"
+      ]
+    },
+    {
+      "key": "ot/isa/11",
+      "kind": "scripture",
+      "chapters": [
+        11,
+        12
+      ],
+      "verses": [],
+      "urls": [
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/11?lang=kor",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/11?lang=eng"
+      ]
+    },
+    {
+      "key": "/study/manual/hymns/high-on-the-mountain-top",
+      "kind": "manual",
+      "chapters": [],
+      "verses": [],
+      "urls": [
+        "https://www.churchofjesuschrist.org/study/manual/hymns/high-on-the-mountain-top?lang=kor",
+        "https://www.churchofjesuschrist.org/study/manual/hymns/high-on-the-mountain-top?lang=eng"
+      ]
+    },
+    {
+      "key": "ot/isa/6",
+      "kind": "scripture",
+      "chapters": [
+        6
+      ],
+      "verses": [],
+      "urls": [
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/6?lang=kor",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/6?lang=eng"
+      ]
+    },
+    {
+      "key": "ot/isa/9",
+      "kind": "scripture",
+      "chapters": [
+        9
+      ],
+      "verses": [
+        6,
+        2,
+        7
+      ],
+      "urls": [
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/9?lang=kor&id=p6#p6",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/9?lang=kor&id=p2,p6-p7#p2",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/9?lang=kor&id=p7#p7",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/9?lang=kor&id=p6-p7#p6",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/9?lang=eng&id=p6#p6",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/9?lang=eng&id=p2,p6-p7#p2",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/9?lang=eng&id=p7#p7",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/9?lang=eng&id=p6-p7#p6"
+      ]
+    },
+    {
+      "key": "ot/isa/7",
+      "kind": "scripture",
+      "chapters": [
+        7,
+        8,
+        9
+      ],
+      "verses": [
+        7,
+        8,
+        9,
+        14
+      ],
+      "urls": [
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/7?lang=kor",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/7?lang=kor&id=p7-p9#p7",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/7?lang=kor&id=p14#p14",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/7?lang=eng",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/7?lang=eng&id=p7-p9#p7",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/7?lang=eng&id=p14#p14"
+      ]
+    },
+    {
+      "key": "ot/isa/8",
+      "kind": "scripture",
+      "chapters": [
+        8
+      ],
+      "verses": [
+        12,
+        13,
+        14
+      ],
+      "urls": [
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/8?lang=kor&id=p12-p13#p12",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/8?lang=kor&id=p13-p14#p13",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/8?lang=eng&id=p12-p13#p12",
+        "https://www.churchofjesuschrist.org/study/scriptures/ot/isa/8?lang=eng&id=p13-p14#p13"
+      ]
+    },
+    {
+      "key": "nt/matt/1",
+      "kind": "scripture",
+      "chapters": [
+        1
+      ],
+      "verses": [
+        21,
+        22,
+        23
+      ],
+      "urls": [
+        "https://www.churchofjesuschrist.org/study/scriptures/nt/matt/1?lang=kor&id=p21-p23#p21",
+        "https://www.churchofjesuschrist.org/study/scriptures/nt/matt/1?lang=kor&id=p23#p23",
+        "https://www.churchofjesuschrist.org/study/scriptures/nt/matt/1?lang=eng&id=p21-p23#p21",
+        "https://www.churchofjesuschrist.org/study/scriptures/nt/matt/1?lang=eng&id=p23#p23"
+      ]
+    },
+    {
+      "key": "nt/matt/4",
+      "kind": "scripture",
+      "chapters": [
+        4
+      ],
+      "verses": [
+        16
+      ],
+      "urls": [
+        "https://www.churchofjesuschrist.org/study/scriptures/nt/matt/4?lang=kor&id=p16#p16",
+        "https://www.churchofjesuschrist.org/study/scriptures/nt/matt/4?lang=eng&id=p16#p16"
+      ]
+    },
+    {
+      "key": "nt/matt/21",
+      "kind": "scripture",
+      "chapters": [
+        21
+      ],
+      "verses": [
+        44
+      ],
+      "urls": [
+        "https://www.churchofjesuschrist.org/study/scriptures/nt/matt/21?lang=kor&id=p44#p44",
+        "https://www.churchofjesuschrist.org/study/scriptures/nt/matt/21?lang=eng&id=p44#p44"
+      ]
+    },
+    {
+      "key": "nt/luke/1",
+      "kind": "scripture",
+      "chapters": [
+        1
+      ],
+      "verses": [
+        31,
+        32,
+        33
+      ],
+      "urls": [
+        "https://www.churchofjesuschrist.org/study/scriptures/nt/luke/1?lang=kor&id=p31-p33#p31",
+        "https://www.churchofjesuschrist.org/study/scriptures/nt/luke/1?lang=eng&id=p31-p33#p31"
+      ]
+    },
+    {
+      "key": "/study/magazines/liahona",
+      "kind": "collection",
+      "chapters": [],
+      "verses": [],
+      "urls": [
+        "https://www.churchofjesuschrist.org/study/magazines/liahona?lang=kor",
+        "https://www.churchofjesuschrist.org/study/magazines/liahona?lang=eng"
+      ]
+    },
+    {
+      "key": "/study/magazines/for-the-strength-of-youth",
+      "kind": "collection",
+      "chapters": [],
+      "verses": [],
+      "urls": [
+        "https://www.churchofjesuschrist.org/study/magazines/for-the-strength-of-youth?lang=kor",
+        "https://www.churchofjesuschrist.org/study/magazines/for-the-strength-of-youth?lang=eng"
+      ]
+    },
+    {
+      "key": "/study/manual/scripture-helps-old-testament/36-isaiah-1-12",
+      "kind": "manual",
+      "chapters": [],
+      "verses": [],
+      "urls": [
+        "https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/36-isaiah-1-12?lang=kor&id=p_gKifo-p_oivkY#p_gKifo",
+        "https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/36-isaiah-1-12?lang=kor&id=p_logrH-p_dsI14#p_logrH",
+        "https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/36-isaiah-1-12?lang=kor&id=p_ciTs8-p_nW5f0#p_ciTs8",
+        "https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/36-isaiah-1-12?lang=kor",
+        "https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/36-isaiah-1-12?lang=eng&id=p_gKifo-p_oivkY#p_gKifo",
+        "https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/36-isaiah-1-12?lang=eng&id=p_logrH-p_dsI14#p_logrH",
+        "https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/36-isaiah-1-12?lang=eng&id=p_ciTs8-p_nW5f0#p_ciTs8",
+        "https://www.churchofjesuschrist.org/study/manual/scripture-helps-old-testament/36-isaiah-1-12?lang=eng"
+      ]
+    },
+    {
+      "key": "/study/manual/childrens-songbook/i-love-to-see-the-temple",
+      "kind": "manual",
+      "chapters": [],
+      "verses": [],
+      "urls": [
+        "https://www.churchofjesuschrist.org/study/manual/childrens-songbook/i-love-to-see-the-temple?lang=kor",
+        "https://www.churchofjesuschrist.org/study/manual/childrens-songbook/i-love-to-see-the-temple?lang=eng"
+      ]
+    },
+    {
+      "key": "/study/manual/old-testament-stories-2022/isaiah-the-prophet",
+      "kind": "manual",
+      "chapters": [],
+      "verses": [],
+      "urls": [
+        "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2022/isaiah-the-prophet?lang=kor",
+        "https://www.churchofjesuschrist.org/study/manual/old-testament-stories-2022/isaiah-the-prophet?lang=eng"
+      ]
+    },
+    {
+      "key": "/study/magazines/friend",
+      "kind": "collection",
+      "chapters": [],
+      "verses": [],
+      "urls": [
+        "https://www.churchofjesuschrist.org/study/magazines/friend?lang=kor",
+        "https://www.churchofjesuschrist.org/study/magazines/friend?lang=eng"
+      ]
+    },
+    {
+      "key": "/study/scriptures/bd/isaiah",
+      "kind": "article",
+      "chapters": [],
+      "verses": [],
+      "urls": [
+        "https://www.churchofjesuschrist.org/study/scriptures/bd/isaiah?lang=eng"
+      ]
+    },
+    {
+      "key": "/study/ensign/1995/01/scripture-reading-and-revelation",
+      "kind": "article",
+      "chapters": [],
+      "verses": [],
+      "urls": [
+        "https://www.churchofjesuschrist.org/study/ensign/1995/01/scripture-reading-and-revelation?lang=eng"
+      ]
+    }
+  ],
+  "limitations": [
+    "Korean Bible text is KRV 1961, not the NKRV wording in Gospel Library.",
+    "Copyrighted non-Bible materials are labeled summaries or source guides; original text and original target paragraphs remain at official links.",
+    "English High on the Mountain Top words are public domain; its Korean translation is not mirrored."
+  ]
+}

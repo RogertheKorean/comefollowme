@@ -1,0 +1,524 @@
+[
+  {
+    "key": "nt/luke/1",
+    "language": "ko",
+    "url": "https://www.bible.com/ko/bible/88/LUK.1.KRV",
+    "checked_at": "2026-09-14T13:40:10.420Z",
+    "verses": 80,
+    "page_sha256": "0d47273fcb1dde136138b545b0861c3b56529deb49c0725f4569753f91fe1535",
+    "text_sha256": "e7ebe1f645601b35bcaede28320533a1373ba5b337e7edac3481adbdf114b3c0"
+  },
+  {
+    "key": "nt/luke/1",
+    "language": "en",
+    "url": "https://www.bible.com/bible/1/LUK.1.KJV",
+    "checked_at": "2026-09-14T13:40:10.434Z",
+    "verses": 80,
+    "page_sha256": "4e2c2f3968ad7f8230677f5471a5762bd4e5d1582ef68e668ab9014685bf5db3",
+    "text_sha256": "e7b6d8e9c32acef31f713fa8c59e7ccecb81ed8ec265c67cc3aa691ca5fc9af4"
+  },
+  {
+    "key": "nt/matt/1",
+    "language": "ko",
+    "url": "https://www.bible.com/ko/bible/88/MAT.1.KRV",
+    "checked_at": "2026-09-14T13:40:10.442Z",
+    "verses": 25,
+    "page_sha256": "f3f8b9594b95d4556f4b6732de4f24df7387ea01f1237c630aed1bf7dd29d769",
+    "text_sha256": "bef2483f2874701e0973520df9d240df674874247c3ecf904def4cf9f396324b"
+  },
+  {
+    "key": "nt/matt/21",
+    "language": "ko",
+    "url": "https://www.bible.com/ko/bible/88/MAT.21.KRV",
+    "checked_at": "2026-09-14T13:40:10.564Z",
+    "verses": 46,
+    "page_sha256": "9f0c2bcb24eff1bdbf982bf8dd31de1778ce50fb5f3db179b6121976f7ee397e",
+    "text_sha256": "e0f1dd388974393a63695f249ee9c82aee670b8393741669b4e2858073db23ad"
+  },
+  {
+    "key": "nt/matt/4",
+    "language": "ko",
+    "url": "https://www.bible.com/ko/bible/88/MAT.4.KRV",
+    "checked_at": "2026-09-14T13:40:10.623Z",
+    "verses": 25,
+    "page_sha256": "20742bdca81ff8728d97b9cef55ac59a4612597cb2df8addd827cf89fd0b5a68",
+    "text_sha256": "adc56dd71fac21e55296dd562e7afd0f2b6e21ba440e5207956e7988f697c842"
+  },
+  {
+    "key": "nt/matt/1",
+    "language": "en",
+    "url": "https://www.bible.com/bible/1/MAT.1.KJV",
+    "checked_at": "2026-09-14T13:40:10.724Z",
+    "verses": 25,
+    "page_sha256": "9ea38a6088c8d82774dbd1e0b5d88e4bf1395e45ca94a61cea35edf5363a8007",
+    "text_sha256": "d642895a02282004d807c4573162fb477e142953d0aa7f08082e104a309c5512"
+  },
+  {
+    "key": "nt/matt/4",
+    "language": "en",
+    "url": "https://www.bible.com/bible/1/MAT.4.KJV",
+    "checked_at": "2026-09-14T13:40:10.868Z",
+    "verses": 25,
+    "page_sha256": "7db5a0b9a36f2d22fa82c7090ba2aae4742aecad294a57a5cb6b0ba700467202",
+    "text_sha256": "c6ec55ceb26a619f4cd95d0e183993cd19b2225161ebc49e46c703aff0ffd920"
+  },
+  {
+    "key": "ot/2-chr/26",
+    "language": "ko",
+    "url": "https://www.bible.com/ko/bible/88/2CH.26.KRV",
+    "checked_at": "2026-09-14T13:40:10.975Z",
+    "verses": 23,
+    "page_sha256": "152ea8403fa4c64c897d055087d55400cd795e5c3c568b11b2cb7ee9940eccd5",
+    "text_sha256": "767f7e145f96a281d028c213e680d51aa0e3cdcfeddb62c2c150490f75672115"
+  },
+  {
+    "key": "ot/2-chr/26",
+    "language": "en",
+    "url": "https://www.bible.com/bible/1/2CH.26.KJV",
+    "checked_at": "2026-09-14T13:40:11.079Z",
+    "verses": 23,
+    "page_sha256": "48ec05a0e6c6bae9281ad0c8ffe02ecbb4919106c3e986b969f800118232c784",
+    "text_sha256": "bef872f74eb61d9d0d072a920d175595ef7a476272f466dde47c879965996673"
+  },
+  {
+    "key": "nt/matt/21",
+    "language": "en",
+    "url": "https://www.bible.com/bible/1/MAT.21.KJV",
+    "checked_at": "2026-09-14T13:40:11.211Z",
+    "verses": 46,
+    "page_sha256": "404182441ebe0616e82a5a10d9e3696c2fcef5d5a8cac097de7f38cf718cdfb6",
+    "text_sha256": "dbce7dd9e31640091746909e9850f2c73c43147f295072ea28fd28d576fdb81d"
+  },
+  {
+    "key": "ot/2-chr/27",
+    "language": "en",
+    "url": "https://www.bible.com/bible/1/2CH.27.KJV",
+    "checked_at": "2026-09-14T13:40:11.312Z",
+    "verses": 9,
+    "page_sha256": "287bf2219f2f07cd50a57679fbbb677299f03563af4e0fa16d85d871a81bc59e",
+    "text_sha256": "ef957e41bba81050e8533d54508cdd843dc147fccc72933c439d99788e76bf76"
+  },
+  {
+    "key": "ot/2-chr/28",
+    "language": "en",
+    "url": "https://www.bible.com/bible/1/2CH.28.KJV",
+    "checked_at": "2026-09-14T13:40:11.530Z",
+    "verses": 27,
+    "page_sha256": "0ae1e648a40912897faef9e4c865f54ce078c8eaf39f19367cdb0b31666b51d1",
+    "text_sha256": "d8c31630316575e7057bb0a7d3effc791d91302ef7aac4475911e8f2fe0c9006"
+  },
+  {
+    "key": "ot/2-chr/28",
+    "language": "ko",
+    "url": "https://www.bible.com/ko/bible/88/2CH.28.KRV",
+    "checked_at": "2026-09-14T13:40:11.592Z",
+    "verses": 27,
+    "page_sha256": "d174783c7cbcb9c84e32bbc2789dd69b022c9f45e230a90e7d9342760dc16930",
+    "text_sha256": "4ac8196265961028389fe48f4319b524a721bf3e7f6a99a6e68276e9afb20bce"
+  },
+  {
+    "key": "ot/2-chr/29",
+    "language": "ko",
+    "url": "https://www.bible.com/ko/bible/88/2CH.29.KRV",
+    "checked_at": "2026-09-14T13:40:11.602Z",
+    "verses": 36,
+    "page_sha256": "3e1720e22c43b7bbe019ff009a0d4cc8c6f239b9b4a824214eb876652ec2f4d7",
+    "text_sha256": "42dce630feaf2263ce35869e268e0982dd8d364c080102c09756c34e9054e64d"
+  },
+  {
+    "key": "ot/2-chr/27",
+    "language": "ko",
+    "url": "https://www.bible.com/ko/bible/88/2CH.27.KRV",
+    "checked_at": "2026-09-14T13:40:11.619Z",
+    "verses": 9,
+    "page_sha256": "24f704be845f59b310a0f8c88953305e703b10ad45df05d2f224745d09bad7b8",
+    "text_sha256": "089e6ed86ea15c3a9ca4d39cbe5f056790e62f8f4a69c2a5dbf5a425e4a5c6fe"
+  },
+  {
+    "key": "ot/2-chr/30",
+    "language": "ko",
+    "url": "https://www.bible.com/ko/bible/88/2CH.30.KRV",
+    "checked_at": "2026-09-14T13:40:11.647Z",
+    "verses": 27,
+    "page_sha256": "64f2965916a6f6fb36d4013e64b95994bf7ba6cb7233196e2b7975aa864bc4e9",
+    "text_sha256": "0871c867ae9993efc50dc8254a57a070ad01ae81631319f7595569a66e02fc50"
+  },
+  {
+    "key": "ot/2-chr/31",
+    "language": "ko",
+    "url": "https://www.bible.com/ko/bible/88/2CH.31.KRV",
+    "checked_at": "2026-09-14T13:40:11.693Z",
+    "verses": 21,
+    "page_sha256": "82fa88f5c5820bb9eb49e927c4bfaff398f89d8143609496f56a11fdfd887f03",
+    "text_sha256": "6909758e9423722b303f020ae850cd3ba9314f018c5aa3aa9647b68ec2c8848c"
+  },
+  {
+    "key": "ot/2-chr/29",
+    "language": "en",
+    "url": "https://www.bible.com/bible/1/2CH.29.KJV",
+    "checked_at": "2026-09-14T13:40:11.807Z",
+    "verses": 36,
+    "page_sha256": "7cf7e478c7e0aeec6ab428915bea977619af9ee6655ba9418b45a2692f36dc03",
+    "text_sha256": "0718d0f67d6d8bd850ed84ed2732339b689e7546495644b2d7e38290cd0ca0a3"
+  },
+  {
+    "key": "ot/2-chr/30",
+    "language": "en",
+    "url": "https://www.bible.com/bible/1/2CH.30.KJV",
+    "checked_at": "2026-09-14T13:40:11.833Z",
+    "verses": 27,
+    "page_sha256": "d5dae939585305cf330b36721f2ac350eccd6954b00240d278ca93c25b13fdd2",
+    "text_sha256": "8c012515609906f45353fc41d1baf74397038c69696457416c34d16001b365f3"
+  },
+  {
+    "key": "ot/2-chr/32",
+    "language": "ko",
+    "url": "https://www.bible.com/ko/bible/88/2CH.32.KRV",
+    "checked_at": "2026-09-14T13:40:11.849Z",
+    "verses": 33,
+    "page_sha256": "f83aa4d25a5edca28aa536fe6f4c45c2f6ce318c2684838245f772c6d18fef9f",
+    "text_sha256": "ee30892bd74900eead22153972cd55e53780068845423078717200407e6f6a21"
+  },
+  {
+    "key": "ot/2-kgs/15",
+    "language": "ko",
+    "url": "https://www.bible.com/ko/bible/88/2KI.15.KRV",
+    "checked_at": "2026-09-14T13:40:11.915Z",
+    "verses": 38,
+    "page_sha256": "541f2415f68e7baeb7363ba876002e06e0c7b5409558a5eab6baed50db29ece7",
+    "text_sha256": "3316e512aea42d68b7a3e8887fc8fa3efa81260bcfaca334c2fc143f71a3680e"
+  },
+  {
+    "key": "ot/2-chr/31",
+    "language": "en",
+    "url": "https://www.bible.com/bible/1/2CH.31.KJV",
+    "checked_at": "2026-09-14T13:40:11.924Z",
+    "verses": 21,
+    "page_sha256": "99bf2f1063b5437edd837e50c2b63ab603f65c2f01c25606e0d6ea71683516e3",
+    "text_sha256": "af3ca7eacf23494789e61442e2a6cd0438e509ec0f20ee4c74cec417785b40a0"
+  },
+  {
+    "key": "ot/2-chr/32",
+    "language": "en",
+    "url": "https://www.bible.com/bible/1/2CH.32.KJV",
+    "checked_at": "2026-09-14T13:40:12.049Z",
+    "verses": 33,
+    "page_sha256": "5988bf0fa7ea9b56ffa2746497f4d86ce5b45d0acc9427e0230ccb6ff9f5f601",
+    "text_sha256": "68bab671f85e45a7570ae0cc0eebb6604711fcd20505c8e04d57fc205cf88f92"
+  },
+  {
+    "key": "ot/2-kgs/16",
+    "language": "ko",
+    "url": "https://www.bible.com/ko/bible/88/2KI.16.KRV",
+    "checked_at": "2026-09-14T13:40:12.143Z",
+    "verses": 20,
+    "page_sha256": "b5c50242b07a55d4d54888848331fb4d946bea2ae018aca885b6eab8b7f795f9",
+    "text_sha256": "70d0fd52ee9eb01453effa6044dd127c99ed4781f094569887029ea9a5177054"
+  },
+  {
+    "key": "ot/2-kgs/16",
+    "language": "en",
+    "url": "https://www.bible.com/bible/1/2KI.16.KJV",
+    "checked_at": "2026-09-14T13:40:12.307Z",
+    "verses": 20,
+    "page_sha256": "c9ef97b64ac79aee275fb0fae4cdef18f1e9a24086eaf8679af88ec0d452f768",
+    "text_sha256": "ba63b01a1b5511efb99231f6f0b15289cc794222b2d65d390dc761f4f762b438"
+  },
+  {
+    "key": "ot/2-kgs/15",
+    "language": "en",
+    "url": "https://www.bible.com/bible/1/2KI.15.KJV",
+    "checked_at": "2026-09-14T13:40:12.317Z",
+    "verses": 38,
+    "page_sha256": "04c813f40919d0e2d36586d04d7817dec82b0d72926fc633f99ea803a1190e7b",
+    "text_sha256": "96007fab74f58977d59e9a5ef07eae824afa4e68ae95e42a90e36747ea58a6b3"
+  },
+  {
+    "key": "ot/2-kgs/17",
+    "language": "ko",
+    "url": "https://www.bible.com/ko/bible/88/2KI.17.KRV",
+    "checked_at": "2026-09-14T13:40:12.376Z",
+    "verses": 41,
+    "page_sha256": "359072cd56924d2635652dc2917a3a17c68e722aca83075388abaf72e2709c64",
+    "text_sha256": "73b5af6015c8c169d4a06e41629915361f9da7e60ee667e71b41a22f8f8b8f88"
+  },
+  {
+    "key": "ot/2-kgs/18",
+    "language": "ko",
+    "url": "https://www.bible.com/ko/bible/88/2KI.18.KRV",
+    "checked_at": "2026-09-14T13:40:12.388Z",
+    "verses": 37,
+    "page_sha256": "17a6a0e2592f98f521ca289e9d975402c4d4bc17dced6af82480b62b65f1fbcc",
+    "text_sha256": "0de9c9a24726d8f6f8fe0d1d708c4a9d3aeba748683e0127f2541e215dc5f242"
+  },
+  {
+    "key": "ot/2-kgs/19",
+    "language": "ko",
+    "url": "https://www.bible.com/ko/bible/88/2KI.19.KRV",
+    "checked_at": "2026-09-14T13:40:12.449Z",
+    "verses": 37,
+    "page_sha256": "7bdedb58e9231fc6f1717d433c3caf5c71f559f799d5f359f65b47f200e45d23",
+    "text_sha256": "50203fe4f35e61b185126736191726bfa32011df8e1293dd686a4e1c5ef0f11b"
+  },
+  {
+    "key": "ot/2-kgs/17",
+    "language": "en",
+    "url": "https://www.bible.com/bible/1/2KI.17.KJV",
+    "checked_at": "2026-09-14T13:40:12.514Z",
+    "verses": 41,
+    "page_sha256": "033a12be885f111f51608192195659080f7f262861e8dc785040de3e6ec46cc7",
+    "text_sha256": "23fe01179bd1680575c81f07f86ffb08b7737d054fdd3ecd8c872a0a133b2cbb"
+  },
+  {
+    "key": "ot/2-kgs/18",
+    "language": "en",
+    "url": "https://www.bible.com/bible/1/2KI.18.KJV",
+    "checked_at": "2026-09-14T13:40:12.612Z",
+    "verses": 37,
+    "page_sha256": "35f5131f6fd755f7f7d9de2ba1fa84cd7c32af88c50833106f84c3490d5601a6",
+    "text_sha256": "f3701677af8c8b241b412b533250d4af53c2059c823ddf8cf1e2e74bc917690b"
+  },
+  {
+    "key": "ot/2-kgs/19",
+    "language": "en",
+    "url": "https://www.bible.com/bible/1/2KI.19.KJV",
+    "checked_at": "2026-09-14T13:40:12.668Z",
+    "verses": 37,
+    "page_sha256": "56244f06c98fb0da2a91a4ead0e5256c1ed02827945dcdffbd645e9d98e43487",
+    "text_sha256": "d4c5020d6e04ecf0b0ea9bf102a92965aaba36480c3e87bb08f5ad6acc0a76e4"
+  },
+  {
+    "key": "ot/2-kgs/20",
+    "language": "ko",
+    "url": "https://www.bible.com/ko/bible/88/2KI.20.KRV",
+    "checked_at": "2026-09-14T13:40:12.729Z",
+    "verses": 21,
+    "page_sha256": "9f4c8328c774c3d4a336cd4dccfaf713edc84c07a571ea33641fb2ddf91dbfc7",
+    "text_sha256": "4f6a99537336cac36ccd5a43f1df36efae99f6e3a33bb8fed1d286bf680bcf18"
+  },
+  {
+    "key": "ot/isa/1",
+    "language": "ko",
+    "url": "https://www.bible.com/ko/bible/88/ISA.1.KRV",
+    "checked_at": "2026-09-14T13:40:12.762Z",
+    "verses": 31,
+    "page_sha256": "e134ead0fadf7cd2fd26e80b9cc1a66cbbf70e17a8ffb16242ba3e97dfb52aea",
+    "text_sha256": "ba958d94dac0938ebcbec31bbbc7fb89eb508596c1ef1d7573973c6ee5071769"
+  },
+  {
+    "key": "ot/isa/10",
+    "language": "ko",
+    "url": "https://www.bible.com/ko/bible/88/ISA.10.KRV",
+    "checked_at": "2026-09-14T13:40:12.802Z",
+    "verses": 34,
+    "page_sha256": "29530f026e921c64ced8ec466f51da60b94479730c41a3741ad721f918148053",
+    "text_sha256": "6a60e27361efa2fdb499d8b6e4a34db76ad009b3cd32d65efe09623830ae293c"
+  },
+  {
+    "key": "ot/2-kgs/20",
+    "language": "en",
+    "url": "https://www.bible.com/bible/1/2KI.20.KJV",
+    "checked_at": "2026-09-14T13:40:12.829Z",
+    "verses": 21,
+    "page_sha256": "c91d61eb2bfe372a19f54d449d44213fd8d59892e9766c01bf8ac654ff160416",
+    "text_sha256": "779c47f18433b8f7f60deed19e33b10a54a610ee3667e30b8add3612f27bb2f6"
+  },
+  {
+    "key": "ot/isa/11",
+    "language": "ko",
+    "url": "https://www.bible.com/ko/bible/88/ISA.11.KRV",
+    "checked_at": "2026-09-14T13:40:12.887Z",
+    "verses": 16,
+    "page_sha256": "523fdaeaa63537b1f2fb1854622df3446b84b0ca58c9c5527d72fd07f5c4653a",
+    "text_sha256": "d82320eb8bfc1b66f77313ce3ef2ffcd816e1078f31c654b2292744cf7ca9908"
+  },
+  {
+    "key": "ot/isa/1",
+    "language": "en",
+    "url": "https://www.bible.com/bible/1/ISA.1.KJV",
+    "checked_at": "2026-09-14T13:40:12.947Z",
+    "verses": 31,
+    "page_sha256": "e9783053653d4e7babfe03f472fa39171ce974f9b883d688a695c84d65ecc41f",
+    "text_sha256": "9ccf1a920d90289926b779336e8c4450717d5f6154f322b6e80dfc03ac95d6fc"
+  },
+  {
+    "key": "ot/isa/10",
+    "language": "en",
+    "url": "https://www.bible.com/bible/1/ISA.10.KJV",
+    "checked_at": "2026-09-14T13:40:13.018Z",
+    "verses": 34,
+    "page_sha256": "2d29ccc491d832ae0247ddc59e9a295c4935a70891c7c2ff0f9d36814e756e6a",
+    "text_sha256": "344112f436ad4a8bd648392c97ffe4cfed1d52a6db88a71a8340bd1006523e17"
+  },
+  {
+    "key": "ot/isa/11",
+    "language": "en",
+    "url": "https://www.bible.com/bible/1/ISA.11.KJV",
+    "checked_at": "2026-09-14T13:40:13.087Z",
+    "verses": 16,
+    "page_sha256": "ac536c2f2f1d45c2af2484c6cb100a02efca2449728551cbef52666483399b9b",
+    "text_sha256": "4ea4e120b0a780b412fdbdced9354c81d885f3c6b1b4fa53063dc3691cf8fa59"
+  },
+  {
+    "key": "ot/isa/2",
+    "language": "ko",
+    "url": "https://www.bible.com/ko/bible/88/ISA.2.KRV",
+    "checked_at": "2026-09-14T13:40:13.146Z",
+    "verses": 22,
+    "page_sha256": "f555220ff1d3a4df3f414f13aeb37aa297789dd94f205f4175b760e87dc97099",
+    "text_sha256": "4f94a96be2cff1682880d7d69e4a348412da457628667b65f501dcb00182f49b"
+  },
+  {
+    "key": "ot/isa/12",
+    "language": "ko",
+    "url": "https://www.bible.com/ko/bible/88/ISA.12.KRV",
+    "checked_at": "2026-09-14T13:40:13.159Z",
+    "verses": 6,
+    "page_sha256": "09ab0e3cea6bc31b1f98f618126bed50996f27582e19eb913a9e9aa8f4521547",
+    "text_sha256": "4dd805b87e2d0807c879b7bdafe69d1fe3e71d340b936b08bbc64a00b7ff575a"
+  },
+  {
+    "key": "ot/isa/3",
+    "language": "ko",
+    "url": "https://www.bible.com/ko/bible/88/ISA.3.KRV",
+    "checked_at": "2026-09-14T13:40:13.214Z",
+    "verses": 26,
+    "page_sha256": "5a74905b81d9ca7a9cc69c22be89d8ee7e794dba67ee176158b3f2989ab602a9",
+    "text_sha256": "0d6e002d73fb260dc5358f75b69b8d33df4833fdfb38d046f549542c95e46f23"
+  },
+  {
+    "key": "ot/isa/12",
+    "language": "en",
+    "url": "https://www.bible.com/bible/1/ISA.12.KJV",
+    "checked_at": "2026-09-14T13:40:13.235Z",
+    "verses": 6,
+    "page_sha256": "918bd766306dd4f52e6892cf0bec13233698553df2247026cb0acd5447f21523",
+    "text_sha256": "e8b2a0f64ec49120f58daa56f54547bf101b41c654b0e567b3274dab7e3d93b1"
+  },
+  {
+    "key": "ot/isa/4",
+    "language": "ko",
+    "url": "https://www.bible.com/ko/bible/88/ISA.4.KRV",
+    "checked_at": "2026-09-14T13:40:13.288Z",
+    "verses": 6,
+    "page_sha256": "10f9228822a51847b1f126d03d298faf3d381c9d68ee9aa0bd5e3ff6a2583664",
+    "text_sha256": "ce1a3fc5018d480e25161abeda3d518aba3a52fc3a0bd92a9d5de26412782429"
+  },
+  {
+    "key": "ot/isa/2",
+    "language": "en",
+    "url": "https://www.bible.com/bible/1/ISA.2.KJV",
+    "checked_at": "2026-09-14T13:40:13.366Z",
+    "verses": 22,
+    "page_sha256": "af87d4e046050e07a16557560045eaccb95160523a235bbd07217cee54152ccd",
+    "text_sha256": "bc915ed3e7ec18277175f5b4a37880227247e1552f8aa32482ba8e8f1c240cc7"
+  },
+  {
+    "key": "ot/isa/5",
+    "language": "ko",
+    "url": "https://www.bible.com/ko/bible/88/ISA.5.KRV",
+    "checked_at": "2026-09-14T13:40:13.419Z",
+    "verses": 30,
+    "page_sha256": "5b21dd95f6cc5687299ae890b00d05efe18561ef8a2c174d8d7da82706920d36",
+    "text_sha256": "0524d956ca80280c4fe49d157584610f63fc8ecce76cb7a88aea42fdc6855cf8"
+  },
+  {
+    "key": "ot/isa/4",
+    "language": "en",
+    "url": "https://www.bible.com/bible/1/ISA.4.KJV",
+    "checked_at": "2026-09-14T13:40:13.498Z",
+    "verses": 6,
+    "page_sha256": "58129c25e03419dfd703b8bebc3171b214d0ac9f142373b8110df5a1b6ab08ec",
+    "text_sha256": "e983ab7504db7e1496a722039b5695aa5306d892216a434d0f57c0a990e59e88"
+  },
+  {
+    "key": "ot/isa/6",
+    "language": "ko",
+    "url": "https://www.bible.com/ko/bible/88/ISA.6.KRV",
+    "checked_at": "2026-09-14T13:40:13.556Z",
+    "verses": 13,
+    "page_sha256": "e7575fe00a3d06986866531197d2ef07049592c2e7f701869ecb8c9d0eb10f49",
+    "text_sha256": "929a8faed739b49cf6778de872b8bc61184fc507fc3f6399410bdb1c790f2c2a"
+  },
+  {
+    "key": "ot/isa/3",
+    "language": "en",
+    "url": "https://www.bible.com/bible/1/ISA.3.KJV",
+    "checked_at": "2026-09-14T13:40:13.572Z",
+    "verses": 26,
+    "page_sha256": "88d404cf3f05061eb4010170788deb5ebe0a111fb2331b1efd54da636e8913f3",
+    "text_sha256": "ed57759f0a83c7688352e93c9b76e772d49875afce9db228b776b8999a6d326c"
+  },
+  {
+    "key": "ot/isa/7",
+    "language": "ko",
+    "url": "https://www.bible.com/ko/bible/88/ISA.7.KRV",
+    "checked_at": "2026-09-14T13:40:13.621Z",
+    "verses": 25,
+    "page_sha256": "bd755bd82ffff1f321760f81bad63c9aa29e4a830b8d628d831bad9c1a9507ff",
+    "text_sha256": "b6a043a910ab92e50e6126c3f164f1cded001f47a9cce9adc73748b2219b00f6"
+  },
+  {
+    "key": "ot/isa/5",
+    "language": "en",
+    "url": "https://www.bible.com/bible/1/ISA.5.KJV",
+    "checked_at": "2026-09-14T13:40:13.642Z",
+    "verses": 30,
+    "page_sha256": "b845a3cf681a8fa6c6f39c9ef9caa088a1c7df25a143f334c9ed2e5a5f0e822c",
+    "text_sha256": "bc4b6507315190d06025d7afdaa6e70d5b1905e2db305ef654f947fd8bfaf877"
+  },
+  {
+    "key": "ot/isa/6",
+    "language": "en",
+    "url": "https://www.bible.com/bible/1/ISA.6.KJV",
+    "checked_at": "2026-09-14T13:40:13.792Z",
+    "verses": 13,
+    "page_sha256": "7ad40c67b3ba0f509453db7cd654244fb2e1d5279980d57f51187dafafca61a8",
+    "text_sha256": "32ea7d97a3dae0acd51dd62ba17d073b83a6316cfaf75c55e447116aebfbe13c"
+  },
+  {
+    "key": "ot/isa/7",
+    "language": "en",
+    "url": "https://www.bible.com/bible/1/ISA.7.KJV",
+    "checked_at": "2026-09-14T13:40:13.847Z",
+    "verses": 25,
+    "page_sha256": "a51b8a4385e6404ed72d0cb0f98f516f4d532fceece87e79c5541821d1c9feda",
+    "text_sha256": "212732ca0a71af2b5f65769e831423c52d75d4577f1b47a8db31892fe3047047"
+  },
+  {
+    "key": "ot/isa/8",
+    "language": "ko",
+    "url": "https://www.bible.com/ko/bible/88/ISA.8.KRV",
+    "checked_at": "2026-09-14T13:40:13.856Z",
+    "verses": 22,
+    "page_sha256": "c04ebd6052189a2a1e43d02a7dee14543951e0a3b6da996f601c4828aa76cf3a",
+    "text_sha256": "4dd28c70bd2ef94aae9138fbed2f0f554530b387ea9d56e8038cc5db09523035"
+  },
+  {
+    "key": "ot/isa/9",
+    "language": "ko",
+    "url": "https://www.bible.com/ko/bible/88/ISA.9.KRV",
+    "checked_at": "2026-09-14T13:40:13.895Z",
+    "verses": 21,
+    "page_sha256": "fe71ff39643f69eae92f453a50f524a35934547a72be2fd314a97c9cee8cdb73",
+    "text_sha256": "e3b56233921dc9cb308ed56d9143b5da18b202b2e82935036581a4474da07790"
+  },
+  {
+    "key": "ot/isa/8",
+    "language": "en",
+    "url": "https://www.bible.com/bible/1/ISA.8.KJV",
+    "checked_at": "2026-09-14T13:40:13.998Z",
+    "verses": 22,
+    "page_sha256": "b85fce62ae5e3591ab8bc5dbec4dae2cf121b9231f4dff80f25b0df47d2420a0",
+    "text_sha256": "14a4dc585cd488fe97d17664b457c0dd0e6117653e6f22e4897cb5f24ebb87c1"
+  },
+  {
+    "key": "ot/isa/9",
+    "language": "en",
+    "url": "https://www.bible.com/bible/1/ISA.9.KJV",
+    "checked_at": "2026-09-14T13:40:14.063Z",
+    "verses": 21,
+    "page_sha256": "4cb18b76f49f89358e1b6e4a4948c988439c8a831a0728fd31d7a16fe1ebc949",
+    "text_sha256": "847ddd1d2e4677d68bf757ad8ed47a0ed8e55e8e71dbeb49efd3f2a601dfa453"
+  }
+]
